@@ -209,7 +209,7 @@ function processVendorFonts3() {
 
 function processImages() {
   return gulp
-    .src("./assets/img/**/*.{png,jpg,gif,jpeg,PNG,JPG,GIF,JPEG}", {
+    .src("./assets/img/**/*.{png,jpg,gif,jpeg,ico,PNG,JPG,GIF,JPEG,ICO}", {
       base: "./",
     })
     .pipe(gulp.dest("./dist/"))
