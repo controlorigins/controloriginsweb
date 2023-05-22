@@ -1,65 +1,55 @@
 {
-  "title": "Control.Origins",
-  "name": "control-origins",
-  "version": "1.1.1",
-  "scripts": {
-    "start": "gulp watch"
-  },
-  "description": "A single page site for Control.Origins",
-  "keywords": [
-    "css",
-    "sass",
-    "html",
-    "responsive"
-  ],
-  "homepage": "https://controlorigins.com",
-  "bugs": {
-    "url": "https://controlorigins.com",
-    "email": "info@controlorigins.com"
-  },
-  "license": "MIT",
-  "author": "Mark Hazleton",
-  "contributors": [
-    "Mark Hazleton (https://linkedin.com/in/markhazleton/)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://projectmechanics@dev.azure.com/projectmechanics/ControlOrigins/_git/git"
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.11.5",
-    "aos": "^2.3.4",
-    "axios": ">=0.27.2",
-    "boxicons": "^2.1.2",
-    "counterup": "^1.0.2",
-    "github-profile-card": "^3.1.0",
-    "isotope-layout": "^3.0.6",
-    "jquery.easing": "^1.4.1",
-    "owl.carousel": "^2.3.4",
-    "popper.js": "^1.16.1",
-    "postcss": "^8.4.14",
-    "remixicon": "^2.5.0",
-    "venobox": "^2.0.4",
-    "waypoints": "^4.0.1"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.7",
-    "bootstrap": "^5.1.3",
-    "browser-sync": "^2.27.10",
-    "csso": "^5.0.3",
-    "del": "^6.1.1",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-count": "^1.0.0",
-    "gulp-csso": "^4.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.1.3",
-    "gulp-uglify": "^3.0.2",
-    "htmlmin": "^0.0.7",
-    "jquery": "^3.6.0",
-    "merge-stream": "^2.0.0",
-    "uglify-js": "^3.16.0"
-  }
+    "title": "ControlOrigins.com",
+    "name": "controloriginsweb",
+    "version": "8.0.1",
+    "scripts": {
+        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build:assets": "node scripts/build-assets.js",
+        "build:pug": "node scripts/build-pug.js",
+        "build:scripts": "node scripts/build-scripts.js",
+        "build:scss": "node scripts/build-scss.js",
+        "clean": "node scripts/clean.js",
+        "start": "npm run build && node scripts/start.js",
+        "start:debug": "npm run build && node scripts/start-debug.js"
+    },
+    "description": "Control Origins Website.",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template"
+    ],
+    "homepage": "https://github.com/controlorigins/controloriginsweb",
+    "bugs": {
+        "url": "https://github.com/controlorigins/controloriginsweb/issues",
+        "email": "mark.hazleton@controlorigins.com"
+    },
+    "license": "MIT",
+    "author": "Start Bootstrap",
+    "contributors": [
+        "Mark Hazleton (https://markhazleton.controlorigins.com)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/controlorigins/controloriginsweb.git"
+    },
+    "dependencies": {
+        "bootstrap": "5.2.3",
+        "g": "^2.0.1",
+        "npm-check-updates": "^16.10.12"
+    },
+    "devDependencies": {
+        "autoprefixer": "10.4.14",
+        "browser-sync": "^2.29.3",
+        "chokidar": "3.5.3",
+        "concurrently": "8.0.1",
+        "postcss": "8.4.23",
+        "prettier": "2.8.8",
+        "pug": "3.0.2",
+        "sass": "1.62.1",
+        "shelljs": "0.8.5",
+        "upath": "2.0.1"
+    }
 }
