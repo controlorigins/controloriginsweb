@@ -9,57 +9,58 @@ html(lang='en')
 
     block pagehead
 
-    // Font Awesome icons (free version)
-    script(src='https://use.fontawesome.com/releases/v6.1.0/js/all.js', crossorigin='anonymous')
-
-    // Google fonts
-    link(href='https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i', rel='stylesheet', type='text/css')
-
-    // Core theme CSS (includes Bootstrap)
-    link(href='css/styles.css', rel='stylesheet')
-    link(href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css', rel="stylesheet", type='text/css')
-
+    // Favicons
+    link( rel="icon" href="assets/img/favicon.ico")
+    link( rel="apple-touch-icon" href="assets/img/apple-touch-icon.png")
+    // Google Fonts
+    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i")
+    // Vendor CSS Files
+    link( rel="stylesheet" href="assets/css/vendor.css" )
+    // Template Main CSS File
+    link(rel="stylesheet" href="assets/css/style.css")
     // Global site tag (gtag.js) - Google Analytics
-    script(src="https://www.googletagmanager.com/gtag/js?id=G-L8GVZNDH0B",Async)
+    script(src="https://www.googletagmanager.com/gtag/js?id=UA-123780-11" async="")
     script.
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-L8GVZNDH0B');
+        gtag('config', 'UA-123780-11');
+    // Clarity tracking code for //controlorigins.com/
     script.
-        (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "d628hovv63");
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="//www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "4me1k8d6vt");
+
   body#page-top
-    // Navigation
-    nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
-        a.navbar-brand.js-scroll-trigger(href='/#page-top' title="Mark Hazleton")
-            span.d-block.d-lg-none Mark Hazleton
-            span.d-none.d-lg-block
-                img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/MarkHazleton.jpg', alt='...')
-        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-        #navbarResponsive.collapse.navbar-collapse
-            ul.navbar-nav
-                li.nav-item
-                    a.nav-link.js-scroll-trigger(href='/#about') About
-                li.nav-item
-                    a.nav-link.js-scroll-trigger(href='/#skills') Skills
-                li.nav-item
-                    a.nav-link.js-scroll-trigger(href='/#projects') Projects
-                li.nav-item
-                    a.nav-link.js-scroll-trigger(href='/#experience') Experience
-                li.nav-item
-                    a.nav-link.js-scroll-trigger(href='/#education') Education
-                li.nav-item
-                    a.nav-link.js-scroll-trigger(href='/#interests') Interests
+    // ======= Header =======
+    header#header.fixed-top
+      .container.d-flex.align-items-center
+        .logo.mr-auto
+          a.logo.mr-auto(href="/")
+            img(
+              alt="Control Origins"
+              src="/assets/img/favicon-32x32.png"
+              )
+            | Control
+            span Origins
+        nav.nav-menu.d-none.d-lg-block
+          ul
+            li.active
+              a(href="/#hero") Home
+            li
+              a(href="/#portfolio") Portfolio
+            li
+              a(href="/#opportunity") Opportunity
+            li
+              a(href="/#approach") Approach
+            li
+              a(href="/#solution-tabs") Solutions
+            li
+              a(href="/#models") Models
+        // .nav-menu
+    // End Header
+    main#main
     // Page Content
     .container-fluid.p-0
-
         block layout-content
 
-include page-footer.pug
+    include page-footer.pug
 
