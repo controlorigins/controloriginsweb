@@ -1,162 +1,61 @@
-﻿doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    meta(
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      )
-    title Mark Hazleton - Control Origins Co-Founder
-    meta(
-      name="description"
-      content="Control Origin Co-Founder Mark Hazleton"
-      )
-    meta(
-      name="keywords"
-      content="Mark Hazleton Co-Founder"
-      )
-    link(
-      href="https://controlorigins.com/mark-hazleton.html"
-      rel="canonical"
-      )
-    // Favicons
-    link(
-      rel="icon"
-      href="assets/img/favicon.ico"
-      )
-    link(
-      rel="apple-touch-icon"
-      href="assets/img/apple-touch-icon.png"
-      )
-    // Google Fonts
-    link(
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      )
-    // Vendor CSS Files
-    link(
-      rel="stylesheet"
-      href="assets/css/vendor.css"
-      )
-    // Template Main CSS File
-    link(
-      rel="stylesheet"
-      href="assets/css/style.css"
-      )
-    style.
-      span.date-range {
-        float: right;
-        }
-    // Global site tag (gtag.js) - Google Analytics
-    script(
-      src="https://www.googletagmanager.com/gtag/js?id=UA-123780-11"
-      async=""
-      )
-    script.
-      window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-123780-11');
-    // Clarity tracking code for //controlorigins.com/
-    script.
-      (function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "//www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y); })(window, document, "clarity", "script", "4me1k8d6vt");
-  body
-    // ======= Header =======
-    header#header.fixed-top
-      .container.d-flex.align-items-center
-        .logo.mr-auto
-          a.logo.mr-auto(href="/")
-            img(
-              alt="Control Origins"
-              src="/assets/img/favicon-32x32.png"
-              )
-            | Control
-            span Origins
-        nav.nav-menu.d-none.d-lg-block
-          ul
-            li.active
-              a(href="/#header") Home
-            li
-              a(href="/#opportunity") Opportunity
-            li
-              a(href="/#portfolio") Portfolio
-            li
-              a(href="/#approach") Approach
-            li
-              a(href="/#solution-tabs") Solutions
-            li
-              a(href="/#models") Models
-        // .nav-menu
-    // End Header
-    main#main
-      br
-      br
-      br
-      section#blog.blog
+﻿extends layouts/layout
+
+block pagehead
+    title Mark Hazleton Control Origins Co-Founder
+    meta(name='description', content='Mark Hazleton - Control Origins Co-Founder')
+    meta(name='author', content='Mark Hazleton')
+    link(rel='canonical', href='https://controlorigins.com/Mark-Hazleton.html')
+
+block layout-content
+    br
+    br
+    section#blog.blog
         .container.aos-init.aos-animate(data-aos="fade-up")
           .row
             .col-lg-8.entries
               article.entry.entry-single
                 h1.entry-title(style="font-size:x-large;")
-                  img.img-fluid(
-                    style="border-radius: 25%;max-width: 25%;margin-right:20px;float:left;max-width: 100px;"
-                    alt="Mark Hazleton - Control Origins Co-Founder"
-                    src="/assets/img/portfolio/MarkHazleton.jpg"
-                    )
+                  img.img-fluid(style="border-radius: 25%;max-width: 25%;margin-right:20px;float:left;max-width: 100px;" alt="Mark Hazleton - Control Origins Co-Founder" src="/assets/img/portfolio/MarkHazleton.jpg" )
                   | Mark Hazleton
                   br
                   | Control Origins Co-Founder
+
                 .entry-content(style="clear:both;")
-                  p
-                    | Mark Hazleton has a passion for solution delivery which makes technology work for business. He prefers to focus on tangible
-                    |   benefits for the business by gathering business subject matter expertise. He avoids being sidetracked by sizzle that does not
-                    |   deliver and believes the goals and objectives of the business are the primary driver for a solution to be successful. His primary
-                    |   focus is the Microsoft stack both on premise and in the cloud.
+                  br
+                  p.
+                    Mark Hazleton has a passion for solution delivery which makes technology work for business. He prefers to focus on tangible
+                    benefits for the business by gathering business subject matter expertise. He avoids being sidetracked by sizzle that does not
+                    deliver and believes the goals and objectives of the business are the primary driver for a solution to be successful. His primary
+                    focus is the Microsoft stack both on premise and in the cloud.
                   p
                   blockquote
                     i.icofont-quote-left.quote-left
                     p I try not to be distracted by sizzle and focus on making technology work for the business.
                     i.las.la-quote-right.quote-right
                     i.icofont-quote-right.quote-right
-                  p
-                    | Mark Hazleton has worked with both on-premise and cloud based providers including Microsoft Azure and Amazon Web Services. He has developed solutions for the enterprise as well as
-                    |   small business to consumer websites. Mark has used the Azure DevOps tools to implement Continuous Integration and Deployment
-                    |   (CI/CD) processes that includes gated deployments to production.
-                  p
-                    | Mark Hazleton has worked in both small start-ups and large consulting organizations and always put client service first.
+                  p.
+                    Mark Hazleton has worked with both on-premise and cloud based providers including Microsoft Azure and Amazon Web Services. He has developed solutions for the enterprise as well as
+                    small business to consumer websites. Mark has used the Azure DevOps tools to implement Continuous Integration and Deployment
+                    (CI/CD) processes that includes gated deployments to production.
+                  p.
+                    Mark Hazleton has worked in both small start-ups and large consulting organizations and always put client service first.
               article.entry.entry-single
                 .entry-img
-                  img.img-fluid(
-                    alt="Greek Theatre by Mark Hazleton"
-                    title="Greek Theatre by Mark Hazleton"
-                    src="/assets/img/GreekTheatre.jpg"
-                    )
+                  img.img-fluid(alt="Greek Theatre by Mark Hazleton" title="Greek Theatre by Mark Hazleton" src="/assets/img/GreekTheatre.jpg" style="object-fit: cover;")
                 h2.entry-title
-                  a(
-                    target="linkedin"
-                    href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/"
-                    ) Learning in 2022
+                  a(target="MarkHazleton" href="https://markhazleton.controlorigins.com/lifelong-learning.html" ) Lifelong Learning
                 .entry-meta
                   ul
                     li.d-flex.align-items-center
                       i.icofont-user
-                      a(
-                        href="https://markhazleton.controlorigins.com/"
-                        target="MarkHazleton"
-                        ) Mark Hazleton
+                      a( href="https://markhazleton.controlorigins.com/" target="MarkHazleton" ) Mark Hazleton
                     li.d-flex.align-items-center
                       i.icofont-wall-clock
-                      a(
-                        href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/"
-                        target="LinkedIn"
-                        )
+                      a( href="https://markhazleton.controlorigins.com/lifelong-learning.html" target="MarkHazleton" )
                         time(datetime="2022-05-22") May 22, 2022
                     li.d-flex.align-items-center
                       i.icofont-comment
-                      a(
-                        href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/"
-                        target="LinkedIn"
-                        )
+                      a(href="https://markhazleton.controlorigins.com/lifelong-learning.html" target="MarkHazleton" )
                 p
                   | As a lifelong learner, I have had to adapt how I acquire and strengthen my skills. Over my time in the technology industry,
                   |   we have moved from in-person classrooms and running to the bookstore when assigned a new project to virtually unlimited options,
@@ -168,17 +67,17 @@ html(lang="en")
                     i.icofont-folder
                     ul.cats
                       li
-                        a(href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/") Learning
+                        a(href="https://markhazleton.controlorigins.com/lifelong-learning.html") Learning
                     i.icofont-tags
                     ul.tags
                       li
                         a(href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/") LinkedIn Article
                       li
-                        a(href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/") Learning
+                        a(href="https://markhazleton.controlorigins.com/lifelong-learning.html") Learning
                       li
-                        a(href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/") Pluralsight
+                        a(href="https://markhazleton.controlorigins.com/lifelong-learning.html#Pluralsight") Pluralsight
                       li
-                        a(href="https://www.linkedin.com/pulse/learning-2022-mark-hazleton/") Microsoft Learn
+                        a(href="https://markhazleton.controlorigins.com/lifelong-learning.html#MicrosoftLearn") Microsoft Learn
               article.entry.entry-single
                 .entry-img
                   img.img-fluid(
@@ -376,72 +275,3 @@ html(lang="en")
                     li Web API Design: Dec 31, 2015
               // End sidebar
             // End blog sidebar
-    // End #main
-    // ======= Footer =======
-    footer#footer
-      .footer-top
-        .container
-          .row
-            .col-lg-3.col-md-6.footer-contact
-              h3
-                | Control
-                span .
-                | Origins
-              p
-                | Roanoke, TX 76262
-                br
-                | United States
-                br
-                br
-                strong Phone:
-                | +1 972 322 1066
-                br
-                strong Email:
-                a(href="mailto:mark.hazleton@controlorigins.com") mark.hazleton@controlorigins.com
-                br
-            .col-lg-2.col-md-6.footer-links
-              h4 Useful Links
-              ul
-                li
-                  i.bx.bx-chevron-right
-                  a(href="/") Home
-                li
-                  i.bx.bx-chevron-right
-                  a(href="/mark-hazleton.html") Mark Hazleton
-                li
-                  i.bx.bx-chevron-right
-                  a(href="/terms.html") Terms of service
-      .container.d-md-flex.py-4
-        .mr-md-auto.text-center.text-md-left
-          .copyright © Copyright Control Origins. All Rights Reserved
-          .credits
-            // All the links in the footer should remain intact.
-            // You can delete the links only if you purchased the pro version.
-            // Licensing information: https://bootstrapmade.com/license/
-            // Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-            | Designed by
-            a(
-              href="https://bootstrapmade.com/"
-              target="_blank"
-              ) BootstrapMade
-        .social-links.text-center.text-md-right.pt-3.pt-md-0
-          a.linkedin(
-            href="https://www.linkedin.com/company/control-origins"
-            target="_blank"
-            )
-            i.bx.bxl-linkedin
-    // End Footer
-    a.back-to-top(href="#")
-      i.icofont-simple-up
-    // Vendor JS Files
-    script(src="assets/js/vendor.js")
-    // Template Main JS File
-    script(src="assets/js/scripts.js")
-    // Cloudflare Web Analytics
-    script(
-      data-cf-beacon="{'token': '06d9fbe29f8a429da31799a68be2a755'}"
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      defer=""
-      ).
-
-    // End Cloudflare Web Analytics

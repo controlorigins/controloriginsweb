@@ -1,107 +1,18 @@
-﻿doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    meta(
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      )
-    title Control Origin Website Terms and Conditions
-    meta(
-      name="description"
-      content="Control Origin Website Terms and Conditions"
-      )
-    meta(
-      name="keywords"
-      content="Terms"
-      )
-    link(
-      href="https://controlorigins.com/terms.html"
-      rel="canonical"
-      )
-    // Favicons
-    link(
-      rel="icon"
-      href="assets/img/favicon.ico"
-      )
-    link(
-      rel="apple-touch-icon"
-      href="assets/img/apple-touch-icon.png"
-      )
-    // Google Fonts
-    link(
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      )
-    // Vendor CSS Files
-    link(
-      rel="stylesheet"
-      href="assets/css/vendor.css"
-      )
-    // Template Main CSS File
-    link(
-      rel="stylesheet"
-      href="assets/css/style.css"
-      )
-    // Global site tag (gtag.js) - Google Analytics
-    script(
-      src="https://www.googletagmanager.com/gtag/js?id=UA-123780-11"
-      async=""
-      )
-    script.
-      window.dataLayer = window.dataLayer || [];
-        function gtag() {
-        dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "UA-123780-11");
-    // Clarity tracking code for //controlorigins.com/
-    script.
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-        c[a] ||
-        function () {
-        (c[a].q = c[a].q || []).push(arguments);
-        };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "//www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "4me1k8d6vt");
-  body
-    // ======= Header =======
-    header#header.fixed-top
-      .container.d-flex.align-items-center
-        .logo.mr-auto
-          a(href="/")
-            | Control
-            span .
-            | Origins
-        // Uncomment below if you prefer to use an image logo
-        // <a href="/" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>
-        nav.nav-menu.d-none.d-lg-block
-          ul
-            li.active
-              a(href="/#header") Home
-            li
-              a(href="/#opportunity") Opportunity
-            li
-              a(href="/#portfolio") Portfolio
-            li
-              a(href="/#approach") Approach
-            li
-              a(href="/#solution-tabs") Solutions
-            li
-              a(href="/#models") Models
-        // .nav-menu
-    // End Header
-    main#main(style="margin-top: 10px; padding-top: 10px")
-      // ======= Terms Section =======
-      section#Terms
-        .container-fluid
+﻿extends layouts/layout
+
+block pagehead
+    title Control Origins Terms of Service
+    meta(name='description', content='Control Origins Terms of Service')
+    meta(name='author', content='Mark Hazleton')
+    link(rel='canonical', href='https://controlorigins.com/terms.html')
+
+block layout-content
+    br
+    br
+    section#terms.d-flex.align-items-center
+        .container(data-aos-delay="100" data-aos="zoom-out")
           .row.col-12
-            h1 Terms and conditions
+            h1 Terms of Service
             p
               | These terms and conditions ("Agreement") sets forth the
               |   general terms and conditions of your use of the
@@ -223,63 +134,3 @@ html(lang="en")
               |   it, you may send an email to
               |   mark.hazleton@controlorigins.com
             p This document was last updated on August 29, 2020
-      // End Models Section
-    // End #main
-    // ======= Footer =======
-    footer#footer
-      .footer-top
-        .container
-          .row
-            .col-lg-3.col-md-6.footer-contact
-              h3
-                | Control
-                span .
-                | Origins
-              p
-                | Roanoke, Texas
-                br
-            .col-lg-2.col-md-6.footer-links
-              h4 Useful Links
-              ul
-                li
-                  i.bx.bx-chevron-right
-                  a(href="/") Home
-                li
-                  i.bx.bx-chevron-right
-                  a(href="/mark-hazleton.html") Mark Hazleton
-                li
-                  i.bx.bx-chevron-right
-                  a(href="#") Terms of service
-      .container.d-md-flex.py-4
-        .mr-md-auto.text-center.text-md-left
-          .copyright © Copyright Control Origins. All Rights Reserved
-          .credits
-            // All the links in the footer should remain intact.
-            // You can delete the links only if you purchased the pro version.
-            // Licensing information: https://bootstrapmade.com/license/
-            // Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-            | Designed by
-            a(
-              href="https://bootstrapmade.com/"
-              target="_blank"
-              ) BootstrapMade
-        .social-links.text-center.text-md-right.pt-3.pt-md-0
-          a.linkedin(
-            href="https://www.linkedin.com/company/control-origins"
-            target="_blank"
-            )
-            i.bx.bxl-linkedin
-    // End Footer
-    a.back-to-top(href="#")
-      i.icofont-simple-up
-    // Vendor JS Files
-    script(src="assets/js/vendor.js")
-    // Template Main JS File
-    script(src="assets/js/main.js")
-    // Cloudflare Web Analytics
-    script(
-      data-cf-beacon="{'token': '06d9fbe29f8a429da31799a68be2a755'}"
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      defer=""
-      )
-    // End Cloudflare Web Analytics
