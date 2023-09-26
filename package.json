@@ -41,14 +41,14 @@
         "npm-check-updates": "^16.14.4"
     },
     "devDependencies": {
-        "autoprefixer": "10.4.15",
+        "autoprefixer": "10.4.16",
         "browser-sync": "^2.29.3",
         "chokidar": "3.5.3",
         "concurrently": "8.2.1",
-        "postcss": "8.4.29",
+        "postcss": "8.4.30",
         "prettier": "3.0.3",
         "pug": "3.0.2",
-        "sass": "1.67.0",
+        "sass": "1.68.0",
         "shelljs": "0.8.5",
         "upath": "2.0.1"
     }
