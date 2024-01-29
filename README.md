@@ -49,6 +49,8 @@ This will generate optimized and minified assets in the dist directory, ready fo
 
 Contributions to ControlOrigins.com are welcome! If you find any issues or would like to propose enhancements, please open an issue or submit a pull request. Make sure to follow the contribution guidelines.
 
+For deailed instructions on how to contribute, [`EditThisSite.md`](/EditThisSite.md)
+
 ## License
 
 The ControlOrigins.com website is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license.

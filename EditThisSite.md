@@ -124,3 +124,109 @@ Practice Makes Perfect: Try making small changes and previewing them to build yo
 Conclusion
 Editing a .pug file doesn't have to be intimidating. With a little practice and attention to detail, you can easily make updates to your website's template. Remember, every expert was once a beginner, so don't hesitate to ask questions and seek help when needed.
 
+## Control Origins Web Project Structure  `/src/` folder
+
+The structure and usage of various directories and files within the `src` directory of the Control Origins Web project.
+
+### Assets
+
+#### CSS
+
+- Contains global stylesheets and vendor-specific CSS files.
+- `style.css`: Main stylesheet for custom styles.
+- `vendor.css`: Compiled CSS from various third-party libraries.
+- Font files (e.g., `icofont.woff`, `remixicon.eot`) are also stored here for web font usage.
+
+#### Fonts
+
+- Houses font files used across the website.
+- Includes various formats (`.eot`, `.svg`, `.ttf`, `.woff`, `.woff2`) for compatibility.
+
+#### Images
+
+- Stores all images used in the website, including icons, logos, and photographs.
+- Portfolio images like `AsyncDemo.png`, `DataAnalysisDemo.png` are part of the project showcase.
+
+#### JS
+
+- Contains JavaScript files for website functionality.
+- `scripts.js`: Custom scripts for interactive features.
+- `vendor.js`: Combined JavaScript from third-party libraries.
+
+#### Vendor
+
+- Third-party libraries and frameworks (Bootstrap, AOS, Boxicons, etc.) are organized here.
+- Each library/framework is in its own subdirectory, containing CSS, JS, and other assets.
+
+### JavaScript
+
+- A separate `scripts.js` file outside the assets directory, likely for additional custom JavaScript logic.
+
+### Portfolio
+
+- `portfolio.json`: JSON file containing data for portfolio items or projects, used to dynamically generate portfolio sections on the website.
+
+### Pug - Pug Templates Structure in `src/pug`
+
+- Utilizes Pug templates to generate HTML.
+- Includes templates for the main page (`index.pug`), layouts, and various sections/modules of the website.
+
+The `src/pug` directory contains Pug templates used for generating the HTML structure of the Control Origins Web project. This structure allows for modular and maintainable development of the website's content. Below is an overview of the key components within this directory:
+
+#### Individual Pages
+
+- **[`Mark-Hazleton.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/Mark-Hazleton.pug):** Dedicated to Mark Hazleton, a co-founder of Control Origins. It provides personal and professional information, extending the main layout template.
+
+- **[`index.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/index.pug):** Serves as the entry point for the website's homepage, incorporating various modules to construct the page.
+
+#### Layouts
+
+- **[`layout.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/layouts/layout.pug):** The main layout template, defining the common HTML structure (header, footer, main container) across the website.
+
+- **[`page-footer.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/layouts/page-footer.pug):** Specifies the footer's structure, included in the main layout or specific pages as needed.
+
+#### Modules
+
+Modules are reusable components included in various pages:
+
+- **[`approach.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/modules/approach.pug):** Outlines Control Origins' methodology or approach.
+
+- **[`hero.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/modules/hero.pug):** Contains the hero section template for the top of webpages.
+
+- **[`models.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/modules/models.pug):** Describes different models or frameworks utilized by Control Origins.
+
+- **[`opportunity.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/modules/opportunity.pug):** Showcases opportunities or calls to action for visitors.
+
+- **[`portfolio.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/modules/portfolio.pug):** Displays a portfolio of projects or achievements.
+
+- **[`sidetracked.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/modules/sidetracked.pug):** Discusses industry distractions or challenges and Control Origins' solutions.
+
+- **[`solutions.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/modules/solutions.pug):** Details the solutions and services offered by Control Origins.
+
+#### Other Templates
+
+- **[`terms.pug`](https://github.com/controlorigins/controloriginsweb/blob/main/src/pug/terms.pug):** Likely contains terms of service or use for the website or Control Origins' services.
+
+This structure promotes a clean and organized development environment, making it easier to update and maintain the website's content.
+
+### SCSS
+
+- Organized into components, sections, and variables for scalable and maintainable styling.
+- `_global.scss`, `_variables.scss`, and `styles.scss` serve as the entry points and global styles.
+
+### Configuration and Meta Files
+
+- `robots.txt`: Directives for search engine crawlers.
+- `rss.xml`: RSS feed configuration.
+- `sitemap.xml`: Sitemap for search engines.
+- `web.config`: Configuration for web servers, particularly IIS.
+
+### Usage Instructions
+
+- **CSS/JS**: Add custom styles/scripts to the respective `style.css` and `scripts.js` files. For vendor-specific overrides, consider extending or creating separate files within the `assets/css` or `assets/js` directories.
+- **Fonts/Images**: Place new fonts and images in their respective directories. Ensure web-friendly formats and sizes.
+- **Pug**: When adding new pages or sections, create corresponding Pug templates within the `pug` directory. Utilize existing layouts and modules for consistency.
+- **SCSS**: For styling, use the SCSS files within the `scss` directory. Define new variables in `_variables.scss` and section-specific styles in the `sections` directory.
+- **Portfolio**: To update portfolio items, modify the `portfolio.json` file with new project details.
+
+Ensure to compile Pug and SCSS files into HTML and CSS, respectively, before deploying the website.
