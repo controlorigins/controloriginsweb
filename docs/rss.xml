@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Control.Origins</title>
+    <title>Control Origins - Business Technology Solutions</title>
     <link>https://controlorigins.com</link>
-    <description />
+    <description>Control Origins empowers organizations with innovative technology solutions for regulatory compliance, strategic sourcing, and business transformation using Microsoft Azure, ASP.NET, and modern cloud technologies.</description>
+    <language>en-us</language>
+    <managingEditor>mark.hazleton@controlorigins.com (Mark Hazleton)</managingEditor>
+    <webMaster>mark.hazleton@controlorigins.com (Mark Hazleton)</webMaster>
+    <pubDate>Fri, 09 Aug 2025 12:00:00 GMT</pubDate>
+    <lastBuildDate>Fri, 09 Aug 2025 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://controlorigins.com/rss.xml" rel="self" type="application/rss+xml" />
+    
     <item>
-      <guid>https://controlorigins.com</guid>
-      <title>Control.Origins</title>
-      <link>https://controlorigins.com</link>
-      <description />
-      <pubDate>Fri, 18 Sep 2020 12:13:00 Z</pubDate>
+      <guid>https://controlorigins.com/</guid>
+      <title>Control Origins - Innovative Business Technology Solutions</title>
+      <link>https://controlorigins.com/</link>
+      <description>Unleash the power of control for your business with our comprehensive technology solutions including regulatory compliance, strategic sourcing, portfolio analysis, and financial analysis.</description>
+      <category>Business Technology Solutions</category>
+      <pubDate>Fri, 09 Aug 2025 12:00:00 GMT</pubDate>
     </item>
+    
+    <item>
+      <guid>https://controlorigins.com/Mark-Hazleton.html</guid>
+      <title>Mark Hazleton - Control Origins Co-Founder &amp; Technology Expert</title>
+      <link>https://controlorigins.com/Mark-Hazleton.html</link>
+      <description>Meet Mark Hazleton, Control Origins co-founder with expertise in Microsoft Azure, ASP.NET, DevOps, and enterprise solution delivery. Passionate about making technology work for business.</description>
+      <category>Leadership</category>
+      <category>Technology Expert</category>
+      <pubDate>Fri, 09 Aug 2025 12:00:00 GMT</pubDate>
+    </item>
+    
     <item>
       <guid>https://controlorigins.com/terms.html</guid>
-      <title>Control.Origins Terms</title>
+      <title>Control Origins Terms of Service</title>
       <link>https://controlorigins.com/terms.html</link>
-      <description />
-      <pubDate>Fri, 18 Sep 2020 12:13:00 Z</pubDate>
-    </item>  
-    <item>
-      <guid>https://controlorigins.com/mark-hazleton.html</guid>
-      <title>Control.Origins Mark Hazleton</title>
-      <link>https://controlorigins.com/mark-hazleton.html</link>
-      <description />
-      <pubDate>Fri, 18 Sep 2020 12:13:00 Z</pubDate>
+      <description>Terms of service and legal information for Control Origins technology solutions and services.</description>
+      <category>Legal</category>
+      <pubDate>Fri, 09 Aug 2025 12:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

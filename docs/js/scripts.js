@@ -1,6 +1,6 @@
 /*!
 * Start Bootstrap - ControlOrigins.com v8.0.1 (https://github.com/controlorigins/controloriginsweb)
-* Copyright 2013-2024 Start Bootstrap
+* Copyright 2013-2025 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/controloriginsweb/blob/master/LICENSE)
 */
 //
