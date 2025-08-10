@@ -12041,6 +12041,42 @@ dl dd dl dd {
   margin-left: 1em;
 }
 
+.sr-only-focusable:focus {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+*:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+#portfolio-flters li:focus {
+  background-color: #007bff;
+  color: white;
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+.portfolio-links a:focus {
+  transform: scale(1.1);
+  background-color: rgba(0, 123, 255, 0.8);
+  outline: 2px solid #0056b3;
+}
+
+.btn:focus,
+button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
 #sideNav {
   padding-left: 1rem;
   padding-right: 1rem;

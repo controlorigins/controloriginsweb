@@ -4,6 +4,16 @@
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Performance & DNS Optimizations-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+        <link rel="dns-prefetch" href="https://clarity.ms" />
+        <!-- Preload Critical Resources-->
+        <link rel="preload" href="assets/css/style.css" as="style" />
+        <link rel="preload" href="assets/css/vendor.css" as="style" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" as="style" />
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <title>Control Origins - Innovative Business Technology Solutions | Regulatory Compliance & Strategic Sourcing</title>
         <meta name="description" content="Control Origins empowers organizations with cutting-edge technology solutions for regulatory compliance, strategic sourcing, portfolio analysis, and business transformation using Microsoft Azure, ASP.NET, and cloud technologies." />
@@ -32,6 +42,15 @@
         <meta name="geo.placename" content="Roanoke, Texas" />
         <meta name="geo.position" content="33.0151;-97.2267" />
         <meta name="ICBM" content="33.0151, -97.2267" />
+        <!-- Mobile App & PWA Meta Tags-->
+        <meta name="theme-color" content="#0d6efd" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Control Origins" />
+        <!-- Windows Tiles-->
+        <meta name="msapplication-TileColor" content="#0d6efd" />
+        <meta name="msapplication-TileImage" content="https://controlorigins.com/assets/img/android-chrome-192x192.png" />
+        <meta name="msapplication-config" content="https://controlorigins.com/assets/img/browserconfig.xml" />
         <!-- RSS Feed-->
         <link rel="alternate" type="application/rss+xml" title="Control Origins RSS Feed" href="https://controlorigins.com/rss.xml" />
         <!-- JSON-LD Structured Data-->
@@ -135,8 +154,8 @@
         <!-- Favicons-->
         <link rel="icon" href="assets/img/favicon.ico" />
         <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
-        <!-- Google Fonts-->
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" />
+        <!-- Optimized Google Fonts with font-display swap-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;family=Raleway:wght@300;400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" />
         <!-- Vendor CSS Files-->
         <link rel="stylesheet" href="assets/css/vendor.css" />
         <!-- Template Main CSS File-->
@@ -168,6 +187,8 @@
         </script>
     </head>
     <body id="page-top">
+        <!-- Skip to main content link for accessibility-->
+        <a class="sr-only sr-only-focusable" href="#main" style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; color: #fff; background: #007bff; z-index: 99999; padding: 8px 16px; text-decoration: none; display: block">Skip to main content</a>
         <!-- ======= Header =======-->
         <header class="fixed-top" id="header">
             <div class="container d-flex align-items-center">
@@ -187,533 +208,592 @@
                     </ul>
                 </nav>
                 <!-- .nav-menu-->
+                <!-- End Header-->
+                <main id="main"></main>
+                <!-- Page Content-->
+                <div class="container-fluid p-0">
+                    <section class="d-flex align-items-center" id="hero">
+                        <div class="container" data-aos-delay="100" data-aos="zoom-out">
+                            <div class="social-links text-left text-md-left pt-0 pt-md-0">
+                                <a class="linkedin" href="https://www.linkedin.com/company/control-origins" rel="noopener noreferrer nofollow" target="_blank" title="Control Origins LinkedIn - Business Technology Solutions"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                            <h1 style="font-size: x-large">Unleash the Power of Control for Your Business Technology Solutions</h1>
+                            <p style="color: white; font-size: larger">At Control Origins, our mission is to empower organizations with innovative technology solutions that drive value creation and enable them to achieve their business goals. We are committed to delivering exceptional results by leveraging cutting-edge Microsoft Azure, ASP.NET, and cloud technologies, industry expertise, and best practice frameworks like COSO, COBIT, and ITIL. Through our comprehensive approach, we help businesses streamline their operations, ensure regulatory compliance (SOX, HIPAA, PCI), and stay ahead in today's rapidly evolving digital landscape.</p>
+                        </div>
+                        <div class="bottom">
+                            <span></span>
+                            Photo by
+                            <a href="https://unsplash.com/@mikofilm?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer nofollow">Mike Kononov</a>
+                        </div>
+                        on
+                        <a href="https://unsplash.com/s/photos/security?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer nofollow">Unsplash</a>
+                    </section>
+                    <section class="portfolio" id="portfolio">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-title">
+                                <h2>Portfolio</h2>
+                                <p>Projects by Control.Origins.</p>
+                            </div>
+                            <!-- Portfolio Structured Data-->
+                            <script type="application/ld+json">
+                                {
+                                    "@context": "https://schema.org",
+                                    "@type": "ItemList",
+                                    "name": "Control Origins Portfolio",
+                                    "description": "Technology projects and applications developed by Control Origins",
+                                    "itemListElement": [
+                                        {
+                                            "@type": "SoftwareApplication",
+                                            "position": 1,
+                                            "name": "MVC Sample CRUD Demo",
+                                            "description": "A demonstration of MVC CRUD implementation in .NET 5x",
+                                            "url": "https://markhazletonsamplecrud.controlorigins.com/",
+                                            "applicationCategory": "WebApplication",
+                                            "operatingSystem": "Any"
+                                        },
+                                        {
+                                            "@type": "SoftwareApplication",
+                                            "position": 2,
+                                            "name": "Data Analysis Demo",
+                                            "description": "CSV file data analysis application",
+                                            "url": "https://app.controlorigins.com/dataanalysis/",
+                                            "applicationCategory": "DataProcessing",
+                                            "operatingSystem": "Web Browser"
+                                        },
+                                        {
+                                            "@type": "WebSite",
+                                            "position": 3,
+                                            "name": "Project Mechanics",
+                                            "description": "Project management methodology website",
+                                            "url": "https://markhazleton.com/projectmechanics/index.html"
+                                        },
+                                        {
+                                            "@type": "SoftwareApplication",
+                                            "position": 4,
+                                            "name": "Project Portal",
+                                            "description": "Control Origins project management platform",
+                                            "url": "https://app.controlorigins.com/",
+                                            "applicationCategory": "ProjectManagement"
+                                        },
+                                        {
+                                            "@type": "SoftwareApplication",
+                                            "position": 5,
+                                            "name": "Async Demo",
+                                            "description": "Demonstration of asynchronous API calls using Polly for timeout handling",
+                                            "url": "https://asyncwebsample.azurewebsites.net/",
+                                            "applicationCategory": "WebApplication"
+                                        },
+                                        {
+                                            "@type": "WebSite",
+                                            "position": 6,
+                                            "name": "TexEcon",
+                                            "description": "Economic consulting platform website",
+                                            "url": "https://texecon.com"
+                                        }
+                                    ]
+                                }
+                            </script>
+                            <div class="row" data-aos-delay="100" data-aos="fade-up">
+                                <div class="col-lg-12 d-flex justify-content-center">
+                                    <ul id="portfolio-flters" role="tablist" aria-label="Portfolio filter navigation">
+                                        <li class="filter-active" data-filter="*" role="tab" aria-selected="true" tabindex="0">All</li>
+                                        <li data-filter=".filter-app" role="tab" aria-selected="false" tabindex="0">App</li>
+                                        <li data-filter=".filter-web" role="tab" aria-selected="false" tabindex="0">Web</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row portfolio-container" data-aos-delay="200" data-aos="fade-up" role="region" aria-label="Portfolio projects gallery">
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="MVC Sample CRUD Demo - ASP.NET Core Application" src="assets/img/portfolio/SampleMVC.png" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>MVC Sample CRUD Demo</h4>
+                                            <p>A Demo for how to implment MVC CRUD in Net 5x</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="MVC Sample CRUD Demo" data-gall="portfolioGallery" href="assets/img/portfolio/SampleMVC.png"><i class="bx bx-plus"></i></a>
+                                                <a title="MVC Sample CRUD Demo" href="//markhazletonsamplecrud.controlorigins.com/" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="Data Analysis Demo - CSV Processing Application" src="assets/img/portfolio/DataAnalysisDemo.png" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>Data Analysis Demo</h4>
+                                            <p>A Demo for data analysis of CSV files</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="Data Analysis Demo" data-gall="portfolioGallery" href="assets/img/portfolio/DataAnalysisDemo.png"><i class="bx bx-plus"></i></a>
+                                                <a title="Data Analysis Demo" href="//app.controlorigins.com/dataanalysis/" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="Project Mechanics Website - Project Management Resource" src="assets/img/portfolio/ProjectMechanics.png" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>Project Mechanics</h4>
+                                            <p>Project Mechanics Website</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="Project Mechanics Website" data-gall="portfolioGallery" href="assets/img/portfolio/ProjectMechanics.png"><i class="bx bx-plus"></i></a>
+                                                <a title="Project Mechanics Website" href="https://markhazleton.com/projectmechanics/index.html" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="Project Portal - Control Origins Application Platform" src="assets/img/portfolio/ProjectPortal.png" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>Project Portal</h4>
+                                            <p>Control Origins Project Portal</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="App 2" data-gall="portfolioGallery" href="assets/img/portfolio/ProjectPortal.png"><i class="bx bx-plus"></i></a>
+                                                <a title="More Details" href="//app.controlorigins.com/" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="Mark Hazleton - Control Origins Co-Founder" src="assets/img/portfolio/MarkHazleton.jpg" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>Mark Hazleton</h4>
+                                            <p>Control Origins co-founder Mark Hazleton</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/MarkHazleton.jpg"><i class="bx bx-plus"></i></a>
+                                                <a title="Mark Hazleton - Co-founder" href="https://markhazleton.com/" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="Async Demo - Asynchronous API Calls with Polly" src="assets/img/portfolio/AsyncDemo.png" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>Async Demo</h4>
+                                            <p>Ad demo of Async Api calls using Polly for timeouts</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/AsyncDemo.png"><i class="bx bx-plus"></i></a>
+                                                <a title="Async Demo with Polly" href="https://asyncwebsample.azurewebsites.net/" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="TexEcon Website - Economic Consulting Platform" src="assets/img/portfolio/TexEcon.png" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>TexEcon</h4>
+                                            <p>TexEcon website for Jared Hazleton</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/TexEcon.png"><i class="bx bx-plus"></i></a>
+                                                <a title="TexEcon" href="//texecon.com" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                    <div class="portfolio-wrap">
+                                        <img class="img-fluid" alt="Control Origins Documents - Markdown and PHP Library System" src="assets/img/portfolio/TexEcon.png" width="400" height="250" loading="lazy" />
+                                        <div class="portfolio-info">
+                                            <h4>Control Origins Documents</h4>
+                                            <p>Document Library using Markdown and PHP</p>
+                                            <div class="portfolio-links">
+                                                <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/TexEcon.png"><i class="bx bx-plus"></i></a>
+                                                <a title="Control Origins Documents" href="//markhazleton.com/creating-a-php-website-with-chat-gpt.html" target="portfolio"><i class="bx bx-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ======= Opportunity Section =======-->
+                    <section class="opportunity section-bg" id="opportunity">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row no-gutters">
+                                <div class="content col-xl-5 d-flex align-items-stretch">
+                                    <div class="content">
+                                        <h3>The Opportunity Is Clear</h3>
+                                        <p>Our solution focus areas include:</p>
+                                        <ul>
+                                            <li>Regulatory and Internal Control Compliance</li>
+                                            <li>Technical and Business Architecture Compliance</li>
+                                            <li>IT Strategy for Applications, Operations and Governance</li>
+                                            <li>Data Privacy and Information Security</li>
+                                        </ul>
+                                        <p></p>
+                                        <p>Our solution model is driven by an analytical approach that is delivered through a multi-tenant, cloud hosted solution leveraging Microsoft technology (Azure, ASP.Net, SQL Server).</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-7 d-flex align-items-stretch">
+                                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                                        <div class="row">
+                                            <div class="col-md-6 icon-box" data-aos-delay="100" data-aos="fade-up">
+                                                <i class="bx bx-receipt"></i>
+                                                <h4>Unified Repository</h4>
+                                                <p>Control Origins was founded on a unique approach to building a logical relationship between an organization’s policies, procedures, standards, roles and skills to industry best practices (COSO, Cobit, ISO and ITIL) as well as regulatory requirements (SOX, HIPAA, Basel II, SSAE 16, PCI, CISP etc.). Additionally, industry specific regulations can be significant.</p>
+                                            </div>
+                                            <div class="col-md-6 icon-box" data-aos-delay="200" data-aos="fade-up">
+                                                <i class="bx bx-cube-alt"></i>
+                                                <h4>Best Practices</h4>
+                                                <p>Whether you are charting the strategic direction of a business unit, ensuring regulatory compliance, transforming operations or optimizing sourcing models, there are a wealth of best practices that can be leveraged to assess the current state, structure transformation efforts and implement a continuous improvement lifecycle.</p>
+                                            </div>
+                                            <div class="col-md-6 icon-box" data-aos-delay="300" data-aos="fade-up">
+                                                <i class="bx bx-images"></i>
+                                                <h4>Unified Analytics</h4>
+                                                <p>Rapidly cross-referencing and analyzing an organization's processes against both regulatory requirements and best practice frameworks is a critical component of any transformation assessment. Mapping those varied elements to an organization's roles, skills and responsibilities can only be efficiently accomplished with a robust data and analytics model.</p>
+                                            </div>
+                                            <div class="col-md-6 icon-box" data-aos-delay="400" data-aos="fade-up">
+                                                <i class="bx bx-shield"></i>
+                                                <h4>Unified Modeling</h4>
+                                                <p>There is a wide variety of best practices, regulatory requirements and business requirements that must be addressed in any transformation strategy. The "origin" and approach of each of these components is highly varied demanding a unified modeling framework that will provide many benefits including:</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End .content-->
+                                    <!-- End Opportunity Section-->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="approach section-bg" id="approach">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-title"><h2>Approach</h2></div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>The Control Origins approach to transformation and optimization is based on best practices for implementing change in an organization. There have been many methods, processes, standards and practices that have been published over the past few decades which have been used to guide the development of our approach. The following list is representative but not all inclusive:</p>
+                                    <ul style="list-style: none; padding: 0">
+                                        <li>
+                                            <i class="ri-check-double-line"></i>
+                                            <strong>PDCA:</strong>
+                                            Plan, Do, Check, Act model or "Shewhart Cycle" published by W. Edwards Deming
+                                        </li>
+                                        <li>
+                                            <i class="ri-check-double-line"></i>
+                                            <strong>DMAIC:</strong>
+                                            Define, Measure, Analyze, Improve and Control model which is a data-driven improvement cycle adopted by Motorola's Six Sigma methodology
+                                        </li>
+                                        <li>
+                                            <i class="ri-check-double-line"></i>
+                                            <strong>OODA:</strong>
+                                            Observe, Orient, Decide and Act model published by military strategist and USAF Colonel John Boyd
+                                        </li>
+                                        <li>
+                                            <i class="ri-check-double-line"></i>
+                                            <strong>PO/AI/DS/ME:</strong>
+                                            Plan and Organize, Acquire and Implement, Deliver and Support and Monitor and Evaluate model published in ISACA's COBIT framework
+                                        </li>
+                                        <li>
+                                            <i class="ri-check-double-line"></i>
+                                            <strong>SS/SD/ST/SO:</strong>
+                                            Service Strategy, Service Design, Service transition and Service Operation published in ITIL
+                                        </li>
+                                    </ul>
+                                    <p>The Control Origins approach is first and foremost the major phases and steps of the strategic transformation and/or optimization methodology. However, the importance of a well defined approach is also core to the structure for our 'practices taxonomy', a very key component of the Control Origins modeling framework. The practices taxonomy is used to classify all components of the framework including documents, tools, templates, digital assets and other information relevant to the strategic transformation process.</p>
+                                    <p>ITIL® and IT Infrastructure Library® are Registered Trade Marks of AXELOS Limited.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="icon-box" data-aos-delay="100" data-aos="fade-up">
+                                        <i class="icofont-computer"></i>
+                                        <h4><a href="/#approach-discover">Discover</a></h4>
+                                        <p id="approach-discover">The Discover phase of the Control Origins methodology is targeted at developing a detailed understanding of the organization's business goals and objectives as well the alignment of the organization being analyzed to those business goals and objectives.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <div class="icon-box" data-aos-delay="200" data-aos="fade-up">
+                                        <i class="icofont-chart-bar-graph"></i>
+                                        <h4><a href="/#approach-asses">Assess</a></h4>
+                                        <p id="approach-assess">This phase of the Control Origins approach is targeted at developing a detailed understanding of the organizations service delivery quality, process maturity and cost effectiveness.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <div class="icon-box" data-aos-delay="300" data-aos="fade-up">
+                                        <i class="icofont-image"></i>
+                                        <h4><a href="/#approach-define">Define</a></h4>
+                                        <p id="approach-define">The Define phase of the Control Origins methodology is targeted at the detailed definition of all components of the transformation or optimization alternatives that have been prioritized for implementation.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <div class="icon-box" data-aos-delay="400" data-aos="fade-up">
+                                        <i class="icofont-settings"></i>
+                                        <h4><a href="/#approach-design">Design</a></h4>
+                                        <p id="approach-design">The Design phase of the Control Origins methodology is targeted at developing the detailed specifications for building the components of transformation or optimization from the Define process.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <div class="icon-box" data-aos-delay="500" data-aos="fade-up">
+                                        <i class="icofont-earth"></i>
+                                        <h4><a href="/#approach-implement">Implement</a></h4>
+                                        <p id="approach-implement">The Implement phase of the Control Origins methodology is targeted at constructing or building the transformation and/or optimization components that were specified in Design.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <div class="icon-box" data-aos-delay="600" data-aos="fade-up">
+                                        <i class="icofont-tasks-alt"></i>
+                                        <h4><a href="/#approach-optimize">Optimize</a></h4>
+                                        <p id="approach-optimize">The Optimize phase of the Control Origins methodology is targeted at continuous improvement of the transformation and/or optimization components that were delivered in Implement</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="tabs" id="solution-tabs" role="tablist">
+                        <div class="container" data-aos="fade-up">
+                            <ul class="nav nav-tabs row d-flex" id="myTab" role="tablist">
+                                <li class="nav-item col-3" role="presentation">
+                                    <button class="nav-link active" id="sourcing-tab" aria-selected="true" aria-controls="sourcing" role="tab" type="button" data-bs-target="#sourcing" data-bs-toggle="tab">
+                                        <i class="ri-gps-line"></i>
+                                        <h4 class="d-none d-lg-block">Strategic Sourcing</h4>
+                                    </button>
+                                </li>
+                                <li class="nav-item col-3" role="presentation">
+                                    <button class="nav-link" id="regulatory-tab" aria-selected="false" aria-controls="regulatory" role="tab" type="button" data-bs-target="#regulatory" data-bs-toggle="tab">
+                                        <i class="ri-body-scan-line"></i>
+                                        <h4 class="d-none d-lg-block">Regulatory Compliance</h4>
+                                    </button>
+                                </li>
+                                <li class="nav-item col-3" role="presentation">
+                                    <button class="nav-link" id="portfolioanalysis-tab" aria-selected="false" aria-controls="portfolioanalysis" role="tab" type="button" data-bs-target="#portfolioanalysis" data-bs-toggle="tab">
+                                        <i class="ri-sun-line"></i>
+                                        <h4 class="d-none d-lg-block">Portfolio Analysis</h4>
+                                    </button>
+                                </li>
+                                <li class="nav-item col-3" role="presentation">
+                                    <button class="nav-link" id="financialanalysis-tab" aria-selected="false" aria-controls="financialanalysis" role="tab" type="button" data-bs-target="#financialanalysis" data-bs-toggle="tab">
+                                        <i class="ri-store-line"></i>
+                                        <h4 class="d-none d-lg-block">Financial Analysis</h4>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="sourcing" aria-labelledby="sourcing-tab" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos-delay="100" data-aos="fade-up">
+                                            <h3>Strategic Sourcing Solutions</h3>
+                                            <p>Includes current state assessment, portfolio analysis, financial base case, resource allocation analysis, scenario analysis and future state design and implementation.</p>
+                                            <p>The following Business Alignment tools are leveraged for for establishing an understanding of how the current business strategy aligns with current services:</p>
+                                            <ul>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    <strong>Stakeholder Satisfaction:</strong>
+                                                    Business satisfaction with existing services and service levels
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    <strong>Operational Efficiency:</strong>
+                                                    Effectiveness and efficiency of operations
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    <strong>Responsiveness:</strong>
+                                                    Ability of current organization to adapt to changing business requirements
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    <strong>Accuracy:</strong>
+                                                    Reliability of financial reporting
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    <strong>Assurance:</strong>
+                                                    Compliance with applicable laws and regulations
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos-delay="200" data-aos="fade-up"><img class="img-fluid" alt="Strategic Sourcing Solutions" src="assets/img/tabs-1.jpg" /></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="regulatory" aria-labelledby="regulatory-tab" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <h3>Regulatory Compliance Solutions</h3>
+                                            <p>Regulatory compliance solutions include discovery, verification, remediation, reporting and analytics across industry segments.</p>
+                                            <p>We have demonstrated the ability to rapidly identify compliance exceptions and establish an efficient remediation business process. Innovative analytics are applied to continuously update stakeholders regarding progress on the compliance process across very large organizations.</p>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center"><img class="img-fluid" alt="Regulatory Compliance Solutions" src="assets/img/tabs-2.jpg" /></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="portfolioanalysis" aria-labelledby="portfolioanalysis-tab" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <h3>Portfolio Analysis Solutions</h3>
+                                            <p>Control Origins provides clients with a wide variety of portfolio analysis services across industries as well as portfolio domains including applications and infrastructure.</p>
+                                            <p>The approach for analyzing application and infrastructure portfolios must be multi-dimensional and aligned to systems development lifecycle (SDLC) or service management best practices (ITIL).</p>
+                                            <p>The goal for outcomes of portfolio analysis includes the following:</p>
+                                            <ul>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    application development and maintenance sourcing
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    application development and maintenance resource optimization
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    application portfolio rationalization and consolidation
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    lean application development
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    lean application maintenance
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    application retirement
+                                                </li>
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    application architecture strategy
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center"><img class="img-fluid" alt="Portfolio Analysis Solutions" src="assets/img/tabs-3.jpg" /></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="financialanalysis" aria-labelledby="financialanalysis" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <h3>Financial Analysis Solutions</h3>
+                                            <p>Control Origins provides a wide variety of financial analysis services with the goal of developing a financial 'base case' for an organization followed by modeling transformation or optimization alternatives and their impact or business value.</p>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center"><img class="img-fluid" alt="Financial Analysis Solutions" src="assets/img/tabs-4.jpg" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="opportunity section-bg" id="models">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row no-gutters">
+                                <div class="content col-xl-5 d-flex align-items-stretch">
+                                    <div class="content">
+                                        <h3>Data & Analytical Models</h3>
+                                        <p>
+                                            Rapidly cross-referencing and analyzing an organization's processes against regulatory requirements and best practice frameworks is a critical component of any transformation assessment.  Mapping those varied elements to an organization's roles, skills and responsibilities can only be efficiently accomplished with a robust data and analytics model.
+                                            <br />
+                                            <br />
+                                            Evaluating enterprise IT processes should begin with creation of a clear 'baseline' of the current process and control environment. To establish the baseline, the relationship between procedures, standards, roles, skills, best practices, regulatory requirements must be explicitly defined. Once defined, the baseline is used to complete a 'gap analysis' of an organization’s process and control hierarchy through a capability maturity assessment process.
+                                        </p>
+                                        <p>
+                                            <strong>Bottom line:</strong>
+                                            The Control Origins team leveraged deep experience in processes and industry best practices as well as cloud-based application development and hosting to build a modeling framework accessible through web-based, mobile or 'stand-alone' windows user interfaces.  Web-based user interfaces can be cumbersome and ineffective for data collection across complex data domains (applications, roles, skills etc.). Data collection, data analysis, data visualization and relational evaluation is tailored to the most effective approach for the data domain being analyzed.
+                                            <br />
+                                        </p>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-7 d-flex align-items-stretch">
+                                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                                        <div class="row">
+                                            <div class="col-md-6 icon-box" data-aos-delay="100" data-aos="fade-up">
+                                                <i class="bx bx-receipt"></i>
+                                                <h4>Scored Assessment Models</h4>
+                                                <p>Comparing an organization's processes and controls to both regulatory requirements and best practice frameworks is a key component of developing a transformation or optimization strategy. The ability to assess the maturity of an organization from a process and control perspective is essential to developing that strategy.</p>
+                                            </div>
+                                            <div class="col-md-6 icon-box" data-aos-delay="200" data-aos="fade-up">
+                                                <i class="bx bx-cube-alt"></i>
+                                                <h4>Portfolio Analysis Models</h4>
+                                                <p>The assessment and analysis of transformation or optimization alternatives must include domains 'portfolios' or collections of assets that are not commonly included in the analysis process. Asset types or categories included in a 'portfolio' are sometimes referred to as 'resource units' in strategic sourcing strategy development. Portfolios can include applications, physical or logical servers, network nodes, storage etc. In order to comprehensively assess transformation or optimization alternatives for any organization, varying levels of 'portfolio' analysis must be completed.</p>
+                                            </div>
+                                            <div class="col-md-6 icon-box" data-aos-delay="300" data-aos="fade-up">
+                                                <i class="bx bx-images"></i>
+                                                <h4>Role Analysis Models</h4>
+                                                <p>Roles define an associated set of tasks or activities. Roles may be performed by many people; and one person can perform many roles. For example, an organization may have several resources that perform the role of Database Administrator, although traditionally each application group or business process team only has one Database Administrator at any one time; and a person who is able to perform the role of Database Administrator may also be able to perform the role of Database Architect or Database Designer.</p>
+                                            </div>
+                                            <div class="col-md-6 icon-box" data-aos-delay="400" data-aos="fade-up">
+                                                <i class="bx bx-shield"></i>
+                                                <h4>Responsibility Assignment Models</h4>
+                                                <p>An industry best practice for defining the level of responsibility assigned to a specific 'role' is the RACI matrix which is an abbreviation for Responsible Accountable, Consulted and Informed. Also referred to as Responsibility Assignment Model (RAM), this approach maps activities and deliverables to roles for a business process.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End .content-->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <footer id="footer">
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 footer-contact">
+                                    <h3>
+                                        <span style="color: black">Control</span>
+                                        <span style="color: white">.</span>
+                                        <span style="color: gold">Origins</span>
+                                    </h3>
+                                    <p>
+                                        Roanoke, TX 76262
+                                        <br />
+                                        United States
+                                        <br />
+                                        <br />
+                                        <strong>Phone:</strong>
+                                        +1 972 322 1066
+                                        <br />
+                                        <strong>Email:</strong>
+                                        <a href="mailto:mark.hazleton@controlorigins.com" rel="noopener nofollow">mark.hazleton@controlorigins.com</a>
+                                        <br />
+                                    </p>
+                                </div>
+                                <div class="col-lg-2 col-md-6 footer-links">
+                                    <h4>Useful Links</h4>
+                                    <ul>
+                                        <li>
+                                            <i class="bx bx-chevron-right"></i>
+                                            <a title="Project Mechanics" href="https://markhazleton.com/projectmechanics/">Project Mechanics</a>
+                                        </li>
+                                        <li>
+                                            <i class="bx bx-chevron-right"></i>
+                                            <a title="Mark Hazleton - Co-founder" href="https://markhazleton.com/">Mark Hazleton</a>
+                                        </li>
+                                        <li>
+                                            <i class="bx bx-chevron-right"></i>
+                                            <a title="ControlOrigins - Terms of service" href="/terms.html">Terms of service</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container d-md-flex py-4">
+                        <div class="mr-md-auto text-center text-md-left">
+                            <div class="copyright">© Copyright Control Origins. All Rights Reserved</div>
+                            <div class="credits">
+                                <!-- All the links in the footer should remain intact.-->
+                                <!-- You can delete the links only if you purchased the pro version.-->
+                                <!-- Licensing information: https://bootstrapmade.com/license/-->
+                                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/-->
+                                Designed by
+                                <a href="https://bootstrapmade.com/" target="_blank" rel="noopener nofollow" title="Free Bootstrap Templates &amp; Website Themes">BootstrapMade</a>
+                            </div>
+                        </div>
+                        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                            <a class="linkedin" href="https://www.linkedin.com/company/control-origins" target="_blank" rel="noopener nofollow" title="Control Origins on LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <!-- End Footer-->
+                    <a class="back-to-top" href="/"><i class="icofont-simple-up"></i></a>
+                    <!-- Vendor JS Files-->
+                    <script src="assets/js/vendor.js"></script>
+                    <!-- Template Main JS File-->
+                    <script src="assets/js/scripts.js"></script>
+                    <!-- Cloudflare Web Analytics-->
+                    <script data-cf-beacon="{'token': '06d9fbe29f8a429da31799a68be2a755'}" src="https://static.cloudflareinsights.com/beacon.min.js" defer=""></script>
+                    <!-- End Cloudflare Web Analytics-->
+                </footer>
             </div>
         </header>
-        <!-- End Header-->
-        <main id="main"></main>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <section class="d-flex align-items-center" id="hero">
-                <div class="container" data-aos-delay="100" data-aos="zoom-out">
-                    <div class="social-links text-left text-md-left pt-0 pt-md-0">
-                        <a class="linkedin" href="https://www.linkedin.com/company/control-origins" rel="noopener noreferrer nofollow" target="_blank" title="Control Origins LinkedIn - Business Technology Solutions"><i class="bx bxl-linkedin"></i></a>
-                    </div>
-                    <h1 style="font-size: x-large">Unleash the Power of Control for Your Business Technology Solutions</h1>
-                    <p style="color: white; font-size: larger">At Control Origins, our mission is to empower organizations with innovative technology solutions that drive value creation and enable them to achieve their business goals. We are committed to delivering exceptional results by leveraging cutting-edge Microsoft Azure, ASP.NET, and cloud technologies, industry expertise, and best practice frameworks like COSO, COBIT, and ITIL. Through our comprehensive approach, we help businesses streamline their operations, ensure regulatory compliance (SOX, HIPAA, PCI), and stay ahead in today's rapidly evolving digital landscape.</p>
-                </div>
-                <div class="bottom">
-                    <span></span>
-                    Photo by
-                    <a href="https://unsplash.com/@mikofilm?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer nofollow">Mike Kononov</a>
-                </div>
-                on
-                <a href="https://unsplash.com/s/photos/security?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener noreferrer nofollow">Unsplash</a>
-            </section>
-            <section class="portfolio" id="portfolio">
-                <div class="container" data-aos="fade-up">
-                    <div class="section-title">
-                        <h2>Portfolio</h2>
-                        <p>Projects by Control.Origins.</p>
-                    </div>
-                    <div class="row" data-aos-delay="100" data-aos="fade-up">
-                        <div class="col-lg-12 d-flex justify-content-center">
-                            <ul id="portfolio-flters">
-                                <li class="filter-active" data-filter="*">All</li>
-                                <li data-filter=".filter-app">App</li>
-                                <li data-filter=".filter-web">Web</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row portfolio-container" data-aos-delay="200" data-aos="fade-up">
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="MVC Sample CRUD Demo" src="assets/img/portfolio/SampleMVC.png" />
-                                <div class="portfolio-info">
-                                    <h4>MVC Sample CRUD Demo</h4>
-                                    <p>A Demo for how to implment MVC CRUD in Net 5x</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="MVC Sample CRUD Demo" data-gall="portfolioGallery" href="assets/img/portfolio/SampleMVC.png"><i class="bx bx-plus"></i></a>
-                                        <a title="MVC Sample CRUD Demo" href="//markhazletonsamplecrud.controlorigins.com/" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="Data Analysis Demo" src="assets/img/portfolio/DataAnalysisDemo.png" />
-                                <div class="portfolio-info">
-                                    <h4>Data Analysis Demo</h4>
-                                    <p>A Demo for data analysis of CSV files</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="Data Analysis Demo" data-gall="portfolioGallery" href="assets/img/portfolio/DataAnalysisDemo.png"><i class="bx bx-plus"></i></a>
-                                        <a title="Data Analysis Demo" href="//app.controlorigins.com/dataanalysis/" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="Project Mechanics Website" src="assets/img/portfolio/ProjectMechanics.png" />
-                                <div class="portfolio-info">
-                                    <h4>Project Mechanics</h4>
-                                    <p>Project Mechanics Website</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="Project Mechanics Website" data-gall="portfolioGallery" href="assets/img/portfolio/ProjectMechanics.png"><i class="bx bx-plus"></i></a>
-                                        <a title="Project Mechanics Website" href="https://markhazleton.com/projectmechanics/index.html" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="Project Portal" src="assets/img/portfolio/ProjectPortal.png" />
-                                <div class="portfolio-info">
-                                    <h4>Project Portal</h4>
-                                    <p>Control Origins Project Portal</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="App 2" data-gall="portfolioGallery" href="assets/img/portfolio/ProjectPortal.png"><i class="bx bx-plus"></i></a>
-                                        <a title="More Details" href="//app.controlorigins.com/" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="Mark Hazleton" src="assets/img/portfolio/MarkHazleton.jpg" />
-                                <div class="portfolio-info">
-                                    <h4>Mark Hazleton</h4>
-                                    <p>Control Origins co-founder Mark Hazleton</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/MarkHazleton.jpg"><i class="bx bx-plus"></i></a>
-                                        <a title="Mark Hazleton - Co-founder" href="https://markhazleton.com/" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="Mark Hazleton" src="assets/img/portfolio/AsyncDemo.png" />
-                                <div class="portfolio-info">
-                                    <h4>Async Demo</h4>
-                                    <p>Ad demo of Async Api calls using Polly for timeouts</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/AsyncDemo.png"><i class="bx bx-plus"></i></a>
-                                        <a title="Async Demo with Polly" href="https://asyncwebsample.azurewebsites.net/" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="TexEcon Website" src="assets/img/portfolio/TexEcon.png" />
-                                <div class="portfolio-info">
-                                    <h4>TexEcon</h4>
-                                    <p>TexEcon website for Jared Hazleton</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/TexEcon.png"><i class="bx bx-plus"></i></a>
-                                        <a title="TexEcon" href="//texecon.com" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img class="img-fluid" alt="Control Origins Documents" src="assets/img/portfolio/TexEcon.png" />
-                                <div class="portfolio-info">
-                                    <h4>Control Origins Documents</h4>
-                                    <p>Document Library using Markdown and PHP</p>
-                                    <div class="portfolio-links">
-                                        <a class="venobox" title="Web 2" data-gall="portfolioGallery" href="assets/img/portfolio/TexEcon.png"><i class="bx bx-plus"></i></a>
-                                        <a title="Control Origins Documents" href="//markhazleton.com/creating-a-php-website-with-chat-gpt.html" target="portfolio"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ======= Opportunity Section =======-->
-            <section class="opportunity section-bg" id="opportunity">
-                <div class="container" data-aos="fade-up">
-                    <div class="row no-gutters">
-                        <div class="content col-xl-5 d-flex align-items-stretch">
-                            <div class="content">
-                                <h3>The Opportunity Is Clear</h3>
-                                <p>Our solution focus areas include:</p>
-                                <ul>
-                                    <li>Regulatory and Internal Control Compliance</li>
-                                    <li>Technical and Business Architecture Compliance</li>
-                                    <li>IT Strategy for Applications, Operations and Governance</li>
-                                    <li>Data Privacy and Information Security</li>
-                                </ul>
-                                <p></p>
-                                <p>Our solution model is driven by an analytical approach that is delivered through a multi-tenant, cloud hosted solution leveraging Microsoft technology (Azure, ASP.Net, SQL Server).</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 d-flex align-items-stretch">
-                            <div class="icon-boxes d-flex flex-column justify-content-center">
-                                <div class="row">
-                                    <div class="col-md-6 icon-box" data-aos-delay="100" data-aos="fade-up">
-                                        <i class="bx bx-receipt"></i>
-                                        <h4>Unified Repository</h4>
-                                        <p>Control Origins was founded on a unique approach to building a logical relationship between an organization’s policies, procedures, standards, roles and skills to industry best practices (COSO, Cobit, ISO and ITIL) as well as regulatory requirements (SOX, HIPAA, Basel II, SSAE 16, PCI, CISP etc.). Additionally, industry specific regulations can be significant.</p>
-                                    </div>
-                                    <div class="col-md-6 icon-box" data-aos-delay="200" data-aos="fade-up">
-                                        <i class="bx bx-cube-alt"></i>
-                                        <h4>Best Practices</h4>
-                                        <p>Whether you are charting the strategic direction of a business unit, ensuring regulatory compliance, transforming operations or optimizing sourcing models, there are a wealth of best practices that can be leveraged to assess the current state, structure transformation efforts and implement a continuous improvement lifecycle.</p>
-                                    </div>
-                                    <div class="col-md-6 icon-box" data-aos-delay="300" data-aos="fade-up">
-                                        <i class="bx bx-images"></i>
-                                        <h4>Unified Analytics</h4>
-                                        <p>Rapidly cross-referencing and analyzing an organization's processes against both regulatory requirements and best practice frameworks is a critical component of any transformation assessment. Mapping those varied elements to an organization's roles, skills and responsibilities can only be efficiently accomplished with a robust data and analytics model.</p>
-                                    </div>
-                                    <div class="col-md-6 icon-box" data-aos-delay="400" data-aos="fade-up">
-                                        <i class="bx bx-shield"></i>
-                                        <h4>Unified Modeling</h4>
-                                        <p>There is a wide variety of best practices, regulatory requirements and business requirements that must be addressed in any transformation strategy. The "origin" and approach of each of these components is highly varied demanding a unified modeling framework that will provide many benefits including:</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End .content-->
-                            <!-- End Opportunity Section-->
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="approach section-bg" id="approach">
-                <div class="container" data-aos="fade-up">
-                    <div class="section-title"><h2>Approach</h2></div>
-                    <div class="row">
-                        <div class="col-12">
-                            <p>The Control Origins approach to transformation and optimization is based on best practices for implementing change in an organization. There have been many methods, processes, standards and practices that have been published over the past few decades which have been used to guide the development of our approach. The following list is representative but not all inclusive:</p>
-                            <ul style="list-style: none; padding: 0">
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    <strong>PDCA:</strong>
-                                    Plan, Do, Check, Act model or "Shewhart Cycle" published by W. Edwards Deming
-                                </li>
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    <strong>DMAIC:</strong>
-                                    Define, Measure, Analyze, Improve and Control model which is a data-driven improvement cycle adopted by Motorola's Six Sigma methodology
-                                </li>
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    <strong>OODA:</strong>
-                                    Observe, Orient, Decide and Act model published by military strategist and USAF Colonel John Boyd
-                                </li>
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    <strong>PO/AI/DS/ME:</strong>
-                                    Plan and Organize, Acquire and Implement, Deliver and Support and Monitor and Evaluate model published in ISACA's COBIT framework
-                                </li>
-                                <li>
-                                    <i class="ri-check-double-line"></i>
-                                    <strong>SS/SD/ST/SO:</strong>
-                                    Service Strategy, Service Design, Service transition and Service Operation published in ITIL
-                                </li>
-                            </ul>
-                            <p>The Control Origins approach is first and foremost the major phases and steps of the strategic transformation and/or optimization methodology. However, the importance of a well defined approach is also core to the structure for our 'practices taxonomy', a very key component of the Control Origins modeling framework. The practices taxonomy is used to classify all components of the framework including documents, tools, templates, digital assets and other information relevant to the strategic transformation process.</p>
-                            <p>ITIL® and IT Infrastructure Library® are Registered Trade Marks of AXELOS Limited.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="icon-box" data-aos-delay="100" data-aos="fade-up">
-                                <i class="icofont-computer"></i>
-                                <h4><a href="/#approach-discover">Discover</a></h4>
-                                <p id="approach-discover">The Discover phase of the Control Origins methodology is targeted at developing a detailed understanding of the organization's business goals and objectives as well the alignment of the organization being analyzed to those business goals and objectives.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-4 mt-md-0">
-                            <div class="icon-box" data-aos-delay="200" data-aos="fade-up">
-                                <i class="icofont-chart-bar-graph"></i>
-                                <h4><a href="/#approach-asses">Assess</a></h4>
-                                <p id="approach-assess">This phase of the Control Origins approach is targeted at developing a detailed understanding of the organizations service delivery quality, process maturity and cost effectiveness.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-4 mt-md-0">
-                            <div class="icon-box" data-aos-delay="300" data-aos="fade-up">
-                                <i class="icofont-image"></i>
-                                <h4><a href="/#approach-define">Define</a></h4>
-                                <p id="approach-define">The Define phase of the Control Origins methodology is targeted at the detailed definition of all components of the transformation or optimization alternatives that have been prioritized for implementation.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-4 mt-md-0">
-                            <div class="icon-box" data-aos-delay="400" data-aos="fade-up">
-                                <i class="icofont-settings"></i>
-                                <h4><a href="/#approach-design">Design</a></h4>
-                                <p id="approach-design">The Design phase of the Control Origins methodology is targeted at developing the detailed specifications for building the components of transformation or optimization from the Define process.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-4 mt-md-0">
-                            <div class="icon-box" data-aos-delay="500" data-aos="fade-up">
-                                <i class="icofont-earth"></i>
-                                <h4><a href="/#approach-implement">Implement</a></h4>
-                                <p id="approach-implement">The Implement phase of the Control Origins methodology is targeted at constructing or building the transformation and/or optimization components that were specified in Design.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-4 mt-md-0">
-                            <div class="icon-box" data-aos-delay="600" data-aos="fade-up">
-                                <i class="icofont-tasks-alt"></i>
-                                <h4><a href="/#approach-optimize">Optimize</a></h4>
-                                <p id="approach-optimize">The Optimize phase of the Control Origins methodology is targeted at continuous improvement of the transformation and/or optimization components that were delivered in Implement</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="tabs" id="solution-tabs" role="tablist">
-                <div class="container" data-aos="fade-up">
-                    <ul class="nav nav-tabs row d-flex" id="myTab" role="tablist">
-                        <li class="nav-item col-3" role="presentation">
-                            <button class="nav-link active" id="sourcing-tab" aria-selected="true" aria-controls="sourcing" role="tab" type="button" data-bs-target="#sourcing" data-bs-toggle="tab">
-                                <i class="ri-gps-line"></i>
-                                <h4 class="d-none d-lg-block">Strategic Sourcing</h4>
-                            </button>
-                        </li>
-                        <li class="nav-item col-3" role="presentation">
-                            <button class="nav-link" id="regulatory-tab" aria-selected="false" aria-controls="regulatory" role="tab" type="button" data-bs-target="#regulatory" data-bs-toggle="tab">
-                                <i class="ri-body-scan-line"></i>
-                                <h4 class="d-none d-lg-block">Regulatory Compliance</h4>
-                            </button>
-                        </li>
-                        <li class="nav-item col-3" role="presentation">
-                            <button class="nav-link" id="portfolioanalysis-tab" aria-selected="false" aria-controls="portfolioanalysis" role="tab" type="button" data-bs-target="#portfolioanalysis" data-bs-toggle="tab">
-                                <i class="ri-sun-line"></i>
-                                <h4 class="d-none d-lg-block">Portfolio Analysis</h4>
-                            </button>
-                        </li>
-                        <li class="nav-item col-3" role="presentation">
-                            <button class="nav-link" id="financialanalysis-tab" aria-selected="false" aria-controls="financialanalysis" role="tab" type="button" data-bs-target="#financialanalysis" data-bs-toggle="tab">
-                                <i class="ri-store-line"></i>
-                                <h4 class="d-none d-lg-block">Financial Analysis</h4>
-                            </button>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="sourcing" aria-labelledby="sourcing-tab" role="tabpanel">
-                            <div class="row">
-                                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos-delay="100" data-aos="fade-up">
-                                    <h3>Strategic Sourcing Solutions</h3>
-                                    <p>Includes current state assessment, portfolio analysis, financial base case, resource allocation analysis, scenario analysis and future state design and implementation.</p>
-                                    <p>The following Business Alignment tools are leveraged for for establishing an understanding of how the current business strategy aligns with current services:</p>
-                                    <ul>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            <strong>Stakeholder Satisfaction:</strong>
-                                            Business satisfaction with existing services and service levels
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            <strong>Operational Efficiency:</strong>
-                                            Effectiveness and efficiency of operations
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            <strong>Responsiveness:</strong>
-                                            Ability of current organization to adapt to changing business requirements
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            <strong>Accuracy:</strong>
-                                            Reliability of financial reporting
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            <strong>Assurance:</strong>
-                                            Compliance with applicable laws and regulations
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos-delay="200" data-aos="fade-up"><img class="img-fluid" alt="Strategic Sourcing Solutions" src="assets/img/tabs-1.jpg" /></div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="regulatory" aria-labelledby="regulatory-tab" role="tabpanel">
-                            <div class="row">
-                                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                    <h3>Regulatory Compliance Solutions</h3>
-                                    <p>Regulatory compliance solutions include discovery, verification, remediation, reporting and analytics across industry segments.</p>
-                                    <p>We have demonstrated the ability to rapidly identify compliance exceptions and establish an efficient remediation business process. Innovative analytics are applied to continuously update stakeholders regarding progress on the compliance process across very large organizations.</p>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="col-lg-6 order-1 order-lg-2 text-center"><img class="img-fluid" alt="Regulatory Compliance Solutions" src="assets/img/tabs-2.jpg" /></div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="portfolioanalysis" aria-labelledby="portfolioanalysis-tab" role="tabpanel">
-                            <div class="row">
-                                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                    <h3>Portfolio Analysis Solutions</h3>
-                                    <p>Control Origins provides clients with a wide variety of portfolio analysis services across industries as well as portfolio domains including applications and infrastructure.</p>
-                                    <p>The approach for analyzing application and infrastructure portfolios must be multi-dimensional and aligned to systems development lifecycle (SDLC) or service management best practices (ITIL).</p>
-                                    <p>The goal for outcomes of portfolio analysis includes the following:</p>
-                                    <ul>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            application development and maintenance sourcing
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            application development and maintenance resource optimization
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            application portfolio rationalization and consolidation
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            lean application development
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            lean application maintenance
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            application retirement
-                                        </li>
-                                        <li>
-                                            <i class="ri-check-double-line"></i>
-                                            application architecture strategy
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 order-1 order-lg-2 text-center"><img class="img-fluid" alt="Portfolio Analysis Solutions" src="assets/img/tabs-3.jpg" /></div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="financialanalysis" aria-labelledby="financialanalysis" role="tabpanel">
-                            <div class="row">
-                                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                    <h3>Financial Analysis Solutions</h3>
-                                    <p>Control Origins provides a wide variety of financial analysis services with the goal of developing a financial 'base case' for an organization followed by modeling transformation or optimization alternatives and their impact or business value.</p>
-                                </div>
-                                <div class="col-lg-6 order-1 order-lg-2 text-center"><img class="img-fluid" alt="Financial Analysis Solutions" src="assets/img/tabs-4.jpg" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="opportunity section-bg" id="models">
-                <div class="container" data-aos="fade-up">
-                    <div class="row no-gutters">
-                        <div class="content col-xl-5 d-flex align-items-stretch">
-                            <div class="content">
-                                <h3>Data & Analytical Models</h3>
-                                <p>
-                                    Rapidly cross-referencing and analyzing an organization's processes against regulatory requirements and best practice frameworks is a critical component of any transformation assessment.  Mapping those varied elements to an organization's roles, skills and responsibilities can only be efficiently accomplished with a robust data and analytics model.
-                                    <br />
-                                    <br />
-                                    Evaluating enterprise IT processes should begin with creation of a clear 'baseline' of the current process and control environment. To establish the baseline, the relationship between procedures, standards, roles, skills, best practices, regulatory requirements must be explicitly defined. Once defined, the baseline is used to complete a 'gap analysis' of an organization’s process and control hierarchy through a capability maturity assessment process.
-                                </p>
-                                <p>
-                                    <strong>Bottom line:</strong>
-                                    The Control Origins team leveraged deep experience in processes and industry best practices as well as cloud-based application development and hosting to build a modeling framework accessible through web-based, mobile or 'stand-alone' windows user interfaces.  Web-based user interfaces can be cumbersome and ineffective for data collection across complex data domains (applications, roles, skills etc.). Data collection, data analysis, data visualization and relational evaluation is tailored to the most effective approach for the data domain being analyzed.
-                                    <br />
-                                </p>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 d-flex align-items-stretch">
-                            <div class="icon-boxes d-flex flex-column justify-content-center">
-                                <div class="row">
-                                    <div class="col-md-6 icon-box" data-aos-delay="100" data-aos="fade-up">
-                                        <i class="bx bx-receipt"></i>
-                                        <h4>Scored Assessment Models</h4>
-                                        <p>Comparing an organization's processes and controls to both regulatory requirements and best practice frameworks is a key component of developing a transformation or optimization strategy. The ability to assess the maturity of an organization from a process and control perspective is essential to developing that strategy.</p>
-                                    </div>
-                                    <div class="col-md-6 icon-box" data-aos-delay="200" data-aos="fade-up">
-                                        <i class="bx bx-cube-alt"></i>
-                                        <h4>Portfolio Analysis Models</h4>
-                                        <p>The assessment and analysis of transformation or optimization alternatives must include domains 'portfolios' or collections of assets that are not commonly included in the analysis process. Asset types or categories included in a 'portfolio' are sometimes referred to as 'resource units' in strategic sourcing strategy development. Portfolios can include applications, physical or logical servers, network nodes, storage etc. In order to comprehensively assess transformation or optimization alternatives for any organization, varying levels of 'portfolio' analysis must be completed.</p>
-                                    </div>
-                                    <div class="col-md-6 icon-box" data-aos-delay="300" data-aos="fade-up">
-                                        <i class="bx bx-images"></i>
-                                        <h4>Role Analysis Models</h4>
-                                        <p>Roles define an associated set of tasks or activities. Roles may be performed by many people; and one person can perform many roles. For example, an organization may have several resources that perform the role of Database Administrator, although traditionally each application group or business process team only has one Database Administrator at any one time; and a person who is able to perform the role of Database Administrator may also be able to perform the role of Database Architect or Database Designer.</p>
-                                    </div>
-                                    <div class="col-md-6 icon-box" data-aos-delay="400" data-aos="fade-up">
-                                        <i class="bx bx-shield"></i>
-                                        <h4>Responsibility Assignment Models</h4>
-                                        <p>An industry best practice for defining the level of responsibility assigned to a specific 'role' is the RACI matrix which is an abbreviation for Responsible Accountable, Consulted and Informed. Also referred to as Responsibility Assignment Model (RAM), this approach maps activities and deliverables to roles for a business process.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End .content-->
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <footer id="footer">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 footer-contact">
-                            <h3>
-                                <span style="color: black">Control</span>
-                                <span style="color: white">.</span>
-                                <span style="color: gold">Origins</span>
-                            </h3>
-                            <p>
-                                Roanoke, TX 76262
-                                <br />
-                                United States
-                                <br />
-                                <br />
-                                <strong>Phone:</strong>
-                                +1 972 322 1066
-                                <br />
-                                <strong>Email:</strong>
-                                <a href="mailto:mark.hazleton@controlorigins.com" rel="noopener nofollow">mark.hazleton@controlorigins.com</a>
-                                <br />
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-6 footer-links">
-                            <h4>Useful Links</h4>
-                            <ul>
-                                <li>
-                                    <i class="bx bx-chevron-right"></i>
-                                    <a title="Project Mechanics" href="https://markhazleton.com/projectmechanics/">Project Mechanics</a>
-                                </li>
-                                <li>
-                                    <i class="bx bx-chevron-right"></i>
-                                    <a title="Mark Hazleton - Co-founder" href="https://markhazleton.com/">Mark Hazleton</a>
-                                </li>
-                                <li>
-                                    <i class="bx bx-chevron-right"></i>
-                                    <a title="ControlOrigins - Terms of service" href="/terms.html">Terms of service</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container d-md-flex py-4">
-                <div class="mr-md-auto text-center text-md-left">
-                    <div class="copyright">© Copyright Control Origins. All Rights Reserved</div>
-                    <div class="credits">
-                        <!-- All the links in the footer should remain intact.-->
-                        <!-- You can delete the links only if you purchased the pro version.-->
-                        <!-- Licensing information: https://bootstrapmade.com/license/-->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/-->
-                        Designed by
-                        <a href="https://bootstrapmade.com/" target="_blank" rel="noopener nofollow" title="Free Bootstrap Templates &amp; Website Themes">BootstrapMade</a>
-                    </div>
-                </div>
-                <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                    <a class="linkedin" href="https://www.linkedin.com/company/control-origins" target="_blank" rel="noopener nofollow" title="Control Origins on LinkedIn"><i class="bx bxl-linkedin"></i></a>
-                </div>
-            </div>
-            <!-- End Footer-->
-            <a class="back-to-top" href="/"><i class="icofont-simple-up"></i></a>
-            <!-- Vendor JS Files-->
-            <script src="assets/js/vendor.js"></script>
-            <!-- Template Main JS File-->
-            <script src="assets/js/scripts.js"></script>
-            <!-- Cloudflare Web Analytics-->
-            <script data-cf-beacon="{'token': '06d9fbe29f8a429da31799a68be2a755'}" src="https://static.cloudflareinsights.com/beacon.min.js" defer=""></script>
-            <!-- End Cloudflare Web Analytics-->
-        </footer>
     </body>
 </html>

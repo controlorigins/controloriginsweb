@@ -5,6 +5,19 @@ html(lang='en')
     meta(charset="utf-8")
     link(rel="shortcut icon", href="/favicon.ico")
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+    // Performance & DNS Optimizations
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(rel="dns-prefetch", href="https://www.googletagmanager.com")
+    link(rel="dns-prefetch", href="https://static.cloudflareinsights.com")
+    link(rel="dns-prefetch", href="https://clarity.ms")
+
+    // Preload Critical Resources
+    link(rel="preload", href="assets/css/style.css", as="style")
+    link(rel="preload", href="assets/css/vendor.css", as="style")
+    link(rel="preload", href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap", as="style")
+
     link(rel='icon', type='image/x-icon', href='assets/img/favicon.ico')
 
     block pagehead
@@ -12,8 +25,10 @@ html(lang='en')
     // Favicons
     link( rel="icon" href="assets/img/favicon.ico")
     link( rel="apple-touch-icon" href="assets/img/apple-touch-icon.png")
-    // Google Fonts
-    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i")
+
+    // Optimized Google Fonts with font-display swap
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap")
+
     // Vendor CSS Files
     link( rel="stylesheet" href="assets/css/vendor.css" )
     // Template Main CSS File
@@ -31,6 +46,9 @@ html(lang='en')
       (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="//www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "4me1k8d6vt");
 
   body#page-top
+    // Skip to main content link for accessibility
+    a.sr-only.sr-only-focusable(href='#main', style='position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; color: #fff; background: #007bff; z-index: 99999; padding: 8px 16px; text-decoration: none; display: block;') Skip to main content
+
     // ======= Header =======
     header#header.fixed-top
       .container.d-flex.align-items-center
@@ -53,11 +71,11 @@ html(lang='en')
             li
               a(href="/#solution-tabs") Solutions
         // .nav-menu
-    // End Header
-    main#main
-    // Page Content
-    .container-fluid.p-0
-        block layout-content
+        // End Header
+        main#main
+        // Page Content
+        .container-fluid.p-0
+          block layout-content
 
-    include page-footer.pug
+        include page-footer.pug
 

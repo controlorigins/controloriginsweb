@@ -3,24 +3,89 @@ section#portfolio.portfolio
     .section-title
       h2 Portfolio
       p Projects by Control.Origins.
+
+    // Portfolio Structured Data
+    script(type='application/ld+json').
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Control Origins Portfolio",
+        "description": "Technology projects and applications developed by Control Origins",
+        "itemListElement": [
+          {
+            "@type": "SoftwareApplication",
+            "position": 1,
+            "name": "MVC Sample CRUD Demo",
+            "description": "A demonstration of MVC CRUD implementation in .NET 5x",
+            "url": "https://markhazletonsamplecrud.controlorigins.com/",
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Any"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 2,
+            "name": "Data Analysis Demo",
+            "description": "CSV file data analysis application",
+            "url": "https://app.controlorigins.com/dataanalysis/",
+            "applicationCategory": "DataProcessing",
+            "operatingSystem": "Web Browser"
+          },
+          {
+            "@type": "WebSite",
+            "position": 3,
+            "name": "Project Mechanics",
+            "description": "Project management methodology website",
+            "url": "https://markhazleton.com/projectmechanics/index.html"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 4,
+            "name": "Project Portal",
+            "description": "Control Origins project management platform",
+            "url": "https://app.controlorigins.com/",
+            "applicationCategory": "ProjectManagement"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "position": 5,
+            "name": "Async Demo",
+            "description": "Demonstration of asynchronous API calls using Polly for timeout handling",
+            "url": "https://asyncwebsample.azurewebsites.net/",
+            "applicationCategory": "WebApplication"
+          },
+          {
+            "@type": "WebSite",
+            "position": 6,
+            "name": "TexEcon",
+            "description": "Economic consulting platform website",
+            "url": "https://texecon.com"
+          }
+        ]
+      }
+
     .row(
       data-aos-delay="100"
       data-aos="fade-up"
       )
       .col-lg-12.d-flex.justify-content-center
-        ul#portfolio-flters
-          li.filter-active(data-filter="*") All
-          li(data-filter=".filter-app") App
-          li(data-filter=".filter-web") Web
+        ul#portfolio-flters(role="tablist" aria-label="Portfolio filter navigation")
+          li.filter-active(data-filter="*" role="tab" aria-selected="true" tabindex="0") All
+          li(data-filter=".filter-app" role="tab" aria-selected="false" tabindex="0") App
+          li(data-filter=".filter-web" role="tab" aria-selected="false" tabindex="0") Web
     .row.portfolio-container(
       data-aos-delay="200"
       data-aos="fade-up"
+      role="region"
+      aria-label="Portfolio projects gallery"
       )
       .col-lg-4.col-md-6.portfolio-item.filter-app
         .portfolio-wrap
           img.img-fluid(
-            alt="MVC Sample CRUD Demo"
+            alt="MVC Sample CRUD Demo - ASP.NET Core Application"
             src="assets/img/portfolio/SampleMVC.png"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 MVC Sample CRUD Demo
@@ -41,8 +106,11 @@ section#portfolio.portfolio
       .col-lg-4.col-md-6.portfolio-item.filter-app
         .portfolio-wrap
           img.img-fluid(
-            alt="Data Analysis Demo"
+            alt="Data Analysis Demo - CSV Processing Application"
             src="assets/img/portfolio/DataAnalysisDemo.png"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 Data Analysis Demo
@@ -63,8 +131,11 @@ section#portfolio.portfolio
       .col-lg-4.col-md-6.portfolio-item.filter-web
         .portfolio-wrap
           img.img-fluid(
-            alt="Project Mechanics Website"
+            alt="Project Mechanics Website - Project Management Resource"
             src="assets/img/portfolio/ProjectMechanics.png"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 Project Mechanics
@@ -85,8 +156,11 @@ section#portfolio.portfolio
       .col-lg-4.col-md-6.portfolio-item.filter-app
         .portfolio-wrap
           img.img-fluid(
-            alt="Project Portal"
+            alt="Project Portal - Control Origins Application Platform"
             src="assets/img/portfolio/ProjectPortal.png"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 Project Portal
@@ -107,8 +181,11 @@ section#portfolio.portfolio
       .col-lg-4.col-md-6.portfolio-item.filter-web
         .portfolio-wrap
           img.img-fluid(
-            alt="Mark Hazleton"
+            alt="Mark Hazleton - Control Origins Co-Founder"
             src="assets/img/portfolio/MarkHazleton.jpg"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 Mark Hazleton
@@ -129,8 +206,11 @@ section#portfolio.portfolio
       .col-lg-4.col-md-6.portfolio-item.filter-web
         .portfolio-wrap
           img.img-fluid(
-            alt="Mark Hazleton"
+            alt="Async Demo - Asynchronous API Calls with Polly"
             src="assets/img/portfolio/AsyncDemo.png"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 Async Demo
@@ -151,8 +231,11 @@ section#portfolio.portfolio
       .col-lg-4.col-md-6.portfolio-item.filter-web
         .portfolio-wrap
           img.img-fluid(
-            alt="TexEcon Website"
+            alt="TexEcon Website - Economic Consulting Platform"
             src="assets/img/portfolio/TexEcon.png"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 TexEcon
@@ -173,8 +256,11 @@ section#portfolio.portfolio
       .col-lg-4.col-md-6.portfolio-item.filter-web
         .portfolio-wrap
           img.img-fluid(
-            alt="Control Origins Documents"
+            alt="Control Origins Documents - Markdown and PHP Library System"
             src="assets/img/portfolio/TexEcon.png"
+            width="400"
+            height="250"
+            loading="lazy"
             )
           .portfolio-info
             h4 Control Origins Documents
