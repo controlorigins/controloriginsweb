@@ -4,35 +4,40 @@
     {
       "route": "/assets/*",
       "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-encoding": "gzip, br"
       }
     },
     {
       "route": "/*.js",
       "headers": {
-        "content-type": "application/javascript; charset=utf-8",
-        "cache-control": "public, max-age=31536000, immutable"
+        "content-type": "text/javascript; charset=utf-8",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-encoding": "gzip, br"
       }
     },
     {
       "route": "/*.mjs",
       "headers": {
-        "content-type": "application/javascript; charset=utf-8",
-        "cache-control": "public, max-age=31536000, immutable"
+        "content-type": "text/javascript; charset=utf-8",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-encoding": "gzip, br"
       }
     },
     {
       "route": "/*.css",
       "headers": {
         "content-type": "text/css; charset=utf-8",
-        "cache-control": "public, max-age=31536000, immutable"
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-encoding": "gzip, br"
       }
     },
     {
       "route": "/*.html",
       "headers": {
         "content-type": "text/html; charset=utf-8",
-        "cache-control": "public, max-age=3600, must-revalidate"
+        "cache-control": "public, max-age=3600, must-revalidate",
+        "content-encoding": "gzip, br"
       }
     },
     {
@@ -160,10 +165,10 @@
     }
   ],
   "mimeTypes": {
-    ".js": "application/javascript",
-    ".mjs": "application/javascript",
-    ".tsx": "application/javascript",
-    ".ts": "application/javascript",
+    ".js": "text/javascript",
+    ".mjs": "text/javascript",
+    ".tsx": "text/javascript",
+    ".ts": "text/javascript",
     ".json": "application/json",
     ".webmanifest": "application/manifest+json",
     ".png": "image/png",
@@ -185,7 +190,7 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [
-      "/assets/*",
+      "/assets/**",
       "/*.js",
       "/*.mjs",
       "/*.css",
@@ -216,14 +221,14 @@
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "DENY",
     "X-XSS-Protection": "1; mode=block",
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Permissions-Policy": "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
     "Cache-Control": "public, max-age=0, must-revalidate",
     "X-Robots-Tag": "index, follow",
-    "Cross-Origin-Embedder-Policy": "unsafe-none",
-    "Cross-Origin-Opener-Policy": "unsafe-none",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Opener-Policy": "same-origin",
     "Cross-Origin-Resource-Policy": "cross-origin"
   },
   "responseOverrides": {
