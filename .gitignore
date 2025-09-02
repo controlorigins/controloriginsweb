@@ -1,4 +1,5 @@
 node_modules
-.vs
+dist
 .DS_Store
-_site
+vite.config.ts.*
+*.tar.gz

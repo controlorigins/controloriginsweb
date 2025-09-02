@@ -1,321 +1,335 @@
-# GitHub Copilot Repository Custom Instructions
+# GitHub Copilot Instructions for Control Origins Website
 
-## Control Origins Corporate Website - PUG & Bootstrap 5
+## Project Overview
 
-This file provides custom instructions for GitHub Copilot when working on the Control Origins corporate website project.
+This is a **Control Origins corporate website** - a static React TypeScript application optimized for GitHub Pages deployment. The site serves as the primary web presence for Control Origins, showcasing business technology consulting services.
 
-## Technology Stack Preferences
+### Tech Stack
 
-Use PUG template engine for all HTML templating, with proper indentation (2 spaces) and semantic structure.
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS v4 + Custom CSS Variables
+- **UI Components**: Radix UI primitives + Custom components
+- **Routing**: Wouter (lightweight React router)
+- **State Management**: TanStack React Query + Context API
+- **Build Tool**: Vite with optimized chunking
+- **Deployment**: GitHub Pages
+- **Development**: Vite dev server
 
-Use Bootstrap 5 utility classes and components exclusively for styling, avoiding custom CSS unless absolutely necessary.
+## Documentation Structure Requirements
 
-All PUG templates should use extends/block inheritance pattern with a base layout template.
+### Session Documentation
 
-Implement mixins for reusable components like article cards, navigation elements, and form components.
-
-## Code Standards
-
-### PUG Template Conventions
-
-- Use 2-space indentation consistently
-- Use semantic HTML5 elements: `article`, `section`, `header`, `footer`, `nav`
-- Implement proper template inheritance with `extends` and `block` patterns
-- Use interpolation syntax `#{variable}` for dynamic content
-- Use buffered code `=` for escaped output, unbuffered `!=` for HTML content
-
-### Critical PUG Formatting Rules (Error Prevention)
-
-- **NEVER concatenate elements on the same line** - Each PUG element must be on its own line
-- **Maintain consistent indentation** - PUG is extremely sensitive to indentation inconsistencies
-- **Always include proper spacing between sections** - Add blank lines between major sections
-- **Check for missing newlines** - Especially after text content or pipe (`|`) operators
-- **Validate nested structures** - Ensure proper parent-child relationships with correct indentation
-- **Test build after major edits** - Run `npm run build:pug` frequently to catch errors early
-
-### Common PUG Formatting Errors to Avoid
-
-```pug
-// ❌ WRONG: Missing newline after ul element
-ul.list-group.list-group-flush                    li.list-group-item Content
-
-// ✅ CORRECT: Proper newline and indentation
-ul.list-group.list-group-flush
-  li.list-group-item Content
-
-// ❌ WRONG: Missing indentation for nested elements
-.card-body                          h6.card-title
-  i.bi.bi-icon.me-2
-  | Title Text
-
-// ✅ CORRECT: Proper indentation structure
-.card-body
-  h6.card-title
-    i.bi.bi-icon.me-2
-    | Title Text
-
-// ❌ WRONG: Text content merged with next element
-p.
-  Some content text            section#next-section.mb-5
-
-// ✅ CORRECT: Proper spacing between elements
-p.
-  Some content text
-
-section#next-section.mb-5
-```
-
-### PUG Build Validation Process
-
-1. After significant changes, immediately run `npm run build:pug`
-2. If build fails, check for:
-    - Inconsistent indentation (usually 2-space increments)
-    - Missing newlines between elements
-    - Incorrectly nested structures
-    - Mixed tabs and spaces
-3. Use consistent 2-space indentation throughout
-4. Validate that all opening elements have proper closing structure
-
-### Bootstrap 5 Implementation
-
-- Prioritize utility classes over custom CSS: `mb-4`, `py-3`, `text-primary`
-- Use responsive utilities: `d-none d-md-block`, `col-12 col-lg-8`
-- Apply consistent spacing using Bootstrap's spacing scale
-- Use semantic color classes: `bg-primary`, `text-muted`, `border-secondary`
-- Implement mobile-first responsive design approach
-
-### File Structure
+**ALWAYS** create documentation in the following structure when generating docs:
 
 ```
-views/
-├── layout/base.pug
-├── pages/
-├── components/
-└── mixins/
+/copilot/session-{YYYY-MM-DD}/
+├── session-notes.md
+├── decisions-made.md
+├── code-changes.md
+└── next-steps.md
 ```
 
-## Content Architecture
+**Current date format**: Use `2025-09-01` format for today's sessions.
 
-Create templates for professional business technology content with proper SEO structure.
+### Documentation Guidelines
 
-Implement service metadata structure with title, description, category, and business value fields.
+- Create session folders for ANY documentation work
+- Include timestamps in session notes
+- Document all decisions and rationale
+- Track code changes with before/after snippets
+- Always include next steps and follow-up items
 
-Design responsive layouts suitable for business technology solutions, regulatory compliance content, and strategic sourcing information.
+## Build Process & Local Testing
 
-Include professional company sections highlighting Control Origins' expertise in Microsoft Azure, ASP.NET, and enterprise solutions.
-
-## Professional Branding Requirements
-
-Maintain clean, professional design aesthetic suitable for business technology consulting.
-
-Use typography hierarchy that enhances readability for technical business content.
-
-Include integration points for LinkedIn and professional social media for Control Origins.
-
-Design layouts that showcase technology expertise, regulatory compliance solutions, and business transformation credentials.
-
-## SEO and Performance
-
-Generate proper meta tag structure in PUG templates using mixins.
-
-Use semantic HTML5 elements for better search engine understanding.
-
-Implement lazy loading for images and optimize Bootstrap bundle size.
-
-Create clean, descriptive URL structures for services and business solutions.
-
-## Accessibility Standards
-
-Follow WCAG guidelines for color contrast and semantic markup.
-
-Implement proper heading hierarchy (h1-h6) for screen readers.
-
-Include alt text for images and proper form labels.
-
-Ensure keyboard navigation support for all interactive elements.
-
-## Service & Solution Management
-
-Design templates that support business service descriptions and solution overviews.
-
-Create consistent service card components for solution showcase pages.
-
-Implement category and industry filtering functionality for business solutions.
-
-Support various content types including service descriptions, case studies, and business value propositions.
-
-## Example Code Patterns
-
-When generating PUG templates, follow this structure:
-
-```pug
-extends layout/base
-
-block content
-  main.container.py-4
-    section.row
-      .col-12.col-lg-8
-        header.mb-4
-          h1.display-4= title
-          .text-muted= description
-        .service-content!= content
-      aside.col-12.col-lg-4
-        // Sidebar content for related services
-```
-
-When creating Bootstrap components, use utility classes:
-
-```pug
-.card.shadow-sm
-  .card-body
-    h5.card-title= service.title
-    p.card-text.text-muted= service.description
-    a.btn.btn-primary(href=service.url) Learn More
-```
-
-## Content Context
-
-This is a professional corporate website for Control Origins, a business technology consulting company.
-
-Target audience includes enterprise clients, IT decision makers, and organizations needing regulatory compliance solutions.
-
-Content focuses on business technology solutions, regulatory compliance expertise, strategic sourcing, and Microsoft technology stack capabilities.
-
-All code and design decisions should reflect corporate professionalism and enterprise-level technical competence.
-
-## Debugging and Error Prevention
-
-### PUG Error Patterns and Solutions
-
-#### Error: "Inconsistent indentation. Expecting either X or Y spaces/tabs"
-
-**Cause**: Mixed indentation levels or improper nesting structure
-**Solution**:
-
-- Use exactly 2 spaces per indentation level
-- Never mix tabs and spaces
-- Ensure parent-child relationships are properly indented
-- Use a code editor with visible whitespace to detect issues
-
-#### Error: Elements concatenated on same line
-
-**Cause**: Missing newlines between PUG elements
-**Common locations**:
-
-- After `ul.list-group` before first `li` item
-- After text content (using `|` operator) before next element
-- After `block` declarations before content
-- Between `section` elements
-
-**Prevention checklist**:
-
-- [ ] Each PUG element starts on its own line
-- [ ] Proper blank lines between major sections
-- [ ] No text content merged with element declarations
-- [ ] Table of contents lists have proper newlines
-- [ ] All accordion items are properly separated
-
-### Pre-commit Validation Steps
-
-1. **Visual inspection**: Check for proper indentation alignment
-2. **Build test**: Run `npm run build:pug` before committing
-3. **Content review**: Ensure no missing content in sections
-4. **Structure validation**: Verify all sections have complete content
-
-### Content Completeness Checklist
-
-When creating comprehensive business pages, ensure all sections contain:
-
-- [ ] Proper heading structure with professional business focus
-- [ ] Complete service descriptions (no empty sections)
-- [ ] All solution components have full descriptions and value propositions
-- [ ] Business value sections have clear ROI and benefits
-- [ ] Case studies and testimonials are complete and properly formatted
-- [ ] All service cards have complete titles, descriptions, and call-to-action elements
-
-### Emergency Debug Commands
+### Development Scripts
 
 ```bash
-# Quick PUG syntax check
-npm run build:pug
+# Clean development - removes all build artifacts
+npm run clean
 
-# Full build to catch all errors
-npm run build
+# Frontend-only development (recommended for static site work)
+npm run dev:static          # Vite dev server on http://localhost:5173
 
-# Clean and rebuild if caching issues
-npm run clean && npm run build
+# Full-stack development (includes Express server)
+npm run dev                 # Express + React on configured ports
+
+# Production testing
+npm run preview             # Build + preview on http://localhost:4173
 ```
 
-### Advanced PUG Patterns for Business Pages
+### Build Scripts
 
-#### Service Overview Structure
+```bash
+# Production builds
+npm run build               # Clean + static build (primary)
+npm run build:static        # Vite build to dist/public/
+npm run build:server        # Full-stack build with Express
 
-```pug
-// Service overview section pattern
-section#service-overview.mb-5
-  .container
-    .row
-      .col-12.col-lg-8
-        h2.h3.mb-4
-          i.bi.bi-gear.me-2
-          | Service Overview
-        p.lead Business value proposition here.
-
-        .row.g-3
-          .col-md-6
-            .card.border-primary
-              .card-body
-                h6.card-title
-                  i.bi.bi-check-circle.me-2
-                  | Key Benefit
-                p.card-text Detailed benefit description
+# Deployment-specific builds
+npm run build:github        # Build + copy to docs/ for GitHub Pages
+npm run copy:github         # Copy existing build to docs/
 ```
 
-#### Solution Cards Pattern
+### Local Testing Process
 
-```pug
-// Solution showcase pattern
-.row.g-4
-  .col-md-6.col-lg-4
-    .card.h-100.shadow-sm
-      .card-header.bg-primary.text-white
-        h5.card-title.mb-0
-          i.bi.bi-shield-check.me-2
-          | Regulatory Compliance
-      .card-body.d-flex.flex-column
-        p.card-text.flex-grow-1 Ensure regulatory compliance with industry standards.
-        .mt-auto
-          a.btn.btn-outline-primary(href='/regulatory-compliance') Learn More
+1. **Development Testing**:
+
+   ```bash
+   npm run dev              # Start dev server
+   # Test at http://localhost:5173
+   ```
+
+2. **Production Testing**:
+
+   ```bash
+   npm run clean           # Clean slate
+   npm run build:static    # Production build
+   npm run preview         # Preview server
+   # Test at http://localhost:4173
+   ```
+
+3. **GitHub Pages Testing**:
+
+   ```bash
+   npm run build:github    # Build + copy to docs/
+   # Verify files in docs/ folder
+   # Test with local server in docs/
+   ```
+
+## Deployment Targets
+
+### GitHub Pages
+
+- **Path**: Files deploy to `docs/` folder
+- **Domain**: Custom domain support via CNAME file
+- **Build**: `npm run build:github`
+- **Deploy**: Automated via GitHub Actions or `npm run deploy:github`
+- **Config**: Uses `docs/.nojekyll` to prevent Jekyll processing
+
+## Project Structure & File Organization
+
+```
+├── client/                 # React application root
+│   ├── src/
+│   │   ├── components/     # Reusable components
+│   │   │   ├── ui/        # Radix UI + custom components
+│   │   │   └── *.tsx      # Feature components
+│   │   ├── pages/         # Route components
+│   │   ├── hooks/         # Custom React hooks
+│   │   ├── lib/           # Utilities and configurations
+│   │   └── data/          # Static data (JSON)
+│   ├── public/            # Static assets
+│   └── index.html         # Main HTML template
+├── server/                # Express.js (development only)
+├── docs/                  # GitHub Pages deployment
+├── dist/                  # Build output
+│   └── public/           # Static site files
+├── .github/
+│   ├── workflows/        # CI/CD automation
+│   └── copilot-instructions.md # This file
+└── attached_assets/      # Asset source files
 ```
 
-#### Business Process Accordion
+## Development Guidelines
 
-```pug
-// Business process breakdown
-.accordion#businessProcess
-  .accordion-item
-    h3.accordion-header#headingDiscovery
-      button.accordion-button(
-        type='button'
-        data-bs-toggle='collapse'
-        data-bs-target='#collapseDiscovery'
-        aria-expanded='true'
-        aria-controls='collapseDiscovery'
-      )
-        i.bi.bi-search.me-2
-        | Discovery Phase
-    .accordion-collapse.collapse.show#collapseDiscovery(
-      aria-labelledby='headingDiscovery'
-      data-bs-parent='#businessProcess'
-    )
-      .accordion-body
-        p.
-          Comprehensive assessment of current business processes and technology stack.
-        ul.list-unstyled
-          li.mb-2
-            i.bi.bi-check-lg.text-success.me-2
-            | Business requirement analysis
-          li.mb-2
-            i.bi.bi-check-lg.text-success.me-2
-            | Technology stack evaluation
+### Component Development
+
+- **Use TypeScript**: All components must be typed
+- **Radix UI First**: Prefer Radix primitives for UI components
+- **CSS Variables**: Use Tailwind + CSS variables for theming
+- **Responsive Design**: Mobile-first approach
+- **Accessibility**: Follow WCAG guidelines (Radix provides baseline)
+
+### File Naming Conventions
+
+- **Components**: `kebab-case.tsx` (e.g., `hero-section.tsx`)
+- **Pages**: `kebab-case.tsx` (e.g., `not-found.tsx`)
+- **Hooks**: `use-*.tsx` (e.g., `use-mobile.tsx`)
+- **Types**: `*.types.ts` or inline in component files
+- **Utils**: `kebab-case.ts` (e.g., `query-client.ts`)
+
+### Import Patterns
+
+```typescript
+// Path aliases configured
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import type { SharedType } from "@shared/schema";
 ```
+
+### Styling Guidelines
+
+- **Tailwind Classes**: Use utility-first approach
+- **CSS Variables**: For theme tokens (defined in `index.css`)
+- **Component Variants**: Use `class-variance-authority` for complex variants
+- **Responsive**: Always consider mobile, tablet, desktop
+- **Dark Mode**: Support both light/dark themes
+
+## Code Quality Standards
+
+### TypeScript
+
+- **Strict Mode**: Enabled in `tsconfig.json`
+- **Type Safety**: No `any` types unless absolutely necessary
+- **Props Interface**: Define props interfaces for all components
+- **Return Types**: Explicitly type function returns when complex
+
+### Performance
+
+- **Code Splitting**: Manual chunks configured in Vite
+- **Asset Optimization**: Images optimized, lazy loading where appropriate
+- **Bundle Size**: Monitor with Vite build analysis
+- **Caching**: Proper cache headers for static assets
+
+### SEO & Meta Tags
+
+- **Structured Data**: JSON-LD schema included
+- **Open Graph**: Complete OG meta tags
+- **Twitter Cards**: Social media optimization
+- **Sitemap**: Maintained in `client/public/sitemap.xml`
+- **Robots.txt**: Configured for search engines
+
+## GitHub Pages Best Practices
+
+### GitHub Pages Configuration
+
+- **Jekyll Bypass**: Always include `.nojekyll` file
+- **Custom Domain**: Use `CNAME` file in docs folder
+- **Asset Paths**: Ensure relative paths work correctly
+- **Cache Busting**: Vite handles automatic hash naming
+- **History API**: GitHub Pages doesn't support SPA routing (use hash routing if needed)
+
+## Common Tasks & Patterns
+
+### Adding New Components
+
+1. Create component in appropriate `components/` subfolder
+2. Export from component file
+3. Add to `components/ui/index.ts` if UI component
+4. Include proper TypeScript interfaces
+5. Follow accessibility guidelines
+6. Test responsive behavior
+
+### Modifying Build Process
+
+1. Update `package.json` scripts if needed
+2. Modify `vite.config.ts` for Vite configuration
+3. Update GitHub Actions workflows for CI/CD changes
+4. Test both GitHub Pages and Azure SWA deployments
+5. Document changes in session folder
+
+### Adding New Pages
+
+1. Create page component in `client/src/pages/`
+2. Add route to `App.tsx` using Wouter
+3. Update navigation if needed
+4. Add to sitemap if public page
+5. Test routing on both deployment targets
+
+### Performance Optimization
+
+1. Analyze bundle size: `npm run build:static` and check output
+2. Use Vite's rollup bundle analyzer
+3. Optimize images in `attached_assets/`
+4. Implement lazy loading for heavy components
+5. Monitor Core Web Vitals
+
+## Troubleshooting Common Issues
+
+### Build Failures
+
+```bash
+# Clear everything and rebuild
+npm run clean
+rm -rf node_modules package-lock.json
+npm install
+npm run build:static
+```
+
+### Development Server Issues
+
+```bash
+# Port conflicts - Vite uses 5173, Express uses configured port
+# Check package.json scripts for port configurations
+# Use npm run dev:static for frontend-only development
+```
+
+### Deployment Issues
+
+- **GitHub Pages**: Check `docs/` folder contents and `.nojekyll`
+- **Custom Domain**: DNS configuration and CNAME file
+- **Asset Loading**: Check relative vs absolute paths
+
+### CSS/Styling Issues
+
+- **Tailwind**: Check `tailwind.config.ts` content paths
+- **CSS Variables**: Verify definitions in `client/src/index.css`
+- **Component Styles**: Ensure Radix styles are imported
+- **Theme Issues**: Check theme provider and CSS variable values
+
+## Security & Best Practices
+
+### Code Security
+
+- **No Secrets**: Never commit API keys or secrets
+- **Dependency Updates**: Regular `npm audit` and updates
+- **Type Safety**: Maintain strict TypeScript configuration
+- **Input Validation**: Use Zod for runtime validation where needed
+
+### Static Site Security
+
+- **Content Security Policy**: Configure via meta tags or headers
+- **HTTPS Only**: Both platforms provide HTTPS by default
+- **Asset Integrity**: Subresource integrity for external assets
+- **XSS Prevention**: React provides built-in protection
+
+## Performance Monitoring
+
+### Core Web Vitals
+
+- **LCP**: Optimize hero image loading
+- **FID**: Minimize JavaScript execution time
+- **CLS**: Ensure stable layout during load
+- **INP**: Optimize interaction responsiveness
+
+### Monitoring Tools
+
+- **Lighthouse**: Built into Chrome DevTools
+- **PageSpeed Insights**: Google's web performance tool
+- **Azure Application Insights**: Available with Azure SWA
+- **GitHub Actions**: Can include performance testing
+
+## Communication & Collaboration
+
+### Documentation Requirements
+
+- **Decision Records**: Document architectural decisions
+- **Change Logs**: Track significant changes in session folders
+- **API Documentation**: Document any data structures or APIs
+- **Deployment Notes**: Keep deployment instructions current
+
+### Code Review Guidelines
+
+- **TypeScript Compliance**: Ensure type safety
+- **Performance Impact**: Consider bundle size and load time
+- **Accessibility**: Verify WCAG compliance
+- **Browser Compatibility**: Test across target browsers
+- **Mobile Responsiveness**: Always test mobile layout
+
+## Emergency Procedures
+
+### Rollback Process
+
+1. **GitHub Pages**: Revert docs/ folder changes via Git
+2. **Local Testing**: `npm run preview` to test before deployment
+
+### Critical Issues
+
+1. **Build Broken**: Use last known good configuration
+2. **Site Down**: Check GitHub Actions status
+3. **Performance Issues**: Use Lighthouse to identify bottlenecks
+4. **Security Issues**: Immediate dependency updates and redeployment
+
+---
+
+**Remember**: Always use the session documentation structure `/copilot/session-{date}/` for any work sessions, follow the build process exactly as documented, and test thoroughly before going live.

@@ -1,0 +1,204 @@
+{
+  "sectionInfo": {
+    "title": "Our Solutions",
+    "subtitle": "Comprehensive technology solutions that drive transformation and optimize business performance.",
+    "description": "Our solution model is driven by an analytical approach that is delivered through a multi-tenant, cloud hosted solution leveraging Microsoft technology (Azure, ASP.Net, SQL Server)."
+  },
+  "solutions": [
+    {
+      "id": 1,
+      "title": "Strategic Sourcing Solutions",
+      "name": "strategic-sourcing",
+      "shortDescription": "Includes current state assessment, portfolio analysis, financial base case, resource allocation analysis, scenario analysis and future state design and implementation.",
+      "detailedDescription": "Strategic sourcing solutions provide comprehensive analysis and optimization of your organization's resource allocation and operational structure. We leverage proven methodologies to assess current state, analyze portfolios, develop financial base cases, and design future state implementations that drive measurable business value.",
+      "image": "/src/assets/tabs-1_1756760288725.jpg",
+      "imageAlt": "Strategic Sourcing Solutions - Compass navigation representing strategic direction",
+      "features": [
+        "Stakeholder Satisfaction Assessment",
+        "Operational Efficiency Analysis", 
+        "Responsiveness & Adaptability Evaluation",
+        "Current State Assessment",
+        "Portfolio Analysis & Optimization",
+        "Financial Base Case Development"
+      ],
+      "businessAlignment": [
+        {
+          "tool": "Stakeholder Satisfaction",
+          "description": "Business satisfaction with existing services and service levels"
+        },
+        {
+          "tool": "Operational Efficiency", 
+          "description": "Effectiveness and efficiency of operations"
+        },
+        {
+          "tool": "Responsiveness",
+          "description": "Ability of current organization to adapt to changing business requirements"
+        },
+        {
+          "tool": "Accuracy",
+          "description": "Reliability of financial reporting"
+        },
+        {
+          "tool": "Assurance",
+          "description": "Compliance with applicable laws and regulations"
+        }
+      ],
+      "outcomes": [
+        "Resource allocation optimization",
+        "Cost reduction and efficiency gains",
+        "Enhanced strategic decision making",
+        "Improved operational responsiveness"
+      ],
+      "industries": ["Financial Services", "Healthcare", "Manufacturing", "Technology"],
+      "technologies": ["Microsoft Azure", "Advanced Analytics", "Business Intelligence", "Process Automation"]
+    },
+    {
+      "id": 2, 
+      "title": "Regulatory Compliance Solutions",
+      "name": "regulatory-compliance",
+      "shortDescription": "Comprehensive compliance solutions including discovery, verification, remediation, reporting and analytics across industry segments.",
+      "detailedDescription": "Our regulatory compliance solutions provide end-to-end compliance management across multiple regulatory frameworks. We have demonstrated the ability to rapidly identify compliance exceptions and establish efficient remediation business processes with innovative analytics for continuous stakeholder updates.",
+      "image": "/src/assets/tabs-2_1756760288726.jpg", 
+      "imageAlt": "Regulatory Compliance Solutions - Texas State Capitol representing regulatory oversight",
+      "features": [
+        "SOX, HIPAA, PCI Compliance",
+        "Rapid Exception Identification",
+        "Efficient Remediation Process Design",
+        "Continuous Compliance Monitoring",
+        "Advanced Analytics & Reporting",
+        "Cross-Industry Compliance Management"
+      ],
+      "regulatoryFrameworks": [
+        "SOX (Sarbanes-Oxley Act)",
+        "HIPAA (Health Insurance Portability and Accountability Act)", 
+        "PCI (Payment Card Industry)",
+        "Basel II",
+        "SSAE 16",
+        "CISP",
+        "ISO Standards"
+      ],
+      "capabilities": [
+        "Discovery and verification processes",
+        "Exception identification and tracking",
+        "Remediation workflow automation", 
+        "Real-time compliance dashboards",
+        "Stakeholder progress reporting",
+        "Large organization scalability"
+      ],
+      "outcomes": [
+        "Reduced compliance risk exposure",
+        "Streamlined audit processes", 
+        "Automated compliance monitoring",
+        "Enhanced regulatory reporting"
+      ],
+      "industries": ["Financial Services", "Healthcare", "Technology", "Government"],
+      "technologies": ["Compliance Management Systems", "Risk Analytics", "Automated Monitoring", "Reporting Dashboards"]
+    },
+    {
+      "id": 3,
+      "title": "Portfolio Analysis Solutions", 
+      "name": "portfolio-analysis",
+      "shortDescription": "Multi-dimensional portfolio analysis services across industries and domains including applications and infrastructure.",
+      "detailedDescription": "Control Origins provides comprehensive portfolio analysis services that must be multi-dimensional and aligned to systems development lifecycle (SDLC) or service management best practices (ITIL). Our approach ensures optimal resource utilization and strategic alignment across your technology portfolio.",
+      "image": "/src/assets/tabs-3_1756760288726.jpg",
+      "imageAlt": "Portfolio Analysis Solutions - Team collaboration representing comprehensive analysis",
+      "features": [
+        "Application Portfolio Rationalization",
+        "Resource Optimization & Allocation",
+        "Strategic Architecture Planning",
+        "Multi-Dimensional Analysis",
+        "SDLC & ITIL Alignment",
+        "Infrastructure Portfolio Management"
+      ],
+      "analysisOutcomes": [
+        "Application development and maintenance sourcing",
+        "Application development and maintenance resource optimization", 
+        "Application portfolio rationalization and consolidation",
+        "Lean application development implementation",
+        "Lean application maintenance processes",
+        "Strategic application retirement planning",
+        "Comprehensive application architecture strategy"
+      ],
+      "portfolioDomains": [
+        "Application Portfolio",
+        "Infrastructure Portfolio", 
+        "Technology Stack Analysis",
+        "Resource Unit Assessment",
+        "Asset Performance Evaluation"
+      ],
+      "methodologies": [
+        "Systems Development Lifecycle (SDLC)",
+        "Information Technology Infrastructure Library (ITIL)",
+        "Lean Development Practices",
+        "Portfolio Rationalization Frameworks"
+      ],
+      "outcomes": [
+        "Optimized application portfolio",
+        "Reduced maintenance costs",
+        "Enhanced development efficiency", 
+        "Strategic technology roadmap"
+      ],
+      "industries": ["Technology", "Financial Services", "Manufacturing", "Healthcare"],
+      "technologies": ["Portfolio Management Tools", "SDLC Frameworks", "ITIL Processes", "Analytics Platforms"]
+    },
+    {
+      "id": 4,
+      "title": "Financial Analysis Solutions",
+      "name": "financial-analysis", 
+      "shortDescription": "Comprehensive financial analysis services to develop financial base cases and model transformation alternatives.",
+      "detailedDescription": "Control Origins provides extensive financial analysis services with the goal of developing a comprehensive financial 'base case' for organizations, followed by detailed modeling of transformation or optimization alternatives and their projected business value impact.",
+      "image": "/src/assets/tabs-4_1756760288726.jpg",
+      "imageAlt": "Financial Analysis Solutions - Business meeting representing financial planning and analysis",
+      "features": [
+        "Financial Base Case Development",
+        "Transformation Alternative Modeling",
+        "Business Value Impact Assessment",
+        "ROI & Cost-Benefit Analysis",
+        "Financial Risk Assessment", 
+        "Investment Optimization Planning"
+      ],
+      "analysisComponents": [
+        "Current state financial baseline establishment",
+        "Transformation cost modeling",
+        "Benefit realization projections",
+        "Risk-adjusted return calculations",
+        "Sensitivity analysis and scenarios",
+        "Business case development and validation"
+      ],
+      "financialModeling": [
+        "Base case financial modeling",
+        "Alternative scenario analysis",
+        "Cost-benefit projections",
+        "Return on investment calculations",
+        "Budget impact assessments",
+        "Financial risk evaluations"
+      ],
+      "deliverables": [
+        "Comprehensive financial base case",
+        "Transformation investment models",
+        "Business value assessments", 
+        "ROI projections and timelines",
+        "Risk assessment reports",
+        "Executive financial summaries"
+      ],
+      "outcomes": [
+        "Data-driven investment decisions",
+        "Optimized resource allocation",
+        "Enhanced financial planning",
+        "Measurable business value delivery"
+      ],
+      "industries": ["Financial Services", "Technology", "Manufacturing", "Healthcare"],
+      "technologies": ["Financial Modeling Tools", "Business Intelligence", "Analytics Platforms", "Risk Assessment Systems"]
+    }
+  ],
+  "additionalInfo": {
+    "approachFoundation": "The Control Origins approach to transformation and optimization is based on best practices for implementing change in an organization, leveraging frameworks like COSO, COBIT, ISO, and ITIL.",
+    "technologyPlatform": "Multi-tenant, cloud hosted solution leveraging Microsoft technology (Azure, ASP.Net, SQL Server)",
+    "keyDifferentiators": [
+      "Unified Repository approach",
+      "Industry best practices integration", 
+      "Regulatory requirements alignment",
+      "Comprehensive analytics framework"
+    ]
+  }
+}

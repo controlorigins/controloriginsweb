@@ -1,56 +1,47 @@
 {
-    "title": "ControlOrigins.com",
-    "name": "controloriginsweb",
-    "version": "8.0.1",
-    "scripts": {
-        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
-        "build:assets": "node scripts/build-assets.js",
-        "build:pug": "node scripts/build-pug.js",
-        "build:scripts": "node scripts/build-scripts.js",
-        "build:scss": "node scripts/build-scss.js",
-        "clean": "node scripts/clean.js",
-        "start": "npm run build && node scripts/start.js",
-        "start:debug": "npm run build && node scripts/start-debug.js"
-    },
-    "description": "Control Origins Website.",
-    "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
-    ],
-    "homepage": "https://github.com/controlorigins/controloriginsweb",
-    "bugs": {
-        "url": "https://github.com/controlorigins/controloriginsweb/issues",
-        "email": "mark.hazleton@controlorigins.com"
-    },
-    "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "Mark Hazleton (https://markhazleton.com)"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/controlorigins/controloriginsweb.git"
-    },
-    "dependencies": {
-        "bootstrap": "5.3.7",
-        "g": "^2.0.1",
-        "glob": "^11.0.3",
-        "npm-check-updates": "^18.0.2"
-    },
-    "devDependencies": {
-        "autoprefixer": "10.4.21",
-        "browser-sync": "^3.0.4",
-        "chokidar": "4.0.3",
-        "concurrently": "9.2.0",
-        "postcss": "8.5.6",
-        "prettier": "3.6.2",
-        "pug": "3.0.3",
-        "sass": "1.90.0",
-        "shelljs": "0.10.0",
-        "upath": "2.0.1"
-    }
+  "name": "controlorigins-static-site",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Control Origins static website - Business technology consulting services",
+  "scripts": {
+    "dev": "node ./scripts/prepare-assets.mjs && npx vite dev",
+    "dev:static": "node ./scripts/prepare-assets.mjs && npx vite dev",
+    "build": "npm run clean && node ./scripts/prepare-assets.mjs && npm run build:static",
+    "build:static": "node ./scripts/prepare-assets.mjs && npx vite build",
+    "build:github": "npm run build:static && npm run copy:github",
+    "copy:github": "powershell -Command \"$docs='docs'; $public='client/public'; $dist='dist/public'; New-Item -ItemType Directory -Force $docs | Out-Null; $cnameSrc = Join-Path $public 'CNAME'; $cnameDocs = Join-Path $docs 'CNAME'; $cname = $null; if (Test-Path $cnameSrc) { $cname = Get-Content $cnameSrc -Raw } elseif (Test-Path $cnameDocs) { $cname = Get-Content $cnameDocs -Raw }; Remove-Item -Recurse -Force (Join-Path $docs '*') -ErrorAction SilentlyContinue; Copy-Item -Recurse -Force (Join-Path $dist '*') $docs/; if (Test-Path (Join-Path $docs 'index.html')) { Copy-Item -Force (Join-Path $docs 'index.html') (Join-Path $docs '404.html') }; if ($cname) { Set-Content -NoNewline -Path $cnameDocs -Value $cname }; New-Item -ItemType File -Force (Join-Path $docs '.nojekyll') | Out-Null\"",
+    "start": "node ./scripts/prepare-assets.mjs && npx vite dev",
+    "clean": "powershell -Command \"Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue; Remove-Item -Recurse -Force docs/assets -ErrorAction SilentlyContinue; Remove-Item -Recurse -Force client/public/assets -ErrorAction SilentlyContinue\"",
+    "clean:assets": "powershell -Command \"Remove-Item -Force attached_assets/*android-chrome* -ErrorAction SilentlyContinue; Remove-Item -Force attached_assets/*apple-touch* -ErrorAction SilentlyContinue; Remove-Item -Force attached_assets/*favicon* -ErrorAction SilentlyContinue; Remove-Item -Force attached_assets/site_* -ErrorAction SilentlyContinue\"",
+    "prepare:assets": "node ./scripts/prepare-assets.mjs",
+    "preview": "npm run build:static && npx vite preview",
+    "check": "tsc",
+    "prune:assets": "node ./scripts/prune-assets.mjs",
+    "deploy:github": "npm run build:github && git add docs/ && git commit -m 'Deploy to GitHub Pages' && git push"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-toast": "^1.2.15",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "@tailwindcss/postcss": "^4.1.12",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.12",
+    "tailwindcss-animate": "^1.0.7",
+    "wouter": "^3.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "postcss": "^8.5.6",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.4"
+  }
 }
