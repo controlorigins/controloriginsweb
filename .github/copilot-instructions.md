@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a **Control Origins corporate website** - a static React TypeScript application optimized for GitHub Pages deployment. The site serves as the primary web presence for Control Origins, showcasing business technology consulting services.
+This is a **Control Origins corporate website** - a static React TypeScript application optimized for Azure Static Web Apps deployment. The site serves as the primary web presence for Control Origins, showcasing business technology consulting services.
 
 ### Tech Stack
 
@@ -12,7 +12,7 @@ This is a **Control Origins corporate website** - a static React TypeScript appl
 - **Routing**: Wouter (lightweight React router)
 - **State Management**: TanStack React Query + Context API
 - **Build Tool**: Vite with optimized chunking
-- **Deployment**: GitHub Pages
+- **Deployment**: Azure Static Web Apps
 - **Development**: Vite dev server
 
 ## Documentation Structure Requirements
@@ -66,8 +66,7 @@ npm run build:static        # Vite build to dist/public/
 npm run build:server        # Full-stack build with Express
 
 # Deployment-specific builds
-npm run build:github        # Build + copy to docs/ for GitHub Pages
-npm run copy:github         # Copy existing build to docs/
+npm run build:static        # Optimized build for Azure Static Web Apps
 ```
 
 ### Local Testing Process
@@ -88,23 +87,23 @@ npm run copy:github         # Copy existing build to docs/
    # Test at http://localhost:4173
    ```
 
-3. **GitHub Pages Testing**:
+3. **Production Testing**:
 
    ```bash
-   npm run build:github    # Build + copy to docs/
-   # Verify files in docs/ folder
-   # Test with local server in docs/
+   npm run build:static    # Production build
+   npm run preview         # Preview server
+   # Test at http://localhost:4173
    ```
 
 ## Deployment Targets
 
-### GitHub Pages
+### Azure Static Web Apps
 
-- **Path**: Files deploy to `docs/` folder
-- **Domain**: Custom domain support via CNAME file
-- **Build**: `npm run build:github`
-- **Deploy**: Automated via GitHub Actions or `npm run deploy:github`
-- **Config**: Uses `docs/.nojekyll` to prevent Jekyll processing
+- **Path**: Files deploy from `dist/public/` folder  
+- **Domain**: Custom domain `controlorigins.com` configured in Azure
+- **Build**: `npm run build:static`
+- **Deploy**: Automated via GitHub Actions workflow
+- **Config**: Uses `staticwebapp.config.json` for routing and headers
 
 ## Project Structure & File Organization
 
@@ -121,8 +120,7 @@ npm run copy:github         # Copy existing build to docs/
 │   ├── public/            # Static assets
 │   └── index.html         # Main HTML template
 ├── server/                # Express.js (development only)
-├── docs/                  # GitHub Pages deployment
-├── dist/                  # Build output
+├── dist/                  # Build output (Azure SWA deployment)
 │   └── public/           # Static site files
 ├── .github/
 │   ├── workflows/        # CI/CD automation
@@ -189,16 +187,6 @@ import type { SharedType } from "@shared/schema";
 - **Sitemap**: Maintained in `client/public/sitemap.xml`
 - **Robots.txt**: Configured for search engines
 
-## GitHub Pages Best Practices
-
-### GitHub Pages Configuration
-
-- **Jekyll Bypass**: Always include `.nojekyll` file
-- **Custom Domain**: Use `CNAME` file in docs folder
-- **Asset Paths**: Ensure relative paths work correctly
-- **Cache Busting**: Vite handles automatic hash naming
-- **History API**: GitHub Pages doesn't support SPA routing (use hash routing if needed)
-
 ## Common Tasks & Patterns
 
 ### Adding New Components
@@ -256,7 +244,7 @@ npm run build:static
 
 ### Deployment Issues
 
-- **GitHub Pages**: Check `docs/` folder contents and `.nojekyll`
+- **Azure SWA**: Check GitHub Actions workflow and build output
 - **Custom Domain**: DNS configuration and CNAME file
 - **Asset Loading**: Check relative vs absolute paths
 
@@ -320,7 +308,7 @@ npm run build:static
 
 ### Rollback Process
 
-1. **GitHub Pages**: Revert docs/ folder changes via Git
+1. **Azure SWA**: Check GitHub Actions deployment status
 2. **Local Testing**: `npm run preview` to test before deployment
 
 ### Critical Issues

@@ -9,16 +9,13 @@
     "dev:static": "node ./scripts/prepare-assets.mjs && npx vite dev",
     "build": "npm run clean && node ./scripts/prepare-assets.mjs && npm run build:static",
     "build:static": "node ./scripts/prepare-assets.mjs && npx vite build",
-    "build:github": "npm run build:static && npm run copy:github",
-    "copy:github": "powershell -Command \"$docs='docs'; $public='client/public'; $dist='dist/public'; New-Item -ItemType Directory -Force $docs | Out-Null; $cnameSrc = Join-Path $public 'CNAME'; $cnameDocs = Join-Path $docs 'CNAME'; $cname = $null; if (Test-Path $cnameSrc) { $cname = Get-Content $cnameSrc -Raw } elseif (Test-Path $cnameDocs) { $cname = Get-Content $cnameDocs -Raw }; Remove-Item -Recurse -Force (Join-Path $docs '*') -ErrorAction SilentlyContinue; Copy-Item -Recurse -Force (Join-Path $dist '*') $docs/; if (Test-Path (Join-Path $docs 'index.html')) { Copy-Item -Force (Join-Path $docs 'index.html') (Join-Path $docs '404.html') }; if ($cname) { Set-Content -NoNewline -Path $cnameDocs -Value $cname }; New-Item -ItemType File -Force (Join-Path $docs '.nojekyll') | Out-Null\"",
     "start": "node ./scripts/prepare-assets.mjs && npx vite dev",
-    "clean": "powershell -Command \"Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue; Remove-Item -Recurse -Force docs/assets -ErrorAction SilentlyContinue; Remove-Item -Recurse -Force client/public/assets -ErrorAction SilentlyContinue\"",
+    "clean": "powershell -Command \"Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue; Remove-Item -Recurse -Force client/public/assets -ErrorAction SilentlyContinue\"",
     "clean:assets": "powershell -Command \"Remove-Item -Force attached_assets/*android-chrome* -ErrorAction SilentlyContinue; Remove-Item -Force attached_assets/*apple-touch* -ErrorAction SilentlyContinue; Remove-Item -Force attached_assets/*favicon* -ErrorAction SilentlyContinue; Remove-Item -Force attached_assets/site_* -ErrorAction SilentlyContinue\"",
     "prepare:assets": "node ./scripts/prepare-assets.mjs",
     "preview": "npm run build:static && npx vite preview",
     "check": "tsc",
-    "prune:assets": "node ./scripts/prune-assets.mjs",
-    "deploy:github": "npm run build:github && git add docs/ && git commit -m 'Deploy to GitHub Pages' && git push"
+    "prune:assets": "node ./scripts/prune-assets.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

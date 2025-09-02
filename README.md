@@ -11,7 +11,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.1.4-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.12-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![GitHub Pages](https://img.shields.io/badge/Deployed_on-GitHub_Pages-222222?logo=github&logoColor=white)](https://pages.github.com/)
+[![Azure Static Web Apps](https://img.shields.io/badge/Deployed_on-Azure_SWA-0078d4?logo=microsoft-azure&logoColor=white)](https://azure.microsoft.com/en-us/services/app-service/static/)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
 [🌐 Live Site](https://controlorigins.com) • [📋 Issues](https://github.com/markhazleton/controlorigins-site/issues) • [🚀 Contributing](#-contributing)
@@ -46,7 +46,7 @@
 - **Accessible UI Components** built with Radix UI primitives
 - **Single Page Application** with Wouter lightweight routing
 - **SEO Optimized** with structured data and meta tags
-- **GitHub Pages Ready** with automatic deployment workflows
+- **Azure Static Web Apps Ready** with automatic deployment workflows
 
 ### 🎨 **Design & UX**
 
@@ -79,7 +79,7 @@
 | **UI Components** | Radix UI | Accessible, unstyled primitives |
 | **Routing** | Wouter | Lightweight client-side routing |
 | **Build Tool** | Vite | Fast development and optimized builds |
-| **Deployment** | GitHub Pages | Static site hosting with custom domain |
+| **Deployment** | Azure Static Web Apps | Static site hosting with custom domain |
 
 ### **Key Design Decisions**
 
@@ -124,7 +124,6 @@ npm run dev
 | `npm run build` | Create production build |
 | `npm run preview` | Preview production build locally |
 | `npm run clean` | Remove build artifacts |
-| `npm run deploy:github` | Deploy to GitHub Pages |
 
 ---
 
@@ -182,27 +181,22 @@ hooks/               # Custom React hooks
 ### **Local Build Process**
 
 ```bash
-# Clean development build
-npm run clean
+# Development server
 npm run dev
 
-# Production build testing
+# Production build and testing
 npm run build:static  # Creates dist/public/
 npm run preview       # Test at http://localhost:4173
-
-# GitHub Pages deployment
-npm run build:github  # Builds to docs/ folder
-npm run deploy:github # Commits and pushes to GitHub
 ```
 
-### **GitHub Pages Configuration**
+### **Azure Static Web Apps Deployment**
 
-The site deploys automatically to GitHub Pages using the `docs/` folder method:
+The site deploys automatically to Azure Static Web Apps:
 
-- **Build Output**: `docs/` folder (committed to repository)
-- **Custom Domain**: Configured via `CNAME` file
-- **SPA Routing**: `404.html` mirrors `index.html` for client-side routing
-- **Jekyll Bypass**: `.nojekyll` file prevents Jekyll processing
+- **Build Output**: `dist/public/` folder
+- **Custom Domain**: `controlorigins.com` configured in Azure
+- **SPA Routing**: Handled by `staticwebapp.config.json`
+- **SSL/TLS**: Automatic HTTPS with custom domain support
 
 ### **Build Optimization**
 
@@ -236,8 +230,7 @@ controlorigins-site/
 │   │   ├── main.tsx            # Entry point
 │   │   └── index.css           # Global styles
 │   └── index.html              # HTML template
-├── 📁 docs/                     # GitHub Pages deployment
-├── 📁 dist/                     # Build output
+├── 📁 dist/                     # Build output (Azure SWA deployment)
 ├── 📁 attached_assets/          # Source assets
 ├── 📁 scripts/                  # Build scripts
 ├── 📁 copilot/                  # Session documentation
@@ -278,8 +271,7 @@ export default function HeroSection({
 ### **Environment Configuration**
 
 - **Development**: Vite dev server with hot reload
-- **Production**: Optimized static build with asset hashing
-- **GitHub Pages**: Relative paths for subdirectory deployment
+- **Production**: Optimized static build for Azure Static Web Apps
 
 ### **Path Aliases**
 

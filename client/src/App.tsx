@@ -10,23 +10,9 @@ import Contact from "@/pages/contact";
 import Terms from "@/pages/terms";
 import NotFound from "@/pages/not-found";
 
-// Determine base path for GitHub Pages project sites (e.g., /controlorigins-site/)
-function getBasePath(): string {
-  const { hostname, pathname } = window.location;
-  // On GitHub Pages project sites, host ends with github.io and pathname starts with /<repo>/
-  if (hostname.endsWith("github.io")) {
-    const parts = pathname.split("/").filter(Boolean);
-    if (parts.length > 0) {
-      return `/${parts[0]}`; // e.g., "/controlorigins-site"
-    }
-  }
-  return "/";
-}
-
 function AppRouter() {
-  const base = getBasePath();
   return (
-    <Router base={base}>
+    <Router base="/">
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/portfolio" component={Portfolio} />

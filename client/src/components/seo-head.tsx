@@ -34,6 +34,12 @@ export default function SEOHead({
       metaKeywords.setAttribute('content', keywords);
     }
     
+    // Update canonical URL
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute('href', url);
+    }
+    
     // Update Open Graph tags
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {

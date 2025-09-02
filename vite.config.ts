@@ -1,14 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import fs from "fs";
-
-// NOTE: Use absolute base for Azure Static Web Apps, relative base for GitHub Pages
-// Always use absolute paths for production builds to avoid Azure SWA issues
-const PROD_BASE = "/";
 
 export default defineConfig({
-  base: process.env.NODE_ENV === "production" ? PROD_BASE : "./",
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -28,7 +23,6 @@ export default defineConfig({
         },
       },
     },
-    // Optimize for static deployment
     assetsDir: "assets",
     sourcemap: false,
     minify: true,
