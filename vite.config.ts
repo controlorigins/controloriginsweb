@@ -4,7 +4,8 @@ import path from "path";
 import fs from "fs";
 
 // NOTE: Use absolute base for Azure Static Web Apps, relative base for GitHub Pages
-const PROD_BASE = process.env.AZURE_STATIC_WEB_APPS_API_TOKEN ? "/" : "./";
+// Always use absolute paths for production builds to avoid Azure SWA issues
+const PROD_BASE = "/";
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? PROD_BASE : "./",
