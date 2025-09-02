@@ -1,4 +1,4 @@
-import { Linkedin, User, MapPin, ArrowRight } from "lucide-react";
+import { Linkedin, Building, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,16 +10,16 @@ const contactMethods = [
     href: "https://www.linkedin.com/company/control-origins",
   },
   {
-    icon: User,
-    title: "Contact Mark Hazleton",
-    description: "Founder & Technology Director",
-    href: "https://www.linkedin.com/in/markhazleton",
+    icon: Building,
+    title: "Enterprise Consulting",
+    description: "Business Technology Solutions",
+    href: "/contact",
   },
   {
     icon: MapPin,
-    title: "Enterprise Solutions",
-    description: "Microsoft Azure & .NET Platform",
-    href: "#solutions",
+    title: "Microsoft Solutions",
+    description: "Azure & .NET Platform Expertise",
+    href: "/solutions",
   },
 ];
 
@@ -42,12 +42,9 @@ export default function ContactSection() {
     <section id="contact" className="py-20 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Ready to Transform Your Business with Microsoft Azure?
-          </h2>
-          <h3 className="text-2xl font-semibold mb-6 text-primary-foreground/90">
+          <h2 className="text-2xl font-semibold mb-6 text-primary-foreground/90">
             Expert ASP.NET Development & Regulatory Compliance Solutions
-          </h3>
+          </h2>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto">
             Let's discuss how Control Origins can help drive your organization's
             digital transformation, Microsoft Azure migration, and regulatory compliance initiatives

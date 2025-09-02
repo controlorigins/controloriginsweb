@@ -26,12 +26,9 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Our Microsoft Azure & ASP.NET Expertise
-            </h2>
-            <h3 className="text-2xl font-semibold text-foreground/80 mb-6">
+            <h2 className="text-2xl font-semibold text-foreground/80 mb-6">
               Proven Business Technology Consulting Approach
-            </h3>
+            </h2>
             <p className="text-lg text-muted-foreground mb-6">
               Control Origins was founded on a unique approach to building
               logical relationships between an organization's policies,

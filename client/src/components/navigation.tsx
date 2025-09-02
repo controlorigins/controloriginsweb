@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
+import LinkedInIntegration from "@/components/linkedin-integration";
 import logoPath from "@assets/branding/logo.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [location] = useLocation();
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -18,23 +21,21 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-    
-    if (targetElement) {
-      const offsetTop = targetElement.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
-    setIsOpen(false);
-  };
-
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const navigationItems = [
+    { href: "/", label: "Home" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/solutions", label: "Solutions" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
     <nav
@@ -46,31 +47,32 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <img
-              src={logoPath}
-              alt="Control Origins Logo"
-              className="h-8 w-auto"
-              data-testid="logo-image"
-            />
+            <Link href="/">
+              <img
+                src={logoPath}
+                alt="Control Origins Logo"
+                className="h-8 w-auto cursor-pointer"
+                data-testid="logo-image"
+              />
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {[
-              { href: "#home", label: "Home" },
-              { href: "#portfolio", label: "Portfolio" },
-              { href: "#solutions", label: "Solutions" },
-              { href: "#methodology", label: "Methodology" },
-              { href: "#contact", label: "Contact" },
-            ].map((item) => (
-              <button
+            {navigationItems.map((item) => (
+              <Link
                 key={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="text-foreground hover:text-accent transition-colors font-semibold"
+                href={item.href}
+                className={`transition-colors font-semibold ${
+                  location === item.href
+                    ? "text-accent"
+                    : "text-foreground hover:text-accent"
+                }`}
                 data-testid={`nav-${item.label.toLowerCase()}`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
+            <LinkedInIntegration variant="header" />
             <Button
               variant="ghost"
               size="icon"
@@ -117,21 +119,20 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-background border-t border-border animate-slide-in">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {[
-              { href: "#home", label: "Home" },
-              { href: "#portfolio", label: "Portfolio" },
-              { href: "#solutions", label: "Solutions" },
-              { href: "#methodology", label: "Methodology" },
-              { href: "#contact", label: "Contact" },
-            ].map((item) => (
-              <button
+            {navigationItems.map((item) => (
+              <Link
                 key={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="block w-full text-left px-3 py-2 text-foreground hover:text-accent hover:bg-muted rounded-md transition-colors"
+                href={item.href}
+                onClick={closeMenu}
+                className={`block w-full px-3 py-2 rounded-md transition-colors ${
+                  location === item.href
+                    ? "text-accent bg-muted"
+                    : "text-foreground hover:text-accent hover:bg-muted"
+                }`}
                 data-testid={`mobile-nav-${item.label.toLowerCase()}`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

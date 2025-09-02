@@ -1,19 +1,10 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import LinkedInIntegration from "@/components/linkedin-integration";
 import heroBgImage from "@assets/hero/hero-background.jpg";
 
 export default function HeroSection() {
-  const handleScrollTo = (targetId: string) => {
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const offsetTop = targetElement.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -47,22 +38,28 @@ export default function HeroSection() {
               Enterprise ASP.NET Development
             </span>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={() => handleScrollTo("portfolio")}
-              className="inline-flex items-center px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 transform hover:scale-105"
-              data-testid="cta-view-work"
-            >
-              View Our Work
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              onClick={() => handleScrollTo("solutions")}
-              className="inline-flex items-center px-8 py-4 border-2 border-white bg-transparent text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300"
-              data-testid="cta-our-solutions"
-            >
-              Our Solutions
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link href="/portfolio">
+              <Button
+                className="inline-flex items-center px-8 py-4 bg-accent text-accent-foreground font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 transform hover:scale-105"
+                data-testid="cta-view-work"
+              >
+                View Our Work
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="/solutions">
+              <Button
+                className="inline-flex items-center px-8 py-4 border-2 border-white bg-transparent text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300"
+                data-testid="cta-our-solutions"
+              >
+                Our Solutions
+              </Button>
+            </Link>
+          </div>
+          
+          <div className="flex justify-center">
+            <LinkedInIntegration variant="content" showFollowerCount={true} />
           </div>
         </div>
       </div>

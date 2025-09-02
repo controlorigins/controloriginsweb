@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { ExternalLink, BarChart3, Briefcase, User, Database, Code, Globe, FileText } from "lucide-react";
+import { ExternalLink, BarChart3, Briefcase, Building, Database, Code, Globe, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import Breadcrumb from "@/components/breadcrumb";
 import projectsData from "@/data/projects.json";
 
 // Icon mapping for different project types
@@ -13,7 +12,7 @@ const getProjectIcon = (id: number, category: string) => {
     2: BarChart3, // Data Analysis
     3: Briefcase, // Project Mechanics
     4: Globe, // Project Portal
-    5: User, // Mark Hazleton
+    5: Building, // Company Portfolio
     6: Code, // Async Demo  
     7: Database, // TexEcon
     8: FileText, // Documents
@@ -44,11 +43,7 @@ export default function PortfolioSection() {
   return (
     <section id="portfolio" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Breadcrumb items={[{ label: "Portfolio", active: true }]} />
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Our Portfolio
-          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Showcasing our innovative technology solutions and successful project
             implementations.

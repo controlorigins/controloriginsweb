@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import Breadcrumb from "@/components/breadcrumb";
 import solutionsData from "@/data/solutions.json";
 import compassImage from "@assets/solutions/compass.jpg";
 import capitolImage from "@assets/solutions/capitol.jpg";
@@ -27,11 +26,7 @@ export default function SolutionsSection() {
   return (
     <section id="solutions" className="py-20 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Breadcrumb items={[{ label: "Solutions", active: true }]} />
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {sectionInfo.title}
-          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
             {sectionInfo.subtitle}
           </p>

@@ -35,9 +35,9 @@
 
 1. **Cloudflare Zaraz Support**: Added `https://controlorigins.com` to script-src for Cloudflare-injected scripts
 2. **Connect Sources**: Added `https://cloudflareinsights.com` for Cloudflare analytics
-3. **Removed Problematic Headers**: 
+3. **Removed Problematic Headers**:
    - Removed `Cross-Origin-Embedder-Policy: require-corp`
-   - Removed `Cross-Origin-Opener-Policy: same-origin` 
+   - Removed `Cross-Origin-Opener-Policy: same-origin`
    - Removed `upgrade-insecure-requests` directive
 4. **Simplified CORS**: Let Azure SWA handle CORS naturally
 

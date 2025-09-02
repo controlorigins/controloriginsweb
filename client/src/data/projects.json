@@ -5,7 +5,7 @@
       "title": "MVC Sample CRUD Demo",
       "name": "mvc-sample-crud-demo",
       "description": "A comprehensive demonstration of how to implement Model-View-Controller (MVC) CRUD operations in .NET 5x. This project showcases best practices for ASP.NET Core development, including data validation, entity relationships, and user interface design patterns.",
-      "link": "https://markhazletonsamplecrud.controlorigins.com/",
+      "link": "https://controlorigins.com/samplecrud/",
       "category": "web",
       "technology": [".NET 5x", "ASP.NET Core", "MVC", "Entity Framework"],
       "images": ["./assets/portfolio/SampleMVC.png"]
@@ -30,7 +30,7 @@
       "title": "Project Mechanics",
       "name": "project-mechanics",
       "description": "A comprehensive website dedicated to project management methodology and resources. Provides detailed frameworks, best practices, templates, and tools for effective project execution and management across various industries.",
-      "link": "https://markhazleton.com/projectmechanics/index.html",
+      "link": "https://controlorigins.com/projectmechanics/",
       "category": "web",
       "technology": ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
       "images": ["./assets/portfolio/ProjectMechanics.png"]
@@ -52,15 +52,16 @@
     },
     {
       "id": 5,
-      "title": "Mark Hazleton Profile",
-      "name": "mark-hazleton-profile",
-      "description": "Professional profile website for Mark Hazleton, co-founder of Control Origins. Showcases his expertise in business technology solutions, regulatory compliance, strategic transformation consulting, and leadership in Microsoft Azure and cloud technologies.",
-      "link": "https://markhazleton.com/",
+      "title": "Control Origins Company Portfolio",
+      "name": "control-origins-portfolio",
+      "description": "Professional corporate website showcasing Control Origins' expertise in Microsoft Azure consulting, ASP.NET development, and regulatory compliance solutions. Features comprehensive service offerings and enterprise technology capabilities.",
+      "link": "https://controlorigins.com/",
       "category": "web",
       "technology": [
+        "React",
+        "TypeScript",
         "Modern Web Design",
-        "Responsive Layout",
-        "Professional Portfolio"
+        "Corporate Portfolio"
       ],
       "images": ["./assets/portfolio/MarkHazleton.jpg"]
     },
@@ -95,16 +96,15 @@
     },
     {
       "id": 8,
-      "title": "Control Origins Documents",
-      "name": "control-origins-documents",
-      "description": "Comprehensive document library system built using Markdown and PHP. Provides organized access to technical documentation, best practices guides, methodology frameworks, and knowledge base articles for business transformation and technology solutions.",
-      "link": "https://markhazleton.com/creating-a-php-website-with-chat-gpt.html",
+      "title": "Control Origins Documentation",
+      "name": "control-origins-documentation",
+      "description": "Comprehensive document library system for Control Origins technical documentation, best practices guides, methodology frameworks, and knowledge base articles for business transformation and technology solutions.",
+      "link": "https://controlorigins.com/docs/",
       "category": "web",
       "technology": [
-        "PHP",
-        "Markdown",
-        "Document Management",
-        "Knowledge Base"
+        "Documentation Platform",
+        "Knowledge Management",
+        "Best Practices"
       ],
       "images": []
     }
