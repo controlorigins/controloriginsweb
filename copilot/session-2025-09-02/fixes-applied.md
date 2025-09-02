@@ -10,6 +10,7 @@
 **Problem**: Google Fonts were blocked by restrictive CSP policy.
 
 **Solution**: Updated CSP to allow external font resources:
+
 ```diff
 - "style-src 'self' 'unsafe-inline';"
 + "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;"
@@ -19,6 +20,7 @@
 ```
 
 **Additional**: Added Cloudflare CDN support and relaxed CORS policies:
+
 ```diff
 - "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;"
 + "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.cloudflare.com;"
@@ -35,6 +37,7 @@
 **Problem**: JavaScript modules were served with `text/javascript` instead of standard `application/javascript`.
 
 **Solution**: Updated MIME types and route headers:
+
 ```diff
 - "content-type": "text/javascript; charset=utf-8"
 + "content-type": "application/javascript; charset=utf-8"
@@ -48,6 +51,7 @@
 **Problem**: Aggressive content-encoding headers were causing loading issues.
 
 **Solution**: Removed `content-encoding: "gzip, br"` from:
+
 - Asset routes (`/assets/*`)
 - JavaScript files (`/*.js`, `/*.mjs`)
 - CSS files (`/*.css`)
