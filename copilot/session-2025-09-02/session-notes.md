@@ -136,4 +136,26 @@
 - [Vite Plugin Package](https://www.npmjs.com/package/@tailwindcss/vite)
 
 ---
-**Session End**: Comprehensive migration plan created and ready for review.
+
+## Azure Static Web Apps Deployment Issue
+
+**Time**: Current  
+**Issue**: Build deployment failing due to invalid staticwebapp.config.json
+
+### Problem Identified
+
+Azure Static Web Apps deployment error:
+> "Found an exclude path with multiple wildcard characters '*' in the 'exclude' property. A route can have at most one '*' character."
+
+### Root Cause
+
+In `client/public/staticwebapp.config.json`, the `navigationFallback.exclude` array contains:
+
+- `/assets/**` - Double asterisks violate Azure SWA wildcard rules
+
+### Solution Required
+
+Change `/assets/**` to `/assets/*` to comply with Azure SWA restrictions.
+
+---
+**Session End**: TailwindCSS v4 migration plan created; Azure deployment issue identified and ready for fix.

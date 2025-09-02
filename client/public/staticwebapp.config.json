@@ -190,7 +190,7 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [
-      "/assets/**",
+      "/assets/*",
       "/*.js",
       "/*.mjs",
       "/*.css",
