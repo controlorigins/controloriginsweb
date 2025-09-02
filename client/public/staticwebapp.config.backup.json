@@ -1,0 +1,85 @@
+{
+  "routes": [
+    {
+      "route": "/assets/*",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/*.js",
+      "headers": {
+        "content-type": "text/javascript"
+      }
+    },
+    {
+      "route": "/*.mjs",
+      "headers": {
+        "content-type": "text/javascript"
+      }
+    },
+    {
+      "route": "/*.webmanifest",
+      "headers": {
+        "content-type": "application/manifest+json"
+      }
+    },
+    {
+      "route": "/*",
+      "rewrite": "/index.html"
+    }
+  ],
+  "mimeTypes": {
+    ".js": "text/javascript",
+    ".mjs": "text/javascript",
+    ".tsx": "text/javascript",
+    ".ts": "text/javascript",
+    ".json": "application/json",
+    ".webmanifest": "application/manifest+json",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".svg": "image/svg+xml",
+    ".css": "text/css",
+    ".html": "text/html",
+    ".ico": "image/x-icon"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/assets/**",
+      "/*.js",
+      "/*.mjs",
+      "/*.css",
+      "/*.png",
+      "/*.jpg",
+      "/*.jpeg",
+      "/*.gif",
+      "/*.svg",
+      "/*.ico",
+      "/*.webp",
+      "/*.woff",
+      "/*.woff2",
+      "/*.ttf",
+      "/*.eot",
+      "/*.json",
+      "/*.webmanifest",
+      "/favicon*",
+      "/apple-touch-icon*",
+      "/site.webmanifest",
+      "/robots.txt",
+      "/sitemap.xml"
+    ]
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  }
+}
