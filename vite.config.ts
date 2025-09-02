@@ -3,9 +3,8 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 
-// NOTE: Use a relative base so assets work on GitHub Pages project sites (served under /<repo>/)
-// and also on custom domains. Relative base avoids 404s for /assets/* when hosted under a subpath.
-const PROD_BASE = "./";
+// NOTE: Use absolute base for Azure Static Web Apps, relative base for GitHub Pages
+const PROD_BASE = process.env.AZURE_STATIC_WEB_APPS_API_TOKEN ? "/" : "./";
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? PROD_BASE : "./",
