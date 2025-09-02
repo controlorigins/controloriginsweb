@@ -8,19 +8,22 @@
 
 The fundamental issue was **incorrect base path configuration** in `vite.config.ts` causing Azure Static Web Apps to serve HTML with **relative asset paths** instead of **absolute paths**.
 
-### What Was Happening:
+### What Was Happening
+
 ```
 ❌ WRONG: Browser requested https://controlorigins.com/src/main.tsx (source file)
 ✅ FIXED: Browser requests https://controlorigins.com/assets/index-*.js (bundled file)
 ```
 
-### Firefox Error Details:
+### Firefox Error Details
+
 ```
 Loading module from "https://controlorigins.com/src/main.tsx" was blocked 
 because of a disallowed MIME type ("application/octet-stream").
 ```
 
 This error occurred because:
+
 1. HTML contained incorrect script references pointing to source files
 2. Azure SWA tried to serve TypeScript source files as JavaScript modules
 3. Source files were served with wrong MIME type (`application/octet-stream`)
@@ -30,11 +33,13 @@ This error occurred because:
 ### 1. Fixed Vite Configuration (`vite.config.ts`)
 
 **BEFORE** (problematic logic):
+
 ```typescript
 const PROD_BASE = process.env.AZURE_STATIC_WEB_APPS_API_TOKEN ? "/" : "./";
 ```
 
 **AFTER** (simplified and correct):
+
 ```typescript
 // Always use absolute paths for production builds to avoid Azure SWA issues
 const PROD_BASE = "/";
@@ -43,12 +48,14 @@ const PROD_BASE = "/";
 ### 2. Enhanced GitHub Actions Workflow
 
 **BEFORE** (missing environment variables):
+
 ```yaml
 - name: Build application
   run: npm run build:static
 ```
 
 **AFTER** (explicit production environment):
+
 ```yaml
 - name: Build application
   run: npm run build:static
@@ -60,12 +67,14 @@ const PROD_BASE = "/";
 ### 3. HTML Output Comparison
 
 **BEFORE** (relative paths - BROKEN):
+
 ```html
 <script type="module" crossorigin src="./assets/index-X5D0ZT0N.js"></script>
 <link rel="modulepreload" crossorigin href="./assets/vendor-gH-7aFTg.js">
 ```
 
 **AFTER** (absolute paths - WORKING):
+
 ```html
 <script type="module" crossorigin src="/assets/index-9WNOqrT6.js"></script>
 <link rel="modulepreload" crossorigin href="/assets/vendor-gH-7aFTg.js">
@@ -73,19 +82,22 @@ const PROD_BASE = "/";
 
 ## 🔍 TECHNICAL ANALYSIS
 
-### Why Relative Paths Failed on Azure SWA:
+### Why Relative Paths Failed on Azure SWA
+
 1. **Azure SWA Routing**: The `staticwebapp.config.json` navigation fallback was intercepting requests
 2. **Base Path Resolution**: Relative paths (`./assets/`) resolved incorrectly in Azure's routing context
 3. **Source Map Confusion**: Vite's development-style references leaked into production build
 
-### Why Absolute Paths Work:
+### Why Absolute Paths Work
+
 1. **Direct Asset Access**: `/assets/` bypasses navigation fallback routing
 2. **Explicit MIME Types**: Assets served with correct `text/javascript` content-type
 3. **Cache Optimization**: Assets get proper cache headers with immutable flag
 
 ## 📋 VERIFICATION RESULTS
 
-### Local Build Test (with NODE_ENV=production):
+### Local Build Test (with NODE_ENV=production)
+
 ```
 ✓ Build completed successfully (2.03s)
 ✓ HTML uses absolute paths: /assets/index-9WNOqrT6.js
@@ -93,14 +105,15 @@ const PROD_BASE = "/";
 ✓ staticwebapp.config.json properly configured
 ```
 
-### Deployment Status:
+### Deployment Status
+
 - **Commit**: `d04d3c3` - "fix: Resolve Azure Static Web Apps deployment issues with absolute paths"
 - **GitHub Push**: ✅ Completed
 - **Azure SWA Deployment**: 🔄 In Progress (automatic)
 
 ## 🎯 EXPECTED RESOLUTION
 
-Once deployment completes (5-10 minutes), https://controlorigins.com should:
+Once deployment completes (5-10 minutes), <https://controlorigins.com> should:
 
 ✅ **Load JavaScript modules correctly** - No more MIME type errors  
 ✅ **Serve bundled assets** - No more requests to `/src/main.tsx`  
@@ -110,13 +123,15 @@ Once deployment completes (5-10 minutes), https://controlorigins.com should:
 
 ## 🛡️ PREVENTION MEASURES
 
-### Future Deployment Best Practices:
+### Future Deployment Best Practices
+
 1. **Always test production builds locally**: `NODE_ENV=production npm run build:static`
 2. **Verify HTML output**: Check asset paths are absolute (`/assets/`) not relative (`./assets/`)
 3. **Monitor console errors**: Watch for source file requests in production
 4. **Simplify base path logic**: Avoid complex conditional logic in Vite config
 
-### Monitoring Setup:
+### Monitoring Setup
+
 - Set up Application Insights for real-time error tracking
 - Create alerts for module loading failures
 - Regular testing of deployment pipeline with various browsers
