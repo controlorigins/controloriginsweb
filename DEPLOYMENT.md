@@ -7,16 +7,19 @@ Static React + Vite site deployed to Azure Static Web Apps with custom domain co
 ## Local Build & Preview
 
 1) Install dependencies
+
    ```bash
    npm install
    ```
 
 2) Development server
+
    ```bash
    npm run dev
    ```
 
 3) Production preview (build + serve)
+
    ```bash
    npm run preview
    ```
@@ -24,6 +27,7 @@ Static React + Vite site deployed to Azure Static Web Apps with custom domain co
 ## Production Build
 
 Primary build command:
+
 ```bash
 npm run build:static
 ```

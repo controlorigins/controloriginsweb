@@ -99,7 +99,7 @@ npm run build:static        # Optimized build for Azure Static Web Apps
 
 ### Azure Static Web Apps
 
-- **Path**: Files deploy from `dist/public/` folder  
+- **Path**: Files deploy from `dist/public/` folder
 - **Domain**: Custom domain `controlorigins.com` configured in Azure
 - **Build**: `npm run build:static`
 - **Deploy**: Automated via GitHub Actions workflow
