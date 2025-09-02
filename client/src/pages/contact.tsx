@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/breadcrumb";
 export default function Contact() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Contact", href: "/contact", current: true }
+    { label: "Contact", href: "/contact", active: true }
   ];
 
   return (

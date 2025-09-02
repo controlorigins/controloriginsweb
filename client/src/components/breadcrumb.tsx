@@ -1,4 +1,5 @@
 import { ChevronRight, Home } from "lucide-react";
+import { Link } from "wouter";
 
 interface BreadcrumbItem {
   label: string;
@@ -11,41 +12,31 @@ interface BreadcrumbProps {
 }
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
-  const handleScrollTo = (href: string) => {
-    if (href.startsWith("#")) {
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const offsetTop = targetElement.offsetTop - 100;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
-      }
-    }
-  };
-
   return (
     <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-8" data-testid="breadcrumb">
-      <button
-        onClick={() => handleScrollTo("#home")}
-        className="flex items-center hover:text-accent transition-colors"
-        data-testid="breadcrumb-home"
-      >
-        <Home className="w-4 h-4" />
-      </button>
+      <Link href="/">
+        <button
+          className="flex items-center hover:text-accent transition-colors"
+          data-testid="breadcrumb-home"
+          aria-label="Home"
+          title="Go to Home"
+        >
+          <Home className="w-4 h-4" />
+        </button>
+      </Link>
       
       {items.map((item, index) => (
         <div key={index} className="flex items-center space-x-2">
           <ChevronRight className="w-4 h-4" />
           {item.href && !item.active ? (
-            <button
-              onClick={() => item.href && handleScrollTo(item.href)}
-              className="hover:text-accent transition-colors"
-              data-testid={`breadcrumb-item-${index}`}
-            >
-              {item.label}
-            </button>
+            <Link href={item.href}>
+              <button
+                className="hover:text-accent transition-colors"
+                data-testid={`breadcrumb-item-${index}`}
+              >
+                {item.label}
+              </button>
+            </Link>
           ) : (
             <span
               className={item.active ? "text-foreground font-medium" : ""}

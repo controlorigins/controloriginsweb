@@ -7,7 +7,7 @@ import Breadcrumb from "@/components/breadcrumb";
 export default function Terms() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Terms and Conditions", href: "/terms", current: true }
+    { label: "Terms and Conditions", href: "/terms", active: true }
   ];
 
   return (

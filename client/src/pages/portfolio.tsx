@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/breadcrumb";
 export default function Portfolio() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "Portfolio", href: "/portfolio", current: true }
+    { label: "Portfolio", href: "/portfolio", active: true }
   ];
 
   return (

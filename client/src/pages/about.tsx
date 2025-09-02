@@ -10,7 +10,7 @@ import Breadcrumb from "@/components/breadcrumb";
 export default function About() {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about", current: true }
+    { label: "About", href: "/about", active: true }
   ];
 
   return (
