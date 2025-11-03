@@ -1,0 +1,10 @@
+Contact: https://www.linkedin.com/company/control-origins
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://controlorigins.com/.well-known/security.txt
+Policy: https://controlorigins.com/privacy
+
+# Control Origins - Professional Portfolio Website
+# This is a portfolio showcase website maintained by Mark Hazleton
+# Not currently accepting new business engagements
+# For professional networking only

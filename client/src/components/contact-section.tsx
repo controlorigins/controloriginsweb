@@ -43,12 +43,12 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-2xl font-semibold mb-6 text-primary-foreground/90">
-            Expert ASP.NET Development & Regulatory Compliance Solutions
+            Remote-Based Technology Consulting Services
           </h2>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-            Let's discuss how Control Origins can help drive your organization's
-            digital transformation, Microsoft Azure migration, and regulatory compliance initiatives
-            including SOX, HIPAA, and PCI compliance frameworks.
+            Control Origins operates as a remote-based consultancy and is not actively recruiting new business.
+            For professional inquiries or to learn more about our past work in Microsoft Azure development
+            and regulatory compliance, please connect through our LinkedIn company page.
           </p>
         </div>
 

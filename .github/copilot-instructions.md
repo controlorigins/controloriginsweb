@@ -1,323 +1,282 @@
-# GitHub Copilot Instructions for Control Origins Website
+# Control Origins Website - AI Agent Guide
 
-## Project Overview
+## Project Architecture
 
-This is a **Control Origins corporate website** - a static React TypeScript application optimized for Azure Static Web Apps deployment. The site serves as the primary web presence for Control Origins, showcasing business technology consulting services.
+**Static React SPA** deploying to Azure Static Web Apps at `controlorigins.com`. This is a corporate consulting website, NOT a full-stack application despite the `/server` directory (Express is dev-only, never deployed).
 
 ### Tech Stack
+- **React 19** + TypeScript (strict mode)
+- **Vite 7** build system (ESNext, bundler resolution)
+- **Tailwind CSS v4** with CSS-first `@theme` configuration (no JS config)
+- **Radix UI** for accessible primitives + custom components
+- **Wouter** for client-side routing (not React Router)
+- **Azure Static Web Apps** deployment (single target, no GitHub Pages)
 
-- **Frontend**: React 18 + TypeScript + Vite
-- **Styling**: Tailwind CSS v4 + Custom CSS Variables
-- **UI Components**: Radix UI primitives + Custom components
-- **Routing**: Wouter (lightweight React router)
-- **State Management**: TanStack React Query + Context API
-- **Build Tool**: Vite with optimized chunking
-- **Deployment**: Azure Static Web Apps
-- **Development**: Vite dev server
+## Critical Build Workflow
 
-## Documentation Structure Requirements
-
-### Session Documentation
-
-**ALWAYS** create documentation in the following structure when generating docs:
-
-```
-/copilot/session-{YYYY-MM-DD}/
-├── session-notes.md
-├── decisions-made.md
-├── code-changes.md
-└── next-steps.md
-```
-
-**Current date format**: Use `2025-09-01` format for today's sessions.
-
-### Documentation Guidelines
-
-- Create session folders for ANY documentation work
-- Include timestamps in session notes
-- Document all decisions and rationale
-- Track code changes with before/after snippets
-- Always include next steps and follow-up items
-
-## Build Process & Local Testing
-
-### Development Scripts
+**Asset Pipeline**: Assets currently live in `attached_assets/` (non-standard, may refactor to standard `client/public/assets/`). Build scripts copy assets before bundling:
 
 ```bash
-# Clean development - removes all build artifacts
-npm run clean
+# Development
+npm run dev              # Auto-runs prepare-assets, starts Vite on http://localhost:5173
 
-# Frontend-only development (recommended for static site work)
-npm run dev:static          # Vite dev server on http://localhost:5173
-
-# Full-stack development (includes Express server)
-npm run dev                 # Express + React on configured ports
-
-# Production testing
-npm run preview             # Build + preview on http://localhost:4173
+# Production build
+npm run build            # Alias for clean + build:static
+npm run build:static     # Prepares assets, builds to dist/public/
+npm run preview          # Test production build on http://localhost:4173
 ```
 
-### Build Scripts
+**Deployment**: Azure Static Web Apps deploys from `dist/public/`. GitHub Actions workflow:
+1. Runs `npm run build:static` (includes asset preparation)
+2. Deploys `app_location: "/dist/public"` with `skip_app_build: true`
 
-```bash
-# Production builds
-npm run build               # Clean + static build (primary)
-npm run build:static        # Vite build to dist/public/
-npm run build:server        # Full-stack build with Express
-
-# Deployment-specific builds
-npm run build:static        # Optimized build for Azure Static Web Apps
-```
-
-### Local Testing Process
-
-1. **Development Testing**:
-
-   ```bash
-   npm run dev              # Start dev server
-   # Test at http://localhost:5173
-   ```
-
-2. **Production Testing**:
-
-   ```bash
-   npm run clean           # Clean slate
-   npm run build:static    # Production build
-   npm run preview         # Preview server
-   # Test at http://localhost:4173
-   ```
-
-3. **Production Testing**:
-
-   ```bash
-   npm run build:static    # Production build
-   npm run preview         # Preview server
-   # Test at http://localhost:4173
-   ```
-
-## Deployment Targets
-
-### Azure Static Web Apps
-
-- **Path**: Files deploy from `dist/public/` folder
-- **Domain**: Custom domain `controlorigins.com` configured in Azure
-- **Build**: `npm run build:static`
-- **Deploy**: Automated via GitHub Actions workflow
-- **Config**: Uses `staticwebapp.config.json` for routing and headers
-
-## Project Structure & File Organization
-
-```
-├── client/                 # React application root
-│   ├── src/
-│   │   ├── components/     # Reusable components
-│   │   │   ├── ui/        # Radix UI + custom components
-│   │   │   └── *.tsx      # Feature components
-│   │   ├── pages/         # Route components
-│   │   ├── hooks/         # Custom React hooks
-│   │   ├── lib/           # Utilities and configurations
-│   │   └── data/          # Static data (JSON)
-│   ├── public/            # Static assets
-│   └── index.html         # Main HTML template
-├── server/                # Express.js (development only)
-├── dist/                  # Build output (Azure SWA deployment)
-│   └── public/           # Static site files
-├── .github/
-│   ├── workflows/        # CI/CD automation
-│   └── copilot-instructions.md # This file
-└── attached_assets/      # Asset source files
-```
-
-## Development Guidelines
-
-### Component Development
-
-- **Use TypeScript**: All components must be typed
-- **Radix UI First**: Prefer Radix primitives for UI components
-- **CSS Variables**: Use Tailwind + CSS variables for theming
-- **Responsive Design**: Mobile-first approach
-- **Accessibility**: Follow WCAG guidelines (Radix provides baseline)
-
-### File Naming Conventions
-
-- **Components**: `kebab-case.tsx` (e.g., `hero-section.tsx`)
-- **Pages**: `kebab-case.tsx` (e.g., `not-found.tsx`)
-- **Hooks**: `use-*.tsx` (e.g., `use-mobile.tsx`)
-- **Types**: `*.types.ts` or inline in component files
-- **Utils**: `kebab-case.ts` (e.g., `query-client.ts`)
-
-### Import Patterns
+### Asset Imports
 
 ```typescript
-// Path aliases configured
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import type { SharedType } from "@shared/schema";
+// Import using @assets alias (currently from attached_assets/)
+import heroImg from "@assets/hero/hero-background.jpg";
+import logo from "@assets/branding/logo.png";
+
+// Directory structure:
+// attached_assets/
+//   branding/    - logos, brand assets
+//   hero/        - homepage hero images  
+//   content/     - general content images
+//   solutions/   - solution-specific images
 ```
 
-### Styling Guidelines
+## Routing & SPA Configuration
 
-- **Tailwind Classes**: Use utility-first approach
-- **CSS Variables**: For theme tokens (defined in `index.css`)
-- **Component Variants**: Use `class-variance-authority` for complex variants
-- **Responsive**: Always consider mobile, tablet, desktop
-- **Dark Mode**: Support both light/dark themes
+**Wouter** handles client-side routing (see `App.tsx`). Azure SWA config (`client/public/staticwebapp.config.json`):
+- **SPA fallback**: All routes → `/index.html` (React handles routing)
+- **Asset exclusions**: Prevents `/assets/*`, `/*.js`, `/*.css` from fallback
+- **404 handling**: Returns `index.html` with 200 status code
+- **Cache strategy**: 1-year immutable cache for assets, 1-hour for HTML
 
-## Code Quality Standards
+```typescript
+// Routing in App.tsx - simple Wouter setup
+import { Switch, Route, Router } from "wouter";
 
-### TypeScript
+<Router base="/">
+  <Switch>
+    <Route path="/" component={Home} />
+    <Route path="/solutions" component={Solutions} />
+    <Route component={NotFound} /> {/* Catch-all */}
+  </Switch>
+</Router>
+```
 
-- **Strict Mode**: Enabled in `tsconfig.json`
-- **Type Safety**: No `any` types unless absolutely necessary
-- **Props Interface**: Define props interfaces for all components
-- **Return Types**: Explicitly type function returns when complex
+## Styling Architecture
 
-### Performance
+**Tailwind v4 CSS-first**: Configuration lives in `client/src/index.css` using `@theme` directive (NO `tailwind.config.ts`):
 
-- **Code Splitting**: Manual chunks configured in Vite
-- **Asset Optimization**: Images optimized, lazy loading where appropriate
-- **Bundle Size**: Monitor with Vite build analysis
-- **Caching**: Proper cache headers for static assets
+```css
+@import "tailwindcss";
 
-### SEO & Meta Tags
+@theme {
+  /* Semantic colors reference CSS variables for theme switching */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  
+  /* Border radius scale */
+  --radius-lg: 0.5rem;
+  
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
 
-- **Structured Data**: JSON-LD schema included
-- **Open Graph**: Complete OG meta tags
-- **Twitter Cards**: Social media optimization
-- **Sitemap**: Maintained in `client/public/sitemap.xml`
-- **Robots.txt**: Configured for search engines
+/* Then theme variables below @theme block */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  /* ... */
+}
 
-## Common Tasks & Patterns
+.dark {
+  --background: 222.2 84% 4.9%;
+  /* ... */
+}
+```
 
-### Adding New Components
+**Component Variants**: Use `class-variance-authority` for complex component states:
 
-1. Create component in appropriate `components/` subfolder
-2. Export from component file
-3. Add to `components/ui/index.ts` if UI component
-4. Include proper TypeScript interfaces
-5. Follow accessibility guidelines
-6. Test responsive behavior
+```typescript
+import { cva, type VariantProps } from "class-variance-authority";
 
-### Modifying Build Process
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-md", // base
+  {
+    variants: {
+      variant: { default: "bg-primary text-primary-foreground", /* ... */ },
+      size: { default: "h-10 px-4 py-2", /* ... */ }
+    },
+    defaultVariants: { variant: "default", size: "default" }
+  }
+);
+```
 
-1. Update `package.json` scripts if needed
-2. Modify `vite.config.ts` for Vite configuration
-3. Update GitHub Actions workflows for CI/CD changes
-4. Test both GitHub Pages and Azure SWA deployments
-5. Document changes in session folder
+**Theme Switching**: Custom Context API implementation in `hooks/use-theme.tsx` (NOT a third-party lib):
 
-### Adding New Pages
+```typescript
+import { useTheme } from "@/hooks/use-theme";
 
-1. Create page component in `client/src/pages/`
-2. Add route to `App.tsx` using Wouter
-3. Update navigation if needed
-4. Add to sitemap if public page
-5. Test routing on both deployment targets
+const { theme, setTheme } = useTheme(); // "light" | "dark" | "system"
+setTheme("dark"); // Persists to localStorage, updates DOM class
+```
 
-### Performance Optimization
+## SEO & Meta Tags
 
-1. Analyze bundle size: `npm run build:static` and check output
-2. Use Vite's rollup bundle analyzer
-3. Optimize images in `attached_assets/`
-4. Implement lazy loading for heavy components
-5. Monitor Core Web Vitals
+**Dynamic SEO**: `SEOHead` component updates meta tags via `useEffect` (runs per-route):
 
-## Troubleshooting Common Issues
+```typescript
+import SEOHead from "@/components/seo-head";
+
+<SEOHead 
+  title="Solutions | Control Origins"
+  description="Comprehensive technology solutions..."
+  url="https://controlorigins.com/solutions"
+/>
+```
+
+Component updates: `document.title`, meta description/keywords, Open Graph tags, Twitter Cards, and injects JSON-LD structured data dynamically.
+
+**Static SEO Files**: `client/public/sitemap.xml` and `robots.txt` maintained manually.
+
+## TypeScript Configuration
+
+```json
+// tsconfig.json - Key settings
+{
+  "compilerOptions": {
+    "strict": true,              // No any, strict null checks
+    "module": "ESNext",          // Modern ES modules
+    "moduleResolution": "bundler", // Vite bundler mode
+    "allowImportingTsExtensions": true, // .tsx imports OK
+    "paths": { "@/*": ["./client/src/*"] }
+  }
+}
+```
+
+**Import Aliases**:
+- `@/` → `client/src/` (components, hooks, lib, pages)
+- `@assets/` → `attached_assets/` (images, icons)
+
+## Component Patterns
+
+### File Structure
+```
+client/src/
+├── components/
+│   ├── ui/              # Radix UI + shadcn/ui primitives (button, toast, tooltip)
+│   ├── hero-section.tsx # Feature components (kebab-case)
+│   └── seo-head.tsx
+├── pages/               # Route components (home.tsx, not-found.tsx)
+├── hooks/               # Custom hooks (use-theme.tsx, use-mobile.tsx)
+├── data/                # Static JSON (projects.json, solutions.json)
+└── lib/                 # Utils (utils.ts with cn() helper)
+```
+
+### Component Template
+```typescript
+interface MyComponentProps {
+  title?: string;
+  children?: React.ReactNode;
+  className?: string;
+}
+
+export default function MyComponent({ 
+  title = "Default",
+  children,
+  className 
+}: MyComponentProps) {
+  return (
+    <section className={cn("base-styles", className)}>
+      {/* Implementation */}
+    </section>
+  );
+}
+```
+
+**Key Utilities**: `cn()` from `lib/utils.ts` merges Tailwind classes using `clsx` + `tailwind-merge`.
+
+## Common Development Tasks
+
+### Adding a New Page
+1. Create `client/src/pages/my-page.tsx`
+2. Add route in `App.tsx`: `<Route path="/my-page" component={MyPage} />`
+3. Update `client/public/sitemap.xml` if public
+4. Add `SEOHead` component with page-specific metadata
+
+### Adding a New Component
+1. Create in `client/src/components/my-component.tsx`
+2. Use TypeScript interfaces for props
+3. Import with `@/components/my-component`
+4. For UI primitives, add to `components/ui/` folder
+
+### Styling a Component
+```typescript
+// Use cn() to merge classes conditionally
+import { cn } from "@/lib/utils";
+
+<div className={cn(
+  "base-class",
+  variant === "primary" && "primary-class",
+  className
+)}>
+```
+
+### Accessing Static Data
+```typescript
+import projects from "@/data/projects.json";
+import solutions from "@/data/solutions.json";
+
+// JSON files export typed arrays
+projects.forEach(project => console.log(project.title));
+```
+
+## Troubleshooting
+
+### Assets Not Loading
+```bash
+# Assets MUST be prepared before dev/build
+node ./scripts/prepare-assets.mjs
+# Or use npm scripts that auto-prepare:
+npm run dev              # Includes prepare-assets
+npm run build:static     # Includes prepare-assets
+```
 
 ### Build Failures
-
 ```bash
-# Clear everything and rebuild
+# Nuclear option - full clean rebuild
 npm run clean
 rm -rf node_modules package-lock.json
 npm install
 npm run build:static
 ```
 
-### Development Server Issues
+### TypeScript Errors
+- Check `tsconfig.json` paths match file locations
+- Ensure strict mode compliance (no `any` types)
+- Use `allowImportingTsExtensions: true` for `.tsx` imports
 
-```bash
-# Port conflicts - Vite uses 5173, Express uses configured port
-# Check package.json scripts for port configurations
-# Use npm run dev:static for frontend-only development
-```
+### Routing Not Working Locally
+- Vite dev server handles SPA routing automatically
+- Azure SWA uses `staticwebapp.config.json` for production routing
+- 404s should render React's `NotFound` component (returns 200 status)
 
-### Deployment Issues
+## Key Files Reference
 
-- **Azure SWA**: Check GitHub Actions workflow and build output
-- **Custom Domain**: DNS configuration and CNAME file
-- **Asset Loading**: Check relative vs absolute paths
-
-### CSS/Styling Issues
-
-- **Tailwind**: Check `tailwind.config.ts` content paths
-- **CSS Variables**: Verify definitions in `client/src/index.css`
-- **Component Styles**: Ensure Radix styles are imported
-- **Theme Issues**: Check theme provider and CSS variable values
-
-## Security & Best Practices
-
-### Code Security
-
-- **No Secrets**: Never commit API keys or secrets
-- **Dependency Updates**: Regular `npm audit` and updates
-- **Type Safety**: Maintain strict TypeScript configuration
-- **Input Validation**: Use Zod for runtime validation where needed
-
-### Static Site Security
-
-- **Content Security Policy**: Configure via meta tags or headers
-- **HTTPS Only**: Both platforms provide HTTPS by default
-- **Asset Integrity**: Subresource integrity for external assets
-- **XSS Prevention**: React provides built-in protection
-
-## Performance Monitoring
-
-### Core Web Vitals
-
-- **LCP**: Optimize hero image loading
-- **FID**: Minimize JavaScript execution time
-- **CLS**: Ensure stable layout during load
-- **INP**: Optimize interaction responsiveness
-
-### Monitoring Tools
-
-- **Lighthouse**: Built into Chrome DevTools
-- **PageSpeed Insights**: Google's web performance tool
-- **Azure Application Insights**: Available with Azure SWA
-- **GitHub Actions**: Can include performance testing
-
-## Communication & Collaboration
-
-### Documentation Requirements
-
-- **Decision Records**: Document architectural decisions
-- **Change Logs**: Track significant changes in session folders
-- **API Documentation**: Document any data structures or APIs
-- **Deployment Notes**: Keep deployment instructions current
-
-### Code Review Guidelines
-
-- **TypeScript Compliance**: Ensure type safety
-- **Performance Impact**: Consider bundle size and load time
-- **Accessibility**: Verify WCAG compliance
-- **Browser Compatibility**: Test across target browsers
-- **Mobile Responsiveness**: Always test mobile layout
-
-## Emergency Procedures
-
-### Rollback Process
-
-1. **Azure SWA**: Check GitHub Actions deployment status
-2. **Local Testing**: `npm run preview` to test before deployment
-
-### Critical Issues
-
-1. **Build Broken**: Use last known good configuration
-2. **Site Down**: Check GitHub Actions status
-3. **Performance Issues**: Use Lighthouse to identify bottlenecks
-4. **Security Issues**: Immediate dependency updates and redeployment
+| File | Purpose |
+|------|---------|
+| `vite.config.ts` | Build config, path aliases, manual chunks |
+| `client/src/index.css` | Tailwind v4 `@theme` config, CSS variables |
+| `client/src/App.tsx` | Wouter router setup, theme provider |
+| `client/public/staticwebapp.config.json` | Azure SWA routing, cache headers, security headers |
+| `.github/workflows/azure-static-web-apps-*.yml` | CI/CD pipeline |
+| `scripts/prepare-assets.mjs` | Asset copy script (source → public) |
+| `tsconfig.json` | TypeScript strict mode, path aliases |
 
 ---
 
-**Remember**: Always use the session documentation structure `/copilot/session-{date}/` for any work sessions, follow the build process exactly as documented, and test thoroughly before going live.
+*Last updated: November 2025*

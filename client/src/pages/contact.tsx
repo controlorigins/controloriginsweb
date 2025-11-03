@@ -14,9 +14,9 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead 
-        title="Contact Control Origins for Expert Microsoft Azure & Technology Consulting"
-        description="Get in touch with Control Origins for Microsoft Azure consulting, ASP.NET development, regulatory compliance, and strategic technology transformation services. Free consultation available."
-        keywords="contact Control Origins, Microsoft Azure consulting quote, technology consulting services, ASP.NET development inquiry, regulatory compliance consultation, business transformation support"
+        title="Connect with Control Origins on LinkedIn - Portfolio Brand"
+        description="Control Origins is a remote-based portfolio brand maintained by Mark Hazleton. Not currently accepting new business. Connect professionally through LinkedIn to learn about past technology projects."
+        keywords="contact Control Origins, LinkedIn connection, portfolio brand, Mark Hazleton, Microsoft Azure portfolio, technology consulting portfolio"
         url="https://controlorigins.com/contact"
       />
       <Navigation />
@@ -27,12 +27,14 @@ export default function Contact() {
           {/* Page Header with H1 */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Contact <span className="text-accent">Control Origins</span> for 
-              Expert <span className="text-accent">Consulting Services</span>
+              Connect with <span className="text-accent">Control Origins</span> on 
+              <span className="text-accent">LinkedIn</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Ready to transform your business with cutting-edge Microsoft technology solutions? 
-              Let's discuss your project and explore how we can help achieve your goals.
+              Control Origins is a remote-based portfolio brand maintained by Mark Hazleton. 
+              While we're not currently accepting new business engagements, you can connect 
+              professionally through our LinkedIn company page to learn more about our experience 
+              in Microsoft technology solutions and regulatory compliance.
             </p>
           </div>
         </div>

@@ -8,6 +8,7 @@ import Solutions from "@/pages/solutions";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Terms from "@/pages/terms";
+import Privacy from "@/pages/privacy";
 import NotFound from "@/pages/not-found";
 
 function AppRouter() {
@@ -20,6 +21,7 @@ function AppRouter() {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/terms" component={Terms} />
+        <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />
       </Switch>
     </Router>

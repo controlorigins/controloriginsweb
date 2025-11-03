@@ -13,9 +13,9 @@ export default function Terms() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead 
-        title="Terms and Conditions | Control Origins - Microsoft Azure & ASP.NET Consulting"
-        description="Terms and Conditions for Control Origins website and consulting services. Legal terms, privacy policies, and conditions of use for our Microsoft Azure and ASP.NET consulting services."
-        keywords="terms and conditions, legal terms, privacy policy, consulting terms, Microsoft Azure consulting terms, ASP.NET development terms, Control Origins legal"
+        title="Terms and Conditions | Control Origins Portfolio Website"
+        description="Terms and Conditions for Control Origins portfolio website. Legal terms and conditions of use for this professional portfolio showcase."
+        keywords="terms and conditions, legal terms, portfolio website terms, Control Origins legal"
         url="https://controlorigins.com/terms"
       />
       <Navigation />
@@ -39,7 +39,12 @@ export default function Terms() {
               <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
               <p className="text-muted-foreground mb-4">
                 Welcome to Control Origins ("we," "our," or "us"). These Terms and Conditions ("Terms") 
-                govern your use of our website at controlorigins.com (the "Service") operated by Control Origins.
+                govern your use of our portfolio website at controlorigins.com (the "Service").
+              </p>
+              <p className="text-muted-foreground mb-4">
+                <strong>Important:</strong> Control Origins is a portfolio brand maintained by Mark Hazleton 
+                to showcase past professional work. We are not currently accepting new business or client engagements. 
+                This website serves as a professional portfolio and information resource only.
               </p>
               <p className="text-muted-foreground mb-4">
                 By accessing or using our Service, you agree to be bound by these Terms. If you disagree 
@@ -69,20 +74,27 @@ export default function Terms() {
               </p>
             </section>
 
-            {/* Consulting Services */}
+            {/* Portfolio Website Purpose */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">3. Consulting Services</h2>
-              <h3 className="text-xl font-semibold text-foreground mb-3">3.1 Service Description</h3>
+              <h2 className="text-2xl font-bold text-foreground mb-4">3. Portfolio Website Purpose</h2>
+              <h3 className="text-xl font-semibold text-foreground mb-3">3.1 Not Accepting New Business</h3>
               <p className="text-muted-foreground mb-4">
-                Control Origins provides Microsoft Azure consulting, ASP.NET development, and business 
-                technology solutions. Specific terms for consulting engagements will be outlined in 
-                separate Service Agreements or Statements of Work.
+                Control Origins is a portfolio brand that showcases past professional work in Microsoft Azure, 
+                ASP.NET development, and business technology solutions. <strong>We are not currently accepting 
+                new clients, consulting engagements, or business inquiries.</strong>
               </p>
 
-              <h3 className="text-xl font-semibold text-foreground mb-3">3.2 Professional Standards</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">3.2 Portfolio Information Only</h3>
               <p className="text-muted-foreground mb-4">
-                Our consulting services are provided with professional care and skill. We maintain industry 
-                certifications and follow Microsoft best practices in all technology implementations.
+                This website displays information about past projects, methodologies, and technical expertise 
+                for portfolio and professional networking purposes only. Project descriptions and case studies 
+                represent historical work and should not be interpreted as offers for current services.
+              </p>
+
+              <h3 className="text-xl font-semibold text-foreground mb-3">3.3 Professional Contact</h3>
+              <p className="text-muted-foreground mb-4">
+                For professional networking purposes only, you may connect through our LinkedIn company page. 
+                We do not respond to business solicitations, project inquiries, or service requests.
               </p>
             </section>
 
@@ -142,11 +154,11 @@ export default function Terms() {
                 AND LIABILITIES ARISING OUT OF OR IN CONNECTION WITH THE INFORMATION PROVIDED ON THIS WEBSITE.
               </p>
 
-              <h3 className="text-xl font-semibold text-foreground mb-3">5.2 Professional Services Disclaimer</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">5.2 Portfolio Content Disclaimer</h3>
               <p className="text-muted-foreground mb-4">
-                While we strive to provide accurate and up-to-date information, the content on this website 
-                should not be considered as professional advice for your specific situation. For professional 
-                consulting services, please contact us directly.
+                The content on this website represents past professional work and should not be considered 
+                as an offer of current services. Control Origins is not accepting new business engagements. 
+                Portfolio information is provided for professional networking purposes only.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">5.3 Limitation of Liability</h3>
@@ -171,14 +183,14 @@ export default function Terms() {
               </p>
             </section>
 
-            {/* Compliance and Regulatory */}
+            {/* Past Work and Regulatory Compliance */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">7. Compliance and Regulatory</h2>
-              <h3 className="text-xl font-semibold text-foreground mb-3">7.1 Regulatory Compliance</h3>
+              <h2 className="text-2xl font-bold text-foreground mb-4">7. Past Work and Regulatory Compliance</h2>
+              <h3 className="text-xl font-semibold text-foreground mb-3">7.1 Historical Compliance Work</h3>
               <p className="text-muted-foreground mb-4">
-                Control Origins specializes in regulatory compliance including SOX, HIPAA, and PCI compliance. 
-                All compliance-related consulting services are subject to separate agreements and terms 
-                specific to regulatory requirements.
+                This portfolio showcases past work in regulatory compliance including SOX, HIPAA, and PCI compliance. 
+                All compliance-related information represents historical projects and should not be construed as 
+                current service offerings.
               </p>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">7.2 Data Protection</h3>

@@ -14,8 +14,8 @@ export default function Solutions() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead 
-        title="Business Technology Solutions & Strategic Consulting | Control Origins"
-        description="Control Origins delivers comprehensive business technology solutions including Microsoft Azure consulting, regulatory compliance (SOX, HIPAA, PCI), and strategic transformation services."
+        title="Past Business Technology Solutions & Projects | Control Origins"
+        description="Control Origins portfolio showcasing past business technology solutions including Microsoft Azure consulting, regulatory compliance (SOX, HIPAA, PCI), and strategic transformation projects. Not accepting new clients."
         keywords="business technology solutions, Microsoft Azure consulting, regulatory compliance, SOX compliance, HIPAA compliance, PCI compliance, strategic consulting, digital transformation, enterprise technology"
         url="https://controlorigins.com/solutions"
       />
@@ -27,12 +27,12 @@ export default function Solutions() {
           {/* Page Header with H1 */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Business Technology <span className="text-accent">Solutions</span> & 
-              Strategic <span className="text-accent">Consulting</span>
+              Past Technology <span className="text-accent">Solutions</span> & 
+              Project <span className="text-accent">Showcase</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Comprehensive technology solutions designed to drive innovation, ensure compliance, 
-              and accelerate digital transformation for enterprise organizations.
+              Examples of past technology solutions developed for innovation, compliance, 
+              and digital transformation. Portfolio showcase only - not accepting new client work.
             </p>
           </div>
         </div>

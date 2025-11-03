@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# This is a professional portfolio website
+# Maintained by Mark Hazleton
+# Not a commercial service - portfolio showcase only
+
 # Sitemap location
 Sitemap: https://controlorigins.com/sitemap.xml
 

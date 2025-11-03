@@ -26,7 +26,7 @@ export default function LinkedInIntegration({
   const handleLinkedInShare = () => {
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(document.title);
-    const summary = encodeURIComponent("Expert Microsoft Azure & ASP.NET consulting services for enterprise organizations");
+    const summary = encodeURIComponent("Microsoft Azure & ASP.NET professional portfolio showcasing past enterprise technology projects");
     const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}&summary=${summary}`;
     
     // Track LinkedIn share conversion

@@ -30,11 +30,12 @@ export default function About() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               About <span className="text-accent">Control Origins</span>: 
-              Microsoft Technology <span className="text-accent">Experts</span>
+              Portfolio <span className="text-accent">Showcase</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Dedicated technology professionals with deep expertise in Microsoft Azure, 
-              regulatory compliance, and strategic business transformation.
+              A remote-based portfolio brand showcasing decades of professional experience in 
+              Microsoft Azure, regulatory compliance, and strategic business transformation. 
+              Maintained by Mark Hazleton as a professional showcase.
             </p>
           </div>
         </div>

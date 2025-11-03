@@ -3,18 +3,17 @@
 <!-- markdownlint-disable MD033 MD036 -->
 <div align="center">
 
-![Control Origins Logo](./attached_assets/logo_1756760288725.png)
+![Control Origins Logo](./attached_assets/branding/logo.png)
 
 **Professional business technology consulting services website**
 
-[![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-7.1.4-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.12-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.1.12-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.16-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Azure Static Web Apps](https://img.shields.io/badge/Deployed_on-Azure_SWA-0078d4?logo=microsoft-azure&logoColor=white)](https://azure.microsoft.com/en-us/services/app-service/static/)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
-[🌐 Live Site](https://controlorigins.com) • [📋 Issues](https://github.com/markhazleton/controlorigins-site/issues) • [🚀 Contributing](#-contributing)
+[🌐 Live Site](https://controlorigins.com) • [📋 Issues](https://github.com/controlorigins/controloriginsweb/issues) • [🚀 Contributing](#-contributing)
 
 </div>
 
@@ -104,8 +103,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/markhazleton/controlorigins-site.git
-cd controlorigins-site
+git clone https://github.com/controlorigins/controloriginsweb.git
+cd controloriginsweb
 
 # Install dependencies
 npm install
@@ -210,12 +209,12 @@ The site deploys automatically to Azure Static Web Apps:
 ## 🎨 Project Structure
 
 ```text
-controlorigins-site/
+controloriginsweb/
 ├── 📁 client/                    # React application
 │   ├── 📁 public/               # Static assets
-│   │   ├── CNAME                # Custom domain configuration
 │   │   ├── sitemap.xml          # SEO sitemap
-│   │   └── robots.txt           # Search engine directives
+│   │   ├── robots.txt           # Search engine directives
+│   │   └── staticwebapp.config.json  # Azure SWA routing config
 │   ├── 📁 src/
 │   │   ├── 📁 components/       # React components
 │   │   │   ├── 📁 ui/          # Reusable UI primitives
@@ -236,7 +235,7 @@ controlorigins-site/
 ├── 📁 copilot/                  # Session documentation
 ├── package.json                 # Dependencies and scripts
 ├── vite.config.ts              # Vite configuration
-├── tailwind.config.ts          # Tailwind CSS config
+├── postcss.config.js           # PostCSS config (Tailwind v4)
 ├── tsconfig.json               # TypeScript config
 └── README.md                   # This file
 ```
@@ -409,7 +408,7 @@ We welcome contributions to improve the Control Origins website! Please follow t
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -417,10 +416,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](./LICENSE
 
 ### **Getting Help**
 
-- **📋 Issues**: [GitHub Issues](https://github.com/markhazleton/controlorigins-site/issues)
+- **📋 Issues**: [GitHub Issues](https://github.com/controlorigins/controloriginsweb/issues)
 - **🐛 Bug Reports**: Please include steps to reproduce
 - **💡 Feature Requests**: Describe the use case and expected behavior
-- **❓ Questions**: Use GitHub Discussions for general questions
+- **❓ Questions**: Create an issue for questions
 
 ### **Issue Templates**
 
@@ -447,6 +446,6 @@ When creating an issue, please include:
 
 *Professional business technology consulting services*
 
-[🌐 Website](https://controlorigins.com) • [📧 Contact](https://github.com/markhazleton/controlorigins-site/issues)
+[🌐 Website](https://controlorigins.com) • [📧 Contact](https://github.com/controlorigins/controloriginsweb/issues)
 
 </div>

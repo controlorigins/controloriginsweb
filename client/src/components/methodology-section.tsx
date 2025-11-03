@@ -77,11 +77,11 @@ export default function MethodologySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Our Methodology
+            Past Project Methodology
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A proven six-phase approach based on industry best practices for
-            implementing transformation and optimization.
+            The proven six-phase approach used in past projects, based on industry best practices 
+            for implementing transformation and optimization.
           </p>
         </div>
 

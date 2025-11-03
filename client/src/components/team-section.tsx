@@ -47,12 +47,12 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Meet Our Expert Team
+            Professional Background
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Our LinkedIn-connected team of Microsoft technology experts brings decades of 
-            combined experience in enterprise consulting, regulatory compliance, and strategic 
-            business transformation.
+            Control Origins is maintained by Mark Hazleton as a portfolio brand showcasing decades of 
+            experience in enterprise consulting, Microsoft technology solutions, regulatory compliance, 
+            and strategic business transformation.
           </p>
         </div>
         
@@ -153,12 +153,13 @@ export default function TeamSection() {
         <div className="text-center mt-12 animate-fade-in">
           <div className="bg-background rounded-xl p-8 shadow-lg border border-accent/20">
             <h3 className="text-xl font-semibold text-foreground mb-3">
-              Professional Network & Contact
+              Professional Contact & Network
             </h3>
             <p className="text-muted-foreground mb-4">
-              Control Origins works with a network of certified Microsoft technology specialists 
-              and regulatory compliance experts. All business inquiries and professional 
-              connections should be made through LinkedIn for both company and individual contact.
+              Control Origins is a portfolio brand maintained by Mark Hazleton and is not currently 
+              accepting new business engagements. This site serves as a showcase of professional 
+              experience and past project work. For professional networking and inquiries, 
+              please connect through LinkedIn.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

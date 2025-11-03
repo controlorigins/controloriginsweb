@@ -27,19 +27,19 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-fade-in">
             <h2 className="text-2xl font-semibold text-foreground/80 mb-6">
-              Proven Business Technology Consulting Approach
+              Professional Technology Consulting Portfolio
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Control Origins was founded on a unique approach to building
-              logical relationships between an organization's policies,
-              procedures, standards, roles, and skills to industry best practices
-              using cutting-edge Microsoft technology stack.
+              Control Origins is a portfolio brand maintained by Mark Hazleton, showcasing a 
+              proven approach to building logical relationships between organizational policies, 
+              procedures, standards, roles, and skills to industry best practices using the 
+              Microsoft technology stack.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
-              We leverage enterprise frameworks like <strong>COSO, COBIT, ISO, and ITIL</strong>, as well as
+              This portfolio demonstrates expertise leveraging enterprise frameworks like <strong>COSO, COBIT, ISO, and ITIL</strong>, as well as
               critical regulatory requirements including <strong>SOX, HIPAA, Basel II, SSAE 16,
               PCI, and CISP</strong> compliance, all powered by Microsoft Azure cloud infrastructure
-              and ASP.NET application development expertise.
+              and ASP.NET application development expertise. Not currently accepting new engagements.
             </p>
 
             <div className="grid grid-cols-2 gap-6">
