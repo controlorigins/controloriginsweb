@@ -1,4 +1,4 @@
-import { LinkedinIcon, ExternalLink, MapPin } from "lucide-react";
+import { Link2, ExternalLink, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { trackLinkedInConversion } from "@/components/linkedin-integration";
@@ -134,7 +134,7 @@ export default function TeamSection() {
                       onClick={() => handleLinkedInProfileView(member.name, member.linkedinUrl)}
                       className="w-full bg-[#0077B5] hover:bg-[#005885] text-white transition-colors"
                     >
-                      <LinkedinIcon className="w-4 h-4 mr-2" />
+                      <Link2 className="w-4 h-4 mr-2" />
                       Connect on LinkedIn
                       <ExternalLink className="w-3 h-3 ml-2" />
                     </Button>
@@ -169,7 +169,7 @@ export default function TeamSection() {
                 }}
                 className="bg-[#0077B5] hover:bg-[#005885] text-white"
               >
-                <LinkedinIcon className="w-4 h-4 mr-2" />
+                <Link2 className="w-4 h-4 mr-2" />
                 Follow Company Page
                 <ExternalLink className="w-3 h-3 ml-2" />
               </Button>
@@ -181,7 +181,7 @@ export default function TeamSection() {
                 }}
                 className="border-[#0077B5] text-[#0077B5] hover:bg-[#0077B5] hover:text-white"
               >
-                <LinkedinIcon className="w-4 h-4 mr-2" />
+                <Link2 className="w-4 h-4 mr-2" />
                 Connect with Mark
                 <ExternalLink className="w-3 h-3 ml-2" />
               </Button>

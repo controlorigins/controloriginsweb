@@ -1,4 +1,4 @@
-import { LinkedinIcon, Users, ExternalLink, Share2 } from "lucide-react";
+import { Link2, Users, ExternalLink, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Extend Window interface for LinkedIn tracking
@@ -56,7 +56,7 @@ export default function LinkedInIntegration({
         className="text-muted-foreground hover:text-[#0077B5] transition-colors"
         title="Follow Control Origins on LinkedIn"
       >
-        <LinkedinIcon className="w-4 h-4" />
+        <Link2 className="w-4 h-4" />
       </Button>
     );
   }
@@ -72,7 +72,7 @@ export default function LinkedInIntegration({
           className="flex items-center gap-2 text-muted-foreground hover:text-[#0077B5] transition-colors"
           onClick={handleLinkedInFollow}
         >
-          <LinkedinIcon className="w-5 h-5" />
+          <Link2 className="w-5 h-5" />
           <span>Follow {companyName}</span>
           <ExternalLink className="w-3 h-3" />
         </a>
@@ -102,7 +102,7 @@ export default function LinkedInIntegration({
         onClick={handleLinkedInFollow}
         className="bg-[#0077B5] hover:bg-[#005885] text-white transition-colors"
       >
-        <LinkedinIcon className="w-4 h-4 mr-2" />
+        <Link2 className="w-4 h-4 mr-2" />
         Follow {companyName}
         {showFollowerCount && (
           <>

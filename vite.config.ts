@@ -17,9 +17,13 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          ui: ["@radix-ui/react-toast", "@radix-ui/react-tooltip"],
+        manualChunks: (id) => {
+          if (id.includes("node_modules/react") || id.includes("node_modules/react-dom")) {
+            return "vendor";
+          }
+          if (id.includes("node_modules/@radix-ui/react-toast") || id.includes("node_modules/@radix-ui/react-tooltip")) {
+            return "ui";
+          }
         },
       },
     },

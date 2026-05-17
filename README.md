@@ -19,6 +19,17 @@
 
 ---
 
+**Live Site**: [https://controlorigins.com](https://controlorigins.com)
+
+## About
+
+Control Origins is a professional business technology consulting website showcasing Microsoft Azure and ASP.NET expertise, regulatory compliance solutions, and enterprise consulting services.
+
+> Built by [Mark Hazleton](https://markhazleton.com) — Mark Hazleton, Solutions Architect
+> Control Origins is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.
+
+---
+
 ## 📖 Table of Contents
 
 - [✨ Features](#-features)

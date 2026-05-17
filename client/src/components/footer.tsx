@@ -81,19 +81,26 @@ export default function Footer() {
             <p className="text-background/50 text-xs mb-3">
               Remote-Based Portfolio | ASP.NET Specialists | SOX, HIPAA, PCI Compliance Experts
             </p>
-            <p className="text-background/50 text-xs">
+            <p className="text-background/50 text-xs mb-3">
               <Link href="/terms" className="hover:text-accent transition-colors">Terms and Conditions</Link>
               {" | "}
               <Link href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
               {" | "}
-              <a 
-                href="https://www.linkedin.com/company/control-origins" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/company/control-origins"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
               >
                 LinkedIn
               </a>
+            </p>
+            <p className="text-background/40 text-xs">
+              <a href="https://controlorigins.com" className="hover:text-accent transition-colors">Control Origins</a>
+              {" — built by "}
+              <a href="https://markhazleton.com" className="hover:text-accent transition-colors">Mark Hazleton</a>
+              {" · "}
+              <a href="https://makeboldsolutions.com" className="hover:text-accent transition-colors">Make Bold Solutions</a>
             </p>
           </div>
         </div>

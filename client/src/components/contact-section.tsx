@@ -1,10 +1,10 @@
-import { Linkedin, Building, MapPin, ArrowRight } from "lucide-react";
+import { Link2, Building, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const contactMethods = [
   {
-    icon: Linkedin,
+    icon: Link2,
     title: "Connect on LinkedIn",
     description: "Control Origins Company Page",
     href: "https://www.linkedin.com/company/control-origins",
