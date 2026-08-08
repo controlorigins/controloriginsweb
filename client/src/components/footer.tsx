@@ -2,7 +2,15 @@ import { Link } from "wouter";
 import LinkedInIntegration from "@/components/linkedin-integration";
 import logoPath from "@assets/branding/logo.png";
 
+const buildDate = new Date(__BUILD_DATE__).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +84,7 @@ export default function Footer() {
           {/* Copyright and Links */}
           <div className="text-center">
             <p className="text-background/60 text-sm mb-2" data-testid="footer-copyright">
-              © 2025 Control Origins. All rights reserved.
+              © {currentYear} Control Origins. All rights reserved.
             </p>
             <p className="text-background/50 text-xs mb-3">
               Remote-Based Portfolio | ASP.NET Specialists | SOX, HIPAA, PCI Compliance Experts
@@ -101,6 +109,8 @@ export default function Footer() {
               <a href="https://markhazleton.com" className="hover:text-accent transition-colors">Mark Hazleton</a>
               {" · "}
               <a href="https://makeboldsolutions.com" className="hover:text-accent transition-colors">Make Bold Solutions</a>
+              {" · "}
+              <span data-testid="footer-build-date">Built {buildDate}</span>
             </p>
           </div>
         </div>
