@@ -4,6 +4,9 @@
   "type": "module",
   "license": "MIT",
   "description": "Control Origins static website - Business technology consulting services",
+  "engines": {
+    "node": ">=20.12.0"
+  },
   "scripts": {
     "dev": "node ./scripts/prepare-assets.mjs && npx vite dev",
     "dev:static": "node ./scripts/prepare-assets.mjs && npx vite dev",
