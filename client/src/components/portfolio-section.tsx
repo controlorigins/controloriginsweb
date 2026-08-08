@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, BarChart3, Briefcase, Building, Database, Code, Globe, FileText } from "lucide-react";
+import { ExternalLink, BarChart3, Briefcase, Building, Database, Code, Globe, FileText, type LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -7,7 +7,7 @@ import projectsData from "@/data/projects.json";
 
 // Icon mapping for different project types
 const getProjectIcon = (id: number, category: string) => {
-  const iconMap: { [key: number]: any } = {
+  const iconMap: { [key: number]: LucideIcon } = {
     1: Code, // MVC Demo
     2: BarChart3, // Data Analysis
     3: Briefcase, // Project Mechanics

@@ -1,7 +1,7 @@
 import { Link2, ExternalLink, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { trackLinkedInConversion } from "@/components/linkedin-integration";
+import { trackLinkedInConversion } from "@/lib/utils";
 
 interface TeamMember {
   name: string;
@@ -192,7 +192,3 @@ export default function TeamSection() {
     </section>
   );
 }
-
-// Export team data for use in other components if needed
-export { teamMembers };
-export type { TeamMember };

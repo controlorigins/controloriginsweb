@@ -1,23 +1,15 @@
 import { Link2, Users, ExternalLink, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-// Extend Window interface for LinkedIn tracking
-declare global {
-  interface Window {
-    lintrk?: (action: string, data: { conversion_id: string }) => void;
-  }
-}
+import { trackLinkedInConversion } from "@/lib/utils";
 
 interface LinkedInIntegrationProps {
   variant?: "header" | "footer" | "content" | "share";
   showFollowerCount?: boolean;
-  context?: string;
 }
 
-export default function LinkedInIntegration({ 
+export default function LinkedInIntegration({
   variant = "content",
   showFollowerCount = false,
-  context = ""
 }: LinkedInIntegrationProps) {
   
   const companyUrl = "https://www.linkedin.com/company/control-origins";
@@ -28,21 +20,15 @@ export default function LinkedInIntegration({
     const title = encodeURIComponent(document.title);
     const summary = encodeURIComponent("Microsoft Azure & ASP.NET professional portfolio showcasing past enterprise technology projects");
     const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}&summary=${summary}`;
-    
-    // Track LinkedIn share conversion
-    if (typeof window !== 'undefined' && window.lintrk) {
-      window.lintrk('track', { conversion_id: 'share_content' });
-    }
-    
+
+    trackLinkedInConversion('share_content');
+
     window.open(shareUrl, '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
   };
 
   const handleLinkedInFollow = () => {
-    // Track LinkedIn follow conversion
-    if (typeof window !== 'undefined' && window.lintrk) {
-      window.lintrk('track', { conversion_id: 'follow_company' });
-    }
-    
+    trackLinkedInConversion('follow_company');
+
     window.open(companyUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -123,10 +109,3 @@ export default function LinkedInIntegration({
     </div>
   );
 }
-
-// Utility function for tracking LinkedIn conversions
-export const trackLinkedInConversion = (conversionType: string) => {
-  if (typeof window !== 'undefined' && window.lintrk) {
-    window.lintrk('track', { conversion_id: conversionType });
-  }
-};
